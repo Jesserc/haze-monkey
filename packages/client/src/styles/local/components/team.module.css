@@ -2,23 +2,31 @@
     .sectionContainer{
         background: var(--green4);
         position: relative;
+        padding: 5rem 0;
     }
     .sectionContent{
 		width: 95.73365%;
 		margin: 0 0 0 auto;
 		overflow: hidden;
-        padding: 5rem 0;
 	}
-    .sectionContent h1{
+    .navigate{
+        width: 91.46667%;
+    }
+    .navigate h1{
         font: 3rem/3.125rem var(--roobert-bold);
         font-weight: 900;
         color: var(--green1);
-        margin-bottom: 3rem;
+
     }
     .sectionContent h2{
         font: 1rem/1.5rem var(--roobert-bold);
         font-weight: 700;
         color: var(--green1);
+    }
+    /* slider button */
+    .arrow{
+        width: 37.4px;
+        height: 37.4px;
     }
 }
 @media all and (min-width: 1024px) {
@@ -35,20 +43,24 @@
         font: 1.25rem/2rem var(--roobert-bold);
         font-weight: 700;
     }
+    .navigate{
+        width: 85%;
+    }
 }
 @media all and (min-width: 1280px){
-   .sectionContent{
+   .sectionContainer{
         padding: 7.3125rem 0 8.875rem 0;
-    } 
+    }
+     
 }
 @media all and (min-width: 2000px){
-	.sectionContent{
+	.sectionContent, .navigate{
 		width: 1440px;
         margin: 0 auto
 	}
 }
 @media all and (min-width: 2550px){
-	.sectionContent{
+	.sectionContent, .navigate{
 		width: 1440px;
 	}
 }
