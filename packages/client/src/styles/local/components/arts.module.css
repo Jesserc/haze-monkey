@@ -1,0 +1,30 @@
+@media all and (min-width: 0px) {
+    .sectionContent{
+	    overflow-x: scroll ;
+	    overflow-y: hidden;
+    }
+    .sectionContent img{
+        width: 217px;
+        height: 217px;
+    }
+}
+
+@media all and (min-width: 768px) {
+  
+}
+@media all and (min-width: 1024px) {
+   .sectionContent img{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media all and (min-width: 1280px){
+   .sectionContent img{
+        width: auto;
+        height: auto;
+    }
+}
+
+@media all and (min-width: 1440px) {
+ 
+}

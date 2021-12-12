@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+/* fonts  */
+@font-face {
+    font-family: roobert;
+    src: url(../../font/Roobert-Regular.otf);
+}
+
+@font-face {
+    font-family: roobert-bold;
+    src: url(../../font/Roobert-Bold.otf);
+}
+@font-face {
+    font-family: optima;
+    src: url(../../font/Optima-ExtraBlack.otf);
+}
+:root {
+    --roobert-bold: 'roobert-bold', sans-serif;
+    --roobert: 'roobert', sans-serif;
+    --optima: 'optima', sans-serif;
+    --syne: 'Syne', sans-serif;
+}

@@ -1,0 +1,15 @@
+/* colors */
+:root{
+    --white1: #FFFFFF;
+    --white2: #F5FAF8;
+    --grey1: #868F8C;
+    --grey2: #363C39;
+    --brown1: #F5EBD3;
+    --brown1-transparent: rgba(245, 235, 210, 0.85);
+    --brown2: #F5EBD2D9;
+    --green1: #012515;
+    --green2: #101714;
+    --green3: #F0FFD9;
+    --green4: #FAFFF2;
+    --lemon1: #AEED47;
+}

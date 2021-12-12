@@ -1,0 +1,37 @@
+@media all and (min-width: 0px) {
+    .sectionContainer{
+        background: var(--green4);
+        position: relative;
+    }
+    .sectionContent{
+        padding: 4.5rem 0;
+    }
+    .sectionContent h1{
+        font: 3rem/3.125rem var(--roobert-bold);
+        font-weight: 900;
+        color: var(--green1);
+    }
+    .sectionContent p{
+        font: 1rem/1.5rem var(--roobert);
+        font-weight: 400;
+        color: var(--green1);
+    }
+}
+@media all and (min-width: 1024px) {
+    .sectionContent h1{
+        font: 4.5rem/4.625rem var(--roobert-bold);
+        font-weight: 900;
+        color: var(--green1);
+    }
+    .sectionContent p{
+        font: 1.125rem/2rem var(--roobert);
+        font-weight: 400;
+        color: var(--green1);
+    }
+}
+@media all and (min-width: 1280px){
+   .sectionContent{
+        padding: 7.5rem 0;
+    }
+}
+

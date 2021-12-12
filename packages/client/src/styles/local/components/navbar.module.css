@@ -1,0 +1,63 @@
+@media all and (min-width: 0px) {
+  .nav {
+    position: fixed;
+    display: flex;
+    background: var(--brown1-transparent);
+    padding: 0.5rem 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .navWrapper {
+    position: fixed;
+    background: var(--green1);
+    top: 0;
+    right: 0;
+    z-index: 5;
+    height: 100vh;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+  .navWrapper ul {
+    height: 100vh;
+  }
+  .navWrapper ul li {
+    padding: 1.125rem;
+    margin: 0;
+  }
+  .navWrapper ul li a {
+    font: 2.25rem/2.5rem var(--roobert-bold);
+    color: var(--white1);
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  /* button */
+  .discord{
+    background: var(--green1);
+    border-radius: 12px;
+    width: 151.39px;
+    height: 51px;
+  }
+  .discord a{
+    color: var(--white1);
+  }
+}
+
+@media all and (min-width: 768px) {
+  
+}
+@media all and (min-width: 1024px) {
+  .navWrapper ul li a {
+    font: 4.85rem/4.875rem var(--roobert-bold);
+    color: var(--white1);
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+}
+@media all and (min-width: 1440px) {
+ 
+}

@@ -1,0 +1,56 @@
+@media all and (min-width: 0px) {
+  .sectionContainer{
+    background: var(--brown1);
+  }
+  .sectionContent > div {
+    padding: 6rem 0;
+  }
+  .sectionContent h1{
+    font: 3.75rem/4rem var(--optima);
+    font-weight: 900;
+    color: var(--green1);
+  }
+  .sectionContent p{
+    font: 1.125rem/1.875rem var(--roobert);
+    font-weight: 400;
+    color: var(--green1);
+  }
+}
+
+@media all and (min-width: 768px) {
+  
+}
+@media all and (min-width: 1024px) {
+   .sectionContainer{
+    padding: 4.5rem 0 0 0;
+
+  }
+  .sectionContent > div {
+    padding: 0rem 0 0rem 0;
+  }
+}
+@media all and (min-width: 1280px){
+    .sectionContainer{
+        /* height: 100vh; */
+    }
+    .sectionContent h1{
+        font: 5rem/5.5rem var(--optima);
+        font-weight: 900;
+        color: var(--green1);
+        width: 100%;
+    }
+    .sectionContent p{
+        font: 1.5rem/2rem var(--roobert);
+        font-weight: 400;
+        color: var(--green1);
+    }
+    .nft{
+        height: 750.2px;
+        width: 870.84px;
+    }
+
+}
+
+@media all and (min-width: 1440px) {
+ 
+}

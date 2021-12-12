@@ -1,0 +1,69 @@
+@media all and (min-width: 0px) {
+    .sectionContainer{
+        background: var(--green2);
+        position: relative;
+    }
+    .sectionContent{
+        padding: 5.5rem 0;
+    }
+    .roadmapItem{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .sectionContent h1{
+        font: 3rem/3.125rem var(--roobert-bold);
+        font-weight: 900;
+        color: var(--white1);
+        margin-bottom: 7.375rem;
+    }
+    .sectionContent h2{
+        font: 1.5rem/1.75rem var(--roobert-bold);
+        font-weight: 700;
+        color: var(--white2);
+    }
+    .sectionContent p{
+        font: 1rem/1.5rem var(--roobert);
+        font-weight: 400;
+        color: var(--green3);
+    }
+    .underline{
+        width: 343px;
+        height: 2px;
+        background: var(--grey2);
+    }
+}
+@media all and (min-width: 1024px) {
+    .sectionContent h1{
+        font: 4.5rem/4.625rem var(--roobert-bold);
+        font-weight: 900;;
+    }
+    .sectionContent h2{
+        font: 2.25rem/2.5rem var(--roobert-bold);
+        font-weight: 700;
+        color: var(--white2);
+    }
+    .sectionContent p{
+        font: 1.125rem/1.875rem var(--roobert);
+        font-weight: 400;
+        color: var(--green3);
+    }
+    .sectionContent p{
+        font: 1.125rem/1.875rem var(--roobert);
+        font-weight: 400;
+    }
+}
+@media all and (min-width: 1280px){
+   .sectionContent{
+        padding: 9.5rem 0;
+    }
+    .sectionContent > article {
+        margin: 0 8.25rem 0 0;
+        width: 404px;
+    }
+    .sectionContent div > article{
+        width: 298px;
+    }  
+    .sectionContent div > article:first-child{
+        margin: 0 8.25rem 0 0;
+    } 
+}
