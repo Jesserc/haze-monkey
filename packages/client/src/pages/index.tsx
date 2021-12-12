@@ -2,8 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from 'styled-components'
 import About from '../components/landingpage/about/about'
-import Faqs from '../components/landingpage/accordion/faq'
+import Faq from '../components/landingpage/accordion/faq'
 import Background from '../components/landingpage/background/background'
+
 import Hero from '../components/landingpage/hero'
 import Reward from '../components/landingpage/reward/reward'
 import Roadmap from '../components/landingpage/roadmap/roadmaps'
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
         <Reward />
         <Roadmap />
         <Team />
+        <Faq />
       </main>
     </>
   )

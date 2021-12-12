@@ -1,6 +1,7 @@
+import { NextPage } from "next";
 import styles from "../../../styles/local/components/bgvectors.module.css"
 
-const SectionVectors = () => {
+const SectionVectors: NextPage = () => {
     return ( 
         <section className={styles.bgVectors}>
             <img src="images/vectors/star1.svg" alt="background vectors" />

@@ -21,10 +21,6 @@
     color: var(--green3);
   }
 }
-
-@media all and (min-width: 768px) {
-  
-}
 @media all and (min-width: 1280px) {
   .sectionContainer{
     padding: 12.68rem 0 10.125rem  0;
@@ -45,6 +41,3 @@
   }
 }
 
-@media all and (min-width: 1440px) {
- 
-}
