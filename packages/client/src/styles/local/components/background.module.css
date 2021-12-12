@@ -1,7 +1,12 @@
 @media all and (min-width: 0px) {
   .sectionContainer{
     background: var(--green2);
+    z-index: 1;
+  }
+  .sectionContent{
+    position: relative;
     padding: 11.68rem 0 18.93rem  0;
+    z-index: 1;
   }
   .sectionContent h1{
     font: 0.75rem/1rem var(--roobert);
@@ -22,7 +27,7 @@
   }
 }
 @media all and (min-width: 1280px) {
-  .sectionContainer{
+  .sectionContent{
     padding: 12.68rem 0 10.125rem  0;
   }
   .sectionContent h1{
@@ -40,4 +45,3 @@
     color: var(--green3);
   }
 }
-

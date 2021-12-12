@@ -1,10 +1,12 @@
+import { NextPage } from "next";
 import styles from "../../../styles/local/components/background.module.css"
 import SectionVectors from "./sectionVectors";
 
-const Background = () => {
+const Background: NextPage = () => {
     return ( 
         <section className={[styles.sectionContainer, "relative"].join(" ")}>
             <div className={[styles.sectionContent, "flex flex-col xl:flex-row wrapper"].join(" ")}>
+                <SectionVectors />
                 <div className="w-2/4">
                     <h1 className="mb-2">150 Light-years away</h1>
                     <h2 className="mb-14">Our Background Story</h2>
@@ -31,7 +33,6 @@ const Background = () => {
                     </p>
                 </div>
             </div>
-            <SectionVectors />
         </section>
     );
 }

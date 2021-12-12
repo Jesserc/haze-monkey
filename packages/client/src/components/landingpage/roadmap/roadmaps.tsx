@@ -11,7 +11,6 @@ const Roadmap: NextPage = () => {
                     <p className="mb-10">{item.content}</p>
                     <div className={["mb-24", styles.underline].join(" ")}></div>
                 </div> 
-                
                 <img 
                     src={item.percentage} 
                     alt="roadmap percentage" 
