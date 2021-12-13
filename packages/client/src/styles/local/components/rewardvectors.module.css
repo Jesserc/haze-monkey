@@ -1,19 +1,22 @@
 @media all and (min-width: 0px) {
     .bgVectors{
-        position: absolute;
+        z-index: 0;
         top: 0;
-        width: 100%;
+        width: 92%;
+        margin: 0;
         height: 100%;
+        position: absolute;
+    }
+    .bgVectors img{
+       position: absolute;
     }
     .bgVectors img:nth-child(1){
-        position: absolute;
         bottom: 4%;
-        left: 4%;
+        left: 0;
         width: 58px;
         height: 58px;
     }
     .bgVectors img:nth-child(3){
-        position: absolute;
         bottom: 0;
         right: 4%;
         width: 38.41px;
@@ -22,23 +25,20 @@
 }
 @media all and (min-width: 1280px){
     .bgVectors img:nth-child(1){
-        position: absolute;
         bottom: 18%;
-        left: 5%;
+        left: 0;
         width: auto;
         height: auto;
     }
     .bgVectors img:nth-child(2){
-        position: absolute;
         bottom: 30%;
-        left: 25%;
+        left: 20%;
         width: auto;
         height: auto;
     }
     .bgVectors img:nth-child(3){
-        position: absolute;
         bottom: 0;
-        right: 25%;
+        right: 15%;
         width: auto;
         height: auto;
     }   

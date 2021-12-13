@@ -2,8 +2,14 @@
   .sectionContainer{
     background: var(--brown1);
   }
+  .sectionContent{
+    z-index: 1;
+  }
   .sectionContent > div {
     padding: 6rem 0;
+    width: 91.46667%;
+		margin: 0 auto;
+		overflow: hidden;
   }
   .sectionContent h1{
     font: 3.75rem/4rem var(--optima);
@@ -16,41 +22,42 @@
     color: var(--green1);
   }
 }
-
-@media all and (min-width: 768px) {
-  
-}
 @media all and (min-width: 1024px) {
    .sectionContainer{
     padding: 4.5rem 0 0 0;
-
   }
+  .sectionContent{
+		width: 92.5%;
+		margin: 0 0 0 auto;
+		overflow: hidden;
+	}
   .sectionContent > div {
-    padding: 0rem 0 0rem 0;
+    padding: 0;
+    width: 50%;
+		margin: 0 auto;
+		overflow: hidden;
   }
 }
 @media all and (min-width: 1280px){
-    .sectionContainer{
-        /* height: 100vh; */
-    }
-    .sectionContent h1{
-        font: 5rem/5.5rem var(--optima);
-        font-weight: 900;
-        color: var(--green1);
-        width: 100%;
-    }
-    .sectionContent p{
-        font: 1.5rem/2rem var(--roobert);
-        font-weight: 400;
-        color: var(--green1);
-    }
-    .nft{
-        height: 750.2px;
-        width: 870.84px;
-    }
-
+  .sectionContent h1{
+    font: 5rem/5.5rem var(--optima);
+    font-weight: 900;
+    color: var(--green1);
+    width: 100%;
+  }
+  .sectionContent p{
+    font: 1.5rem/2rem var(--roobert);
+    font-weight: 400;
+    color: var(--green1);
+  }
+  .nft{
+    height: 750.2px;
+    width: 870.84px;
+  }
 }
-
-@media all and (min-width: 1440px) {
- 
+@media all and (min-width: 2000px){
+	.sectionContent{
+		width: 1440px;
+    margin: 0 auto
+	}
 }

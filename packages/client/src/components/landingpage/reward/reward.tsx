@@ -6,8 +6,9 @@ import Reward2 from "./reward2";
 import SectionVectors from "./sectionVectors";
 const Reward: NextPage = () => {
     return ( 
-        <section className={[styles.sectionContainer].join(" ")}>
-            <div className={[styles.sectionContent, "wrapper flex flex-col xl:flex-row"].join(" ")}>
+        <section className={styles.sectionContainer}>
+            <div className={[styles.sectionContent, "flex flex-col xl:flex-row wrapper relative"].join(" ")}>
+                <SectionVectors />
                 <article>
                     <h1>Holder’s Reward</h1>
                     <p className="my-10">
@@ -25,9 +26,7 @@ const Reward: NextPage = () => {
                         <Reward2 />
                     </article> 
                 </div>
-                
             </div>
-            <SectionVectors />
         </section>
     );
 }

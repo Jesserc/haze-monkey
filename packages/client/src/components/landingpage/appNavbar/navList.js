@@ -8,16 +8,24 @@ const NavList = ({ isClicked, handleClick }) => {
                 <ul className="flex flex-col wrapper">
                     <li className="flex justify-start ">
                         <div className={ isClicked ? ""  : "hidden" } onClick={handleClick}>
-                            <img src="images/navbar/x.svg" alt="hamburger button"/>
+                            <img 
+                                src="images/navbar/x.svg" 
+                                alt="hamburger button"
+                                className="W-4 lg:w-10"
+                            />
                         </div>
                     </li>
-                    <ul className="flex flex-col mb-32 justify-center xl:justify-end ">
+                <ul className={["flex flex-col mb-32 justify-center xl:justify-end ", styles.navList].join(" ")}>
                         <li><Link href="/"> Story </Link></li>
                         <li><Link href="/"> Roadmap </Link></li>
                         <li><Link href="/"> Team </Link></li>
                     </ul>
-                    <li className="absolute right-0 bottom-36 lg:bottom-96">
-                        <img src="images/vectors/weed2.svg" alt="weed" />
+                    <li className="relative">
+                        <img 
+                            src="images/vectors/weed2.svg" 
+                            alt="weed"
+                            className="absolute right-0 bottom-36 lg:bottom-96 2xl:justify-center"
+                         />
                     </li>  
                 </ul>
             </nav>

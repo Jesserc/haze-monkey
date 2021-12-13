@@ -47,10 +47,6 @@
     color: var(--white1);
   }
 }
-
-@media all and (min-width: 768px) {
-  
-}
 @media all and (min-width: 1024px) {
   .navWrapper ul li a {
     font: 4.85rem/4.875rem var(--roobert-bold);
@@ -61,6 +57,8 @@
     align-items: center;
   }
 }
-@media all and (min-width: 1440px) {
- 
+@media all and (min-width: 1800px) {
+  .navList{
+    justify-content: center;
+  }
 }

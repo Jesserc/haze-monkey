@@ -5,8 +5,8 @@
         padding: 5rem 0;
     }
     .sectionContent{
-		width: 95.73365%;
-		margin: 0 0 0 auto;
+		width: 91.46667%;
+		margin: 0 auto;
 		overflow: hidden;
 	}
     .navigate{
@@ -57,10 +57,5 @@
 	.sectionContent, .navigate{
 		width: 1440px;
         margin: 0 auto
-	}
-}
-@media all and (min-width: 2550px){
-	.sectionContent, .navigate{
-		width: 1440px;
 	}
 }

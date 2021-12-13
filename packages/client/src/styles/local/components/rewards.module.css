@@ -1,7 +1,6 @@
 @media all and (min-width: 0px) {
     .sectionContainer{
         background: var(--green2);
-        position: relative;
     }
     .sectionContent{
         padding: 5.5rem 0;
