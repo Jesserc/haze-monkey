@@ -1,0 +1,41 @@
+@media all and (min-width: 0px) {
+  .sectionContainer{
+    background: var(--brown1);
+  }
+  .sectionContent h1{
+    font: 0.625rem/0.75rem var(--roobert);
+    font-weight: 400;
+    color: var(--white1);
+  }
+  .sectionContent h2{
+    font: 4rem/4rem var(--roobert-bold);
+    font-weight: 900;
+    color: var(--white1);
+  }
+  .button{
+        background: var(--lemon1);
+        width: 166px;
+        height: 64px;
+        box-shadow: 10px 9px 0px 2px var(--white1);
+        -webkit-box-shadow: 10px 9px 0px 2px var(--white1);
+        -moz-box-shadow: 10px 9px 0px 2px var(--white1);
+        font: 1.125rem/1.5rem var(--roobert-bold);
+  }
+}
+@media all and (min-width: 1024px) {
+    .sectionContainer{
+        padding: 4.5rem 0 0 0;
+    }
+ 
+}
+@media all and (min-width: 1280px){
+  .sectionContent h1{
+    font: 5rem/5.5rem var(--optima);
+    font-weight: 900;
+    width: 100%;
+  }
+  .sectionContent h2{
+    font: 1.5rem/2rem var(--roobert);
+    font-weight: 400;
+  }
+}
