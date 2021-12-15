@@ -17,7 +17,7 @@ const Accordion: NextPage = ({}) => {
         return(
             <article key={item.id}>
                 <div className="flex justify-between mb-12">
-                    <h2 className="w-3/4">{item.question}</h2>
+                    <h2 className="w-3/4" onClick = {handleClick} >{item.question}</h2>
                     <button onClick = {handleClick}>
                         <img 
                             src="images/faq/extend.svg" 
