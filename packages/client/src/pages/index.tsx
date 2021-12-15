@@ -6,6 +6,7 @@ import Faq from '../components/landingpage/accordion/faq'
 import Background from '../components/landingpage/background/background'
 
 import Hero from '../components/landingpage/hero'
+import Loading from '../components/landingpage/loading/loading'
 import Reward from '../components/landingpage/reward/reward'
 import Roadmap from '../components/landingpage/roadmap/roadmaps'
 import Team from '../components/landingpage/team/team'

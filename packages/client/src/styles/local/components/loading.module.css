@@ -1,9 +1,14 @@
 @media all and (min-width: 0px) {
   .sectionContainer{
-    background: var(--brown1);
+    background: var(--green2);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
   }
   .sectionContent h1{
     font: 0.625rem/0.75rem var(--roobert);
+    font-weight: 400;
+    Letter-spacing: 0.3rem;
     font-weight: 400;
     color: var(--white1);
   }
@@ -11,31 +16,41 @@
     font: 4rem/4rem var(--roobert-bold);
     font-weight: 900;
     color: var(--white1);
+    margin-bottom: 7.75rem;
   }
   .button{
-        background: var(--lemon1);
-        width: 166px;
-        height: 64px;
-        box-shadow: 10px 9px 0px 2px var(--white1);
-        -webkit-box-shadow: 10px 9px 0px 2px var(--white1);
-        -moz-box-shadow: 10px 9px 0px 2px var(--white1);
-        font: 1.125rem/1.5rem var(--roobert-bold);
+    background: var(--lemon1);
+    width: 166px;
+    height: 64px;
+    border-radius: 12px;
+    box-shadow: 10px 9px 0px 2px var(--white1);
+    -webkit-box-shadow: 10px 9px 0px 2px var(--white1);
+    -moz-box-shadow: 10px 9px 0px 2px var(--white1);
+    font: 1.125rem/1.5rem var(--roobert-bold);
+    margin-bottom: 3.125rem;
+    outline: none;
+  }
+  .button:hover, .button:active{
+    box-shadow: 0 var(--white1);
+    -webkit-box-shadow: 0px var(--white1);
+    -moz-box-shadow: 0px var(--white1);
+    transform: translate(10px, 10px);
   }
 }
 @media all and (min-width: 1024px) {
-    .sectionContainer{
-        padding: 4.5rem 0 0 0;
-    }
+  .sectionContainer{
+      padding: 4.5rem 0 0 0;
+  }
  
 }
 @media all and (min-width: 1280px){
-  .sectionContent h1{
-    font: 5rem/5.5rem var(--optima);
-    font-weight: 900;
-    width: 100%;
-  }
   .sectionContent h2{
-    font: 1.5rem/2rem var(--roobert);
+    font: 5.625rem/5.625rem var(--roobert-bold);
+    font-weight: 900;
+    margin-bottom: 3.125rem;
+  }
+  .sectionContent h1{
+    font: 0.75rem/1rem var(--roobert);
     font-weight: 400;
   }
 }

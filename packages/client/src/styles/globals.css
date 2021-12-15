@@ -37,9 +37,10 @@ html{
         font-weight: bold;
     }
     .app-btn:active, .app-btn:hover{
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
+        box-shadow: 0px var(--green1);
+        -webkit-box-shadow: 0px var(--green1);
+        -moz-box-shadow: 0px var(--green1);
+        transform: translate(10px, 10px);
     }
 	
 }
@@ -49,6 +50,10 @@ html{
 		width: 85%;
 		margin: 0 auto;
 	}
+     .app-btn{
+        height: 64px;
+        
+    }
 
 }
 @media all and (min-width: 2000px){
