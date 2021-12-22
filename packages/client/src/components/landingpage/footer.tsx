@@ -17,14 +17,14 @@ const Footer: NextPage = () => {
                         <a 
                             href="https://twitter.com/HazeMonkeyNFT"
                             target="_blank"
-                            rel="noreferrer
+                            rel="noreferrer"
                         >
                             <img className="mr-10" src="images/socials/twitter.svg" alt="twitter" />
                         </a>
                         <a 
                             href="https://instagram.com/hazemonkeynft?utm_medium=copy_link"
                             target="_blank"
-                            rel="noreferrer
+                            rel="noreferrer"
                         >
 
                             <img className="mr-10"src="images/socials/instagram.svg" alt="instagram" />
@@ -32,7 +32,7 @@ const Footer: NextPage = () => {
                         <a 
                             href="https://discord.gg/s87D89PqHp"
                             target="_blank"
-                            rel="noreferrer
+                            rel="noreferrer"
                         >
                             <img className="" src="images/socials/discord.svg" alt="discord" />
                         </a>
