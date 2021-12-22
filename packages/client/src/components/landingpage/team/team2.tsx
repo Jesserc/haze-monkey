@@ -9,7 +9,7 @@ const Team: NextPage = () => {
                 <img 
                     src={member.image} 
                     alt="team member" 
-                    className="xl:mr-6"
+                    className="xl:mr-6 mb-2"
                 />
                 <h2>{member.name.toUpperCase()}</h2>
                 <p>{member.role}</p>
@@ -21,7 +21,7 @@ const Team: NextPage = () => {
                     <img 
                         src="images/socials/twitter2.svg" 
                         alt="twitter"
-                        className="mt-4"
+                        className="mt-4 mb-10 xl:mb-0"
                     />
                 </a>
             </div>
@@ -31,7 +31,7 @@ const Team: NextPage = () => {
         <section className={[styles.sectionContainer].join(" ")}>
             <div className={[styles.sectionContent, "wrapper"].join(" ")}>
                 <h1 className="text-center mb-12 xl:mb-14">Main Joint</h1>
-                <div className="flex flex-col justify-center items-center xl:flex-row">
+                <div className="flex flex-col justify-center items-center lg:flex-row">
                      {team}
                 </div>
             </div>        
