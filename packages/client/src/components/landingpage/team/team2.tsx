@@ -16,6 +16,7 @@ const Team: NextPage = () => {
                 <a 
                 href={member.twitter}
                 target="_blank"
+                rel="noreferrer
                 >
                     <img 
                         src="images/socials/twitter2.svg" 
