@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import styles from "../../../styles/local/components/leaves.module.css"
 const JungleTree: NextPage = () => {
     return ( 
-        <section className={[styles.jungleTrees, "hidden lg:block"].join(" ")}>
+        <section className={[styles.jungleTrees, "hidden relative lg:block z-0"].join(" ")}>
             {/* <img src="images/about/leaves.svg" alt="jungle" /> */}
             <img src="images/about/leaf1.svg" alt="jungle" />
             <img src="images/about/leaf2.svg" alt="jungle" />

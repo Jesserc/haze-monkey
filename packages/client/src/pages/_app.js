@@ -14,7 +14,6 @@ const MyApp = ({ Component, pageProps }) => {
   }
   const enterJungle = () => {
     enterApp(false);
-    console.log(app)
   }
 
   useEffect(() => {

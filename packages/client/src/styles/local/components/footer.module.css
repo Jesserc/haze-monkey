@@ -1,11 +1,12 @@
 .sectionContainer{
-    background: var(--green4);
+    background: var(--green1);
     padding: 5.718rem 0 0 0;
 }
 .sectionContent p{
     font: 0.875rem/1.25rem var(--roobert);
+    font-weight: 400;
     margin: 0 0 3.125rem 0;
-    color: var(--grey1);
+    color: var(--green3);
 }
 .sectionContent figure{
     margin: 0 0 5.1875rem 0;

@@ -14,9 +14,26 @@ const Footer: NextPage = () => {
                     </div>
                     <p>All rights reserved 2021</p>
                     <figure className="flex flex-row justify-center">
-                        <img className="mr-10" src="images/socials/twitter.svg" alt="twitter" />
-                        <img className="mr-10"src="images/socials/instagram.svg" alt="instagram" />
-                        <img className="" src="images/socials/discord.svg" alt="discord" />
+                        <a 
+                            href="https://twitter.com/HazeMonkeyNFT"
+                            target="_blank"
+                        >
+                            <img className="mr-10" src="images/socials/twitter.svg" alt="twitter" />
+                        </a>
+                        <a 
+                            href="https://instagram.com/hazemonkeynft?utm_medium=copy_link"
+                            target="_blank"
+                        >
+
+                            <img className="mr-10"src="images/socials/instagram.svg" alt="instagram" />
+                        </a>
+                        <a 
+                            href="https://discord.gg/s87D89PqHp"
+                            target="_blank"
+                        >
+                            <img className="" src="images/socials/discord.svg" alt="discord" />
+                        </a>
+
                     </figure>
                 </div>     
                 <div className="flex justify-center items-end">

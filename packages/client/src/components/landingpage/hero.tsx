@@ -6,23 +6,44 @@ const Hero: NextPage = () => {
        <section className={[styles.sectionContainer, "relative"].join(" ")}>
             <div className={[styles.sectionContent, "flex flex-col lg:flex-row relative"].join(" ")}>
                 <div className="flex justify-center relative">
-                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:justify-center xl:justify-start xl:py-20 2xl:justify-center">
+                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-auto">
                         <img 
                             src="images/vectors/weed3.svg" 
                             alt="weed" 
                             className="mb-6"
                             />
-                        <h1 className="mb-6">The OG Stoned Monkeys.</h1>
+                        <h1 className="mb-6">The OG Hazed Monkeys</h1>
                         <p className="mb-6">
-                            The first residence of the JUNGLE.
+                           The first residence of Hazron.
                         </p>
-                        <button className="app-btn">Mint NFT</button>
+                        {/* <button className="app-btn">Mint NFT</button> */}
+                        <button className="coming-soon flex items-center justify-center">Mint NFT <span  className="flex items-center justify-center ml-2">COMING SOON</span></button>
                     </div>
                 </div>
-                <figure className="relative xl:h-full">
+                <figure className={["relative", styles.artWrap].join(" ")}>
                     <img
-                        src="images/hero/nft1.png" 
-                        className={["min-w-full sm:min-w-min mx-auto z-0 lg:min-w-full lg:w-full h-full", styles.nft ].join(" ")}
+                        src="images/arts/art1.svg" 
+                        className={["m-0", styles.nft ].join(" ")}
+                        alt="NFTs"
+                     />
+                     <img
+                        src="images/arts/art2.svg" 
+                        className={["m-0", styles.nft ].join(" ")}
+                        alt="NFTs"
+                     />
+                     <img
+                        src="images/arts/art3.svg" 
+                        className={["m-0", styles.nft ].join(" ")}
+                        alt="NFTs"
+                     />
+                     <img
+                        src="images/arts/art4.svg" 
+                        className={["m-0", styles.nft ].join(" ")}
+                        alt="NFTs"
+                     />
+                     <img
+                        src="images/arts/art5.svg" 
+                        className={["m-0", styles.nft ].join(" ")}
                         alt="NFTs"
                      />
                 </figure>  
@@ -31,7 +52,7 @@ const Hero: NextPage = () => {
                 <img 
                 src="images/vectors/grass.svg" 
                 alt="grass" 
-                className="min-w-full absolute -bottom-5 sm:-bottom-10 lg:-bottom-12 xl:-bottom-20 2xl:-bottom-40 z-0"
+                className="min-w-full absolute -bottom-5 sm:-bottom-10 lg:-bottom-12 xl:-bottom-1 2xl:-bottom-40 z-0"
                 />
             </div>
             

@@ -63,7 +63,12 @@ const TopBar = ({ isClicked, handleClick }) => {
                             alt="join discord"  
                             className="mr-2.5" 
                         />
-                        <a href="">Join Discord</a>
+                        <a 
+                            href="https://discord.gg/s87D89PqHp"
+                            target="_blank"
+                        >
+                            Join Discord
+                        </a>
                     </button>
                 </li>
             </ul>

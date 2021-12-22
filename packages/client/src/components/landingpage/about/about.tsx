@@ -1,27 +1,36 @@
 import JungleTree from "./leaves";
 import styles from "../../../styles/local/components/about.module.css"
-import Art1 from "./art1";
-import Art2 from "./art2";
+// import Art1 from "./art1";
+// import Art2 from "./art2";
 import { NextPage } from "next";
 const About: NextPage = () => {
     return (
-        <section className={[styles.sectionContainer].join(" ")}>
-            <Art1 />
+        <section className={[styles.sectionContainer, "relative"].join(" ")}>
+            {/* <Art1 /> */}
             <JungleTree />
-            <div className={[styles.sectionContent, "wrapper text-center"].join(" ")}>
-                <h1 className="mb-10 w-3/4 sm:w-2/4 lg:w-1/4 mx-auto">About collection</h1>
-                <p className="mb-10 sm:w-3/4 lg:w-2/4 mx-auto">
-                    Welcome the OG Stoned Monkeys, the first residence of the JUNGLE. 
-                    A collection of 10,000 OG stoned monkeys, randomly generated unique art pieces, 
-                    existing freely on the Ethereum blockchain, minted as NFTs. 
+            <div className={[styles.sectionContent, "wrapper text-center relative z-1"].join(" ")}>
+                <h1 className="mb-10 w-3/4 sm:w-2/4 lg:w-1/4 mx-auto">About Project</h1>
+                <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
+                    We are focused on decentralising the anime production industry through 
+                    a gamified DAO voting system using our series as a stepping stone. This will allow; 
                 </p>
-                <p className="sm:w-3/4 lg:w-2/4 mx-auto">
-                    This collection consists of a mixture of hand-drawn unique pieces and 
-                    programmatically generated pieces from over 200 traits including expressions, 
-                    costumes, skin variations, hairstyles, and more!
+                <p className="mb-10  sm:w-3/4 xl:w-2/4 mx-auto">
+                    Our community to vote on the possible outcomes of the series through tokens, 
+                    Games, and contributions in the community. All NFTs have a chance to appear 
+                    as characters in at least an episode. 
+                </p>
+                <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
+                    A percentage of profit from the animated series will be rewarded to holders. 
+                    Our goal is to build an intriguing  Metaverse cinema.
+                </p>
+
+                <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
+                   We plan to support UN SDG goals by planting 420K trees through the community 
+                   and removing 42.0K pounds of dirt from the sea through the team seas project 
+                   in their genesis collection.
                 </p>
             </div>
-            <Art2 />
+            {/* <Art2 /> */}
         </section>
     );
 }

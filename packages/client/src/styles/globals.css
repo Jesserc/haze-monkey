@@ -42,7 +42,22 @@ html{
         -moz-box-shadow: 0px var(--green1);
         transform: translate(10px, 10px);
     }
-	
+    .coming-soon{
+        width: 256px;
+        height: 56px;
+        background: transparent;
+        border-radius: 12px;
+        border: 3px solid var(--green1);
+    }
+    .coming-soon span{
+        background: var(--lemon1);
+        border-radius: 32px;
+        width: 119px;
+        height: 32px;
+        font: 0.625rem/1rem var(--roobert-bold);
+        letter-spacing: 0.05rem;
+        font-weight: 600;
+    }
 }
 
 @media all and (min-width: 1024px){
@@ -54,7 +69,15 @@ html{
         height: 64px;
         
     }
-
+}
+@media all and (min-width: 1288px){
+	.coming-soon{
+        width: 269px;
+        height: 64px;
+    }
+    .coming-soon span{
+        width: 136px;
+    }
 }
 @media all and (min-width: 2000px){
 	.wrapper{
