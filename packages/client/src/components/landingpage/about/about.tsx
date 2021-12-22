@@ -5,7 +5,7 @@ import styles from "../../../styles/local/components/about.module.css"
 import { NextPage } from "next";
 const About: NextPage = () => {
     return (
-        <section className={[styles.sectionContainer, "relative"].join(" ")}>
+        <section id="about" className={[styles.sectionContainer, "relative"].join(" ")}>
             {/* <Art1 /> */}
             <JungleTree />
             <div className={[styles.sectionContent, "wrapper text-center relative z-1"].join(" ")}>

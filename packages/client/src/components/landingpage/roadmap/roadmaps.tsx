@@ -21,7 +21,7 @@ const Roadmap: NextPage = () => {
         )
     })
     return (  
-        <section className={[styles.sectionContainer].join(" ")}>
+        <section id="roadmap" className={[styles.sectionContainer].join(" ")}>
             <div className={[styles.sectionContent, "wrapper"].join(" ")}>
                 <h1 className="text-center">Our Roadmap</h1>
                 {roadmap}

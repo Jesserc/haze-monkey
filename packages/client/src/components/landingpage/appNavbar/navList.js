@@ -16,9 +16,9 @@ const NavList = ({ isClicked, handleClick }) => {
                         </div>
                     </li>
                 <ul className={["flex flex-col mb-32 justify-center xl:justify-end ", styles.navList].join(" ")}>
-                        <li><Link href="/"> Story </Link></li>
-                        <li><Link href="/"> Roadmap </Link></li>
-                        <li><Link href="/"> Team </Link></li>
+                        <li onClick={handleClick}><Link href="#about"> About </Link></li>
+                        <li onClick={handleClick}><Link href="#roadmap"> Roadmap </Link></li>
+                        <li onClick={handleClick}><Link href="#team"> Team </Link></li>
                     </ul>
                     <li className="relative">
                         <img 

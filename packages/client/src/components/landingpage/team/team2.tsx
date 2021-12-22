@@ -28,7 +28,7 @@ const Team: NextPage = () => {
         )
     })
     return (
-        <section className={[styles.sectionContainer].join(" ")}>
+        <section id="team" className={[styles.sectionContainer].join(" ")}>
             <div className={[styles.sectionContent, "wrapper"].join(" ")}>
                 <h1 className="text-center mb-12 xl:mb-14">Main Joint</h1>
                 <div className="flex flex-col justify-center items-center lg:flex-row">
