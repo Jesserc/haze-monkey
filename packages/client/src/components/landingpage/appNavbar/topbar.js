@@ -66,6 +66,7 @@ const TopBar = ({ isClicked, handleClick }) => {
                         <a 
                             href="https://discord.gg/s87D89PqHp"
                             target="_blank"
+                            rel="noreferrer
                         >
                             Join Discord
                         </a>
