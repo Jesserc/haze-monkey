@@ -9,7 +9,7 @@ export const roadmaps: Roadmap[] = [
     {
         id: 0,
         header: "The Stoned Monkey Opportunity",
-        content: "Our Roadmap We will Decentralise the film production industry through a gamified DAO voting system. Our Animated series will be the first project to test run this. Every art has a chance to appear in an episode. And 30% of the profit from animation will be used as a reward to the community.",
+        content: "We will Decentralise the film production industry through a gamified DAO voting system. Our Animated series will be the first project to test run this. Every art has a chance to appear in an episode. And 30% of the profit from animation will be used as a reward to the community.",
         percentage: "images/vectors/roadmap1.svg"
     },
     {

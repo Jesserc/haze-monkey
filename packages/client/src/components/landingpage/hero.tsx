@@ -36,16 +36,20 @@ const Hero: NextPage = () => {
                         className={["m-0", styles.nft ].join(" ")}
                         alt="NFTs"
                      />
-                     <img
-                        src="images/arts/art4.svg" 
-                        className={["m-0", styles.nft ].join(" ")}
-                        alt="NFTs"
-                     />
-                     <img
-                        src="images/arts/art5.svg" 
-                        className={["m-0", styles.nft ].join(" ")}
-                        alt="NFTs"
-                     />
+
+                     <div>
+                        <img
+                            src="images/arts/art4.svg" 
+                            className={["m-0", styles.nft ].join(" ")}
+                            alt="NFTs"
+                        />
+                        <img
+                            src="images/arts/art5.svg" 
+                            className={["m-0", styles.nft ].join(" ")}
+                            alt="NFTs"
+                        />
+                     </div>
+                     
                 </figure>  
             </div> 
             <div className="relative z-0">
