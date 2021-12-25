@@ -9,7 +9,7 @@ const Footer: NextPage = () => {
                     <div className={styles.logoWrap}>
                         <img 
                             className={styles.logo}
-                            src="images/hazed-monkeys.svg" alt="hazed monkeys"
+                            src="images/logo2.svg" alt="hazed monkeys"
                         />
                     </div>
                     <p>All rights reserved 2021</p>
