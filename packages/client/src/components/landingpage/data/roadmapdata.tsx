@@ -15,13 +15,13 @@ export const roadmaps: Roadmap[] = [
     {
         id: 1,
         header: "The Stoned Monkey Opportunity",
-        content:  "In line with United Nations SDG goal No. 17 (Life below water). We will work with Mr Beast’s Team sea Project to clean up to 100,000 pounds of waste from the sea by donating $100,000",
+        content:  "In line with United Nations SDG No. 14 (Life below water). We will work with Mr Beast’s Team sea Project to clean up to 100,000 pounds of waste from the sea by donating $100,000",
         percentage: "images/vectors/roadmap2.svg"
     },
     {
         id: 2,
         header: "The Stoned Monkey Opportunity",
-        content: "We will plant 1 million trees over the next five years. One art mint equals 100 trees. We chose this because it cuts across the 17 United Nations SDG goals and will promote more green NFT projects.",
+        content: "We will plant 1 million trees over the next five years. One art mint equals 100 trees. We chose this because it cuts across the 17 United Nations SD goals and will promote more green NFT projects.",
         percentage: "images/vectors/roadmap3.svg"
     },
     {
