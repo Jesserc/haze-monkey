@@ -6,10 +6,7 @@
     z-index: 0;
   }
   .sectionContent > div {
-    padding: 6rem 0;
-    max-width: 300px;
-		margin: 0 auto;
-		overflow: hidden;
+    /* padding: 6rem 0; */
   }
   .sectionContent h1{
     font: 3.75rem/4rem var(--optima);
@@ -22,39 +19,39 @@
     color: var(--green1);
   }
   .artWrap{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0;
     height: auto;
-    width: auto;
+    width: auto; */
   }
   .artWrap div{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column: span 3;
     justify-content: flex-start;
-    margin: 0;
+    margin: 0; */
   }
   .artWrap div img{
-    width: 66.667%;
-    height: auto;
+    /* width: 66.667%;
+    height: auto; */
   }
   .artWrap div img:first-child{
-    margin-left: auto;
+    /* margin-left: auto; */
   }
 
   .artWrap div img:last-child{
-    margin-right: auto;
+    /* margin-right: auto; */
   }
   .artWrap img{
-    width: auto;
-    height: auto;
+    /* width: auto;
+    height: auto; */
   }
 }
 
 @media all and (min-width: 700px) {
   .sectionContent > div {
-    max-width: 40%;
+    /* max-width: 40%; */
   }
   .artWrap{
     display: grid;
@@ -72,15 +69,15 @@
     padding: 4.5rem 0 0 0;
   }
   .sectionContent{
-		width: 85%;
-    padding: 5.5rem 0;
-		margin: 0 auto;
+		/* width: 85%; */
+    /* padding: 5.5rem 0; */
+		/* margin: 0 auto; */
 	}
   .sectionContent > div {
     padding: 0;
-    width: 50%;
-		margin: 0 auto;
-		overflow: hidden;
+    /* width: 50%; */
+		/* margin: 0 auto;
+		overflow: hidden; */
   }
   .artWrap{
     display: grid;
@@ -90,12 +87,12 @@
     justify-content: center;
   }
   .artWrap div{
-    display: flex;
+    /* display: flex;
     grid-column: span 1;
-    justify-content: flex-start;
+    justify-content: flex-start; */
   }
   .artWrap div img{
-    width: auto;
+    /* width: auto; */
   }
 }
 @media all and (min-width: 1280px){
@@ -108,7 +105,7 @@
     grid-gap: 0;
   }
   .sectionContent{
-    padding: 5.5rem 0 10rem 0;
+    /* padding: 5.5rem 0 10rem 0; */
   }
   .sectionContent h1{
     font: 5rem/5.5rem var(--optima);
@@ -138,89 +135,10 @@
     grid-gap: 0;
   }
   .artWrap img{
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
   }
   .artWrap div img{
-    width: 100%;
+    /* width: 100%; */
   }
 }
-
-
-/* @media all and (min-width: 0px) {
-  .sectionContainer{
-    background: var(--brown1);
-  }
-  .sectionContent{
-    z-index: 0;
-  }
-  .sectionContent > div {
-    padding: 6rem 0;
-    width: 91.46667%;
-		margin: 0 auto;
-		overflow: hidden;
-  }
-  .sectionContent h1{
-    font: 3.75rem/4rem var(--optima);
-    font-weight: 900;
-    color: var(--green1);
-  }
-  .sectionContent p{
-    font: 1.125rem/1.875rem var(--roobert);
-    font-weight: 400;
-    color: var(--green1);
-  }
-  .artWrap{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 0;
-    grid-column:  1 / 2;
-  }
-  .artWrap img:nth-child(4){
-    grid-column:  1 / 1;
-  }
-
-  .artWrap img:nth-child(5){
-    grid-column:  1 / 1;
-  }
-}
-@media all and (min-width: 1024px) {
-  .sectionContent{
-    z-index: 1;
-  }
-  .sectionContainer{
-    padding: 4.5rem 0 0 0;
-  }
-  .sectionContent{
-		width: 92.5%;
-		margin: 0 0 0 auto;
-		overflow: hidden;
-	}
-  .sectionContent > div {
-    padding: 0;
-    width: 50%;
-		margin: 0 auto;
-		overflow: hidden;
-  }
-}
-@media all and (min-width: 1280px){
-  .sectionContent h1{
-    font: 5rem/5.5rem var(--optima);
-    font-weight: 900;
-    color: var(--green1);
-    width: 100%;
-  }
-  .sectionContent p{
-    font: 1.5rem/2rem var(--roobert);
-    font-weight: 400;
-    color: var(--green1);
-  }
-
-}
-@media all and (min-width: 2000px){
-	.sectionContent{
-		width: 1440px;
-    margin: 0 auto
-	}
-} */
