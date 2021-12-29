@@ -20,7 +20,7 @@ const Hero: NextPage = () => {
         ].join(' ')}
       >
         <div className="flex lg:w-1/2 mt-0 lg:mt-40 mb-10 lg:mb-0 justify-center">
-          <div className="flex flex-col ml-0 lg:ml-32 items-center lg:items-start text-center lg:text-left mx-auto">
+          <div className="flex flex-col ml-0 lg:ml-32 mt-32 lg:mt-0 items-center lg:items-start text-center lg:text-left mx-auto">
             <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
             <h1 className="mb-6">The OG Hazed Monkeys</h1>
             <p className="mb-6">The first residence of Hazron.</p>
