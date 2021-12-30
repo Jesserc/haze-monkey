@@ -14,8 +14,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>HAZED MONKEYS</title>
-        <meta name="description" content=" The OG Hazed Monkeys The first residence of Hazron." />
+        <title>Welcome to Haze Monkey Society</title>
+        <meta name="description" content=" The OG Haze Monkey Society The first residence of Hazron." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
