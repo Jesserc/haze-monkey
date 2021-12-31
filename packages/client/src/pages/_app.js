@@ -1,94 +1,38 @@
 import '../styles/globals.css'
-// import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 import Layout from '../components/landingpage/layout/layout'
-import Loading from '../components/landingpage/loading/loading'
 import { useState, useEffect } from 'react'
+import { initGA, logPageView } from '../../utils/analytics'
 
 const MyApp = ({ Component, pageProps }) => {
-  const [isClicked, setClicked] = useState(false);
-  // const [loading, setLoading] = useState(false);
-  // const [app, enterApp] = useState(true)
+  const [isClicked, setClicked] = useState(false)
+  const router = useRouter()
 
   const handleClick = () => {
-    setClicked(!isClicked);
+    setClicked(!isClicked)
   }
- 
+
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+  }, [])
+
+  useEffect(() => {
+    logPageView()
+  }, [router.pathname])
+
   return (
-    <> 
-      <Layout
-        handleClick = { handleClick }
-        isClicked = { isClicked }
-      > 
+    <Layout handleClick={handleClick} isClicked={isClicked}>
       <Component
         {...pageProps}
-        handleclick = {handleClick}
-        isClicked = {isClicked}
+        handleclick={handleClick}
+        isClicked={isClicked}
         // loading = {loading}
       />
-
     </Layout>
-    </>
   )
 }
 
 export default MyApp
-
-
-// import '../styles/globals.css'
-// // import type { AppProps } from 'next/app'
-// import Layout from '../components/landingpage/layout/layout'
-// import Loading from '../components/landingpage/loading/loading'
-// import { useState, useEffect } from 'react'
-
-// const MyApp = ({ Component, pageProps }) => {
-//   const [isClicked, setClicked] = useState(false);
-//   const [loading, setLoading] = useState(false);
-//   const [app, enterApp] = useState(true)
-
-//   const handleClick = () => {
-//     setClicked(!isClicked);
-//   }
-//   const enterJungle = () => {
-//     enterApp(false);
-//   }
-
-//   useEffect(() => {
-//     setLoading(true)
-//     setTimeout(() => {
-//       setLoading(false)
-//     }, 3000);
-//   }, [])
-//   return (
-//     <main> 
-   
-//       {
-//         app ? 
-//         <>
-//             <Loading 
-//               loading={loading}
-//               enterJungle = {enterJungle}
-//           />
-//         </>
-        
-//         :
-
-//          <Layout
-//           handleClick = { handleClick }
-//           isClicked = { isClicked }
-//         > 
-//           <Component
-//             {...pageProps}
-//             handleclick = {handleClick}
-//             isClicked = {isClicked}
-//             loading = {loading}
-//           />
-
-//         </Layout>
-       
-//       }
-      
-//     </main>
-//   )
-// }
-
-// export default MyApp
