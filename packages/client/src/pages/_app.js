@@ -21,7 +21,6 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     logPageView()
-    console.log(`swagnslo${process.env.GOOGLE_ANALYTICS.toLowerCase()}092`, router.pathname)
   }, [router.pathname])
 
   return (
