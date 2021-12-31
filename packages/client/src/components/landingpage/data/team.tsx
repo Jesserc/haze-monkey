@@ -10,7 +10,7 @@ export const members: Team[] = [
   {
     id: 0,
     image:
-      'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/c5f1d1b7-76dc-450d-a05d-88f9fa82db9a_ll0gu8',
+      'https://res.cloudinary.com/lab88/image/upload/v1640938716/website/WhatsApp_Image_2021-12-31_at_9.11.32_AM_1_myedad.jpg',
     name: 'perrie',
     role: 'Co-founder & Project Lead',
     twitter: 'https://twitter.com/Peace_Ojemeh'

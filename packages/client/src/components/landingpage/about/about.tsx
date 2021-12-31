@@ -9,7 +9,7 @@ const About: NextPage = () => {
             {/* <Art1 /> */}
             <JungleTree />
             <div className={[styles.sectionContent, "wrapper text-center relative z-1"].join(" ")}>
-                <h1 className="mb-10 w-3/4 sm:w-2/4 lg:w-1/4 mx-auto">About Project</h1>
+                <h1 className="mb-10 w-3/4 sm:w-2/4 lg:w-1/3 mx-auto">About the project</h1>
                 <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
                     We are focused on decentralising the anime production industry through 
                     a gamified DAO voting system using our series as a stepping stone. This will allow; 
@@ -17,7 +17,7 @@ const About: NextPage = () => {
                 <p className="mb-10  sm:w-3/4 xl:w-2/4 mx-auto">
                     Our community to vote on the possible outcomes of the series through tokens, 
                     Games, and contributions in the community. All NFTs have a chance to appear 
-                    as characters in at least an episode. 
+                    as characters in at least one episode. 
                 </p>
                 <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
                     A percentage of profit from the animated series will be rewarded to holders. 
@@ -27,7 +27,7 @@ const About: NextPage = () => {
                 <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
                    We plan to support UN SDG goals by planting 420K trees through the community 
                    and removing 42.0K pounds of dirt from the sea through the team seas project 
-                   in their genesis collection.
+                   in our genesis collection.
                 </p>
             </div>
             {/* <Art2 /> */}

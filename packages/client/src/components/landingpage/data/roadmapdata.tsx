@@ -9,7 +9,7 @@ export const roadmaps: Roadmap[] = [
     {
         id: 0,
         header: "The Stoned Monkey Opportunity",
-        content: "We will Decentralise the film production industry through a gamified DAO voting system. Our Animated series will be the first project to test run this. Every art has a chance to appear in an episode. And 30% of the profit from animation will be used as a reward to the community.",
+        content: "We will Decentralise the film production industry through a gamified DAO voting system. Our Animated series will be the first project to test run this. Each art has a chance to appear in an episode. And 30% of the profit from animation will be used as a reward to the community.",
         percentage: "images/vectors/roadmap1.svg"
     },
     {
@@ -33,7 +33,7 @@ export const roadmaps: Roadmap[] = [
     {
         id: 4,
         header: "The Stoned Monkey Opportunity",
-        content: "Profit made from our secondary sales will be used to buy lands on Decentraland in other to build our virtual cinema. The episodes will be premiered on the virtual cinema, and only members of our community and partnering projects will have access.",
+        content: "Profit made from our secondary sales will be used to buy lands on Decentraland in order to build our virtual cinema. The episodes will be premiered on the virtual cinema, and only members of our community and partnering projects will have access.",
         percentage: "images/vectors/roadmap5.svg"
     },
     {
@@ -54,10 +54,4 @@ export const roadmaps: Roadmap[] = [
         content: "We will host a mental health session twice a month through Twitter Spaces, Clubhouse, Discord, or other lifestream platforms. These sessions will be open to the public but will feature only members of our community.",
         percentage: "images/vectors/roadmap5.svg"
     },
-    {
-        id: 8,
-        header: "The Stoned Monkey Opportunity",
-        content: "Profit made from our secondary sales will be used to buy lands on Decentraland in other to build our virtual cinema. The episodes will be premiered on the virtual cinema, and only members of our community and partnering projects will have access.",
-        percentage: "images/vectors/roadmap5.svg"
-    }
 ]
