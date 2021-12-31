@@ -1,32 +1,19 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import styled from 'styled-components'
 import About from '../components/landingpage/about/about'
-// import Faq from '../components/landingpage/accordion/faq'
-import Background from '../components/landingpage/background/background'
 import Hero from '../components/landingpage/hero'
-// import Reward from '../components/landingpage/reward/reward'
 import Roadmap from '../components/landingpage/roadmap/roadmaps'
 import Team from '../components/landingpage/team/team2'
-
+import SEOHead from '../components/SEOHead/SEOHead'
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Welcome to Haze Monkey Society</title>
-        <meta name="description" content=" The OG Haze Monkey Society The first residence of Hazron." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <SEOHead />
       <main>
         <Hero />
-        {/* <Background /> */}
         <About />
-        {/* <Reward /> */}
         <Roadmap />
         <Team />
-        {/* <Faq /> */}
       </main>
     </>
   )
