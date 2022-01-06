@@ -29,7 +29,15 @@ export const members: Team[] = [
       'https://res.cloudinary.com/lab88/image/upload/v1640809393/website/e761092a-c9f8-418f-810e-b4139b04cd18_k7vhl0',
     name: 'ish',
     role: 'Co-founder & Concept Artist',
-    twitter: 'https://twitter.com/chidoziri88?s=21'
+    twitter: 'https://twitter.com/chidoziri88'
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/a41495aa-c654-4789-bc45-d06f38fffc74_vulaq9.jpg',
+    name: 'Scott Foo Music',
+    role: 'Marketing',
+    twitter: 'https://twitter.com/ScottFooMusic'
   }
   // {
   //     id: 3,
