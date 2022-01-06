@@ -18,7 +18,7 @@ export const members: Team[] = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/d294ca30-c5c4-406e-9caf-c2ec76f3ca95_uabib1',
+      'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/c5f1d1b7-76dc-450d-a05d-88f9fa82db9a_ll0gu8.jpg',
     name: 'Alabo',
     role: 'Co-founder & Engineering Lead',
     twitter: 'https://twitter.com/alabobriggs'
