@@ -21,7 +21,7 @@ export const members: Team[] = [
       'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/8a6dde98-1daa-4ac2-9390-7847db4ee78d_irspzi.jpg',
     name: 'Alabo',
     role: 'Co-founder & Engineering Lead',
-    twitter: 'https://twitter.com/alabobriggs'
+    twitter: 'https://twitter.com/alabobriggs_'
   },
   {
     id: 2,
