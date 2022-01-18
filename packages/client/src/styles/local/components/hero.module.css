@@ -5,6 +5,9 @@
   .sectionContent{
     z-index: 0;
   }
+  .sectionContent div:first-child{
+    margin: 2.5rem 0;
+  }
   .sectionContent > div {
     /* padding: 6rem 0; */
   }
@@ -12,6 +15,7 @@
     font: 3.75rem/4rem var(--optima);
     font-weight: 900;
     color: var(--green1);
+    width: 80%;
   }
   .sectionContent p{
     font: 1.125rem/1.875rem var(--roobert);
@@ -69,15 +73,18 @@
     padding: 4.5rem 0 0 0;
   }
   .sectionContent{
-		/* width: 85%; */
+		width: 92.5%;
     /* padding: 5.5rem 0; */
-		/* margin: 0 auto; */
+		margin: 0 0 0 auto;
 	}
   .sectionContent > div {
     padding: 0;
-    /* width: 50%; */
+    width: 50%;
 		/* margin: 0 auto;
 		overflow: hidden; */
+  }
+  .sectionContent div:first-child{
+    margin: 1.5rem 0;
   }
   .artWrap{
     display: grid;
@@ -106,6 +113,9 @@
   }
   .sectionContent{
     /* padding: 5.5rem 0 10rem 0; */
+  }
+  .sectionContent div:first-child{
+    margin: 2.5rem 0;
   }
   .sectionContent h1{
     font: 5rem/5.5rem var(--optima);

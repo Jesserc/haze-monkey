@@ -19,8 +19,8 @@ const Hero: NextPage = () => {
           'flex flex-col lg:flex-row items-center lg:items-start justify-center w-full relative'
         ].join(' ')}
       >
-        <div className="flex lg:w-1/2 mt-0 lg:mt-40 mb-10 lg:mb-0 justify-center">
-          <div className="flex flex-col ml-0 lg:ml-32 mt-32 lg:mt-0 items-center lg:items-start text-center lg:text-left mx-auto">
+        <div className="flex justify-center">
+          <div className="flex flex-col lg:mt-0 items-center lg:items-start text-center lg:text-left">
             <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
             <h1 className="mb-6">Haze Monkey Society</h1>
             <p className="mb-6">The first residence of Hazron.</p>
