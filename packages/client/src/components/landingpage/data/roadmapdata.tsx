@@ -26,9 +26,9 @@ export const roadmaps: Roadmap[] = [
   },
   {
     id: 333,
-    header: 'Empowering creators:',
+    header: 'The Stoned Monkey Opportunity',
     content:
-      'Launch MVP of no-code platform to empower NFT creators and Artists.',
+      'Build a no-code platform to empower NFT creators and Artists.',
     percentage: 'images/vectors/roadmap3.svg'
   },
   {
