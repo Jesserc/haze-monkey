@@ -23,7 +23,7 @@ const About: NextPage = () => {
           <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
             Haze Monkey Society is an NFT collection focused on building a
             no-code platform aimed at empowering NFT creators and artists with a
-            Web3 company in Africa
+            Web3 company in Africa.
           </p>
 
           <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
