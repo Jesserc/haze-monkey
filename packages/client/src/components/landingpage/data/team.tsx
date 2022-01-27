@@ -10,7 +10,7 @@ export const members: Team[] = [
   {
     id: 0,
     image:
-      'https://res.cloudinary.com/lab88/image/upload/v1640938716/website/WhatsApp_Image_2021-12-31_at_9.11.32_AM_1_myedad.jpg',
+      'images/team/perrie.svg',
     name: 'perrie',
     role: 'Co-founder & Project Lead',
     twitter: 'https://twitter.com/Peace_Ojemeh'
@@ -18,7 +18,7 @@ export const members: Team[] = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/8a6dde98-1daa-4ac2-9390-7847db4ee78d_irspzi.jpg',
+      'images/team/alabo.svg',
     name: 'Alabo',
     role: 'Co-founder & Engineering Lead',
     twitter: 'https://twitter.com/alabobriggs_'
@@ -26,45 +26,81 @@ export const members: Team[] = [
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/lab88/image/upload/v1640809393/website/e761092a-c9f8-418f-810e-b4139b04cd18_k7vhl0',
+      'images/team/ish.svg',
     name: 'ish',
     role: 'Co-founder & Concept Artist',
     twitter: 'https://twitter.com/chidoziri88'
   },
-  // {
-  //   id: 3,
-  //   image:
-  //     'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/a41495aa-c654-4789-bc45-d06f38fffc74_vulaq9.jpg',
-  //   name: 'Scott Foo Music',
-  //   role: 'Marketing',
-  //   twitter: 'https://twitter.com/ScottFooMusic'
-  // },
-  // {
-  //     id: 3,
-  //     image: "images/arts/teamart4.png",
-  //     name: "@barista",
-  //     role: "Co-founder & Project Lead",
-  //     twitter: ""
-  // },
-  // {
-  //     id: 4,
-  //     image: "images/arts/teamart5.png",
-  //     name: "@lord stoner",
-  //     role: "Co-founder & Project Lead",
-  //     twitter: ""
-  // },
-  // {
-  //     id: 5,
-  //     image: "images/arts/teamart6.png",
-  //     name: "@lord stoner",
-  //     role: "Co-founder & Project Lead",
-  //     twitter: ""
-  // },
-  // {
-  //     id: 6,
-  //     image: "images/arts/teamart7.png",
-  //     name: "@lord stoner",
-  //     role: "Co-founder & Project Lead",
-  //     twitter: ""
-  // },
+  {
+    id: 3,
+    image: "images/team/joshua.svg",
+    name: "joshua",
+    role: "SDG Execution Lead",
+    twitter: ""
+},
+{
+    id: 4,
+    image: "images/team/squirrel.svg",
+    name: "squirrel",
+    role: "Project Advisor",
+    twitter: ""
+},
+{
+    id: 5,
+    image: "images/team/momos.svg",
+    name: "momos",
+    role: "Lead Digital Artist & Animator",
+    twitter: ""
+},
+{
+    id: 6,
+    image: "images/team/ashlei.svg",
+    name: "ashlei",
+    role: "Community Manager",
+    twitter: "https://twitter.com/princessashleiv"
+  },
+  {
+    id: 7,
+    image:
+      'images/team/anita.svg',
+    name: 'anita',
+    role: 'Community Manager',
+    twitter: 'https://twitter.com/alabobriggs_'
+  },
+  {
+    id: 8,
+    image:
+      'images/team/oneworld.svg',
+    name: 'oneworld',
+    role: 'Community Manager',
+    twitter: 'https://twitter.com/Layonart2?t=u0ySzNjKaBvPoWqifHAu3w&s=09'
+  },
+  {
+    id: 9,
+    image: "images/team/rex.svg",
+    name: "rex",
+    role: "Software Engineer",
+    twitter: "https://twitter.com/ojemehprogrex"
+},
+{
+    id: 10,
+    image: "images/team/steve.svg",
+    name: "steve",
+    role: "Interface Designer",
+    twitter: ""
+},
+{
+    id: 11,
+    image: "images/team/brown.svg",
+    name: "brown",
+    role: "Animator & Digital Artist",
+    twitter: ""
+},
+{
+    id: 12,
+    image: "images/team/moses.svg",
+    name: "lord mo",
+    role: "Digital Artist",
+    twitter: "https://twitter.com/konqueror_kuei?s=09"
+  },
 ]

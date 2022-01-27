@@ -10,39 +10,38 @@ export const rewards: Reward[] = [
     },
     {
         id: 1,
-        reward: "Youtube series"
+        reward: "Animation series"
     },
     {
         id: 2,
-        reward: "Access to tokens that help you breed new nfts"
+        reward: 
+            "Privilege of using the no-code platform with exclusive benefits, for NFT artists and creators."
     },
     {
         id: 3,
-        reward: "A roll your joint platform, where holders can express their creativity by experimenting with their stoners."
+        reward: 
+            "Access to tokens airdrops which will be used to participate in the animation production process and vote for different aspect of the community. "
     },
     {
         id: 4,
-        reward: "Access to an open space where only holders can add their own music to get featured in our game series"
+        reward: 
+            "Chance of appearing on the series and a % of what we make goes back to the community through things like airdrops. "
     },
     {
         id: 5,
         reward: "Exclusive merch."
     },
     {
-        id: 6,
-        reward: "$50k on a weed research lab"
-    },
-    {
         id: 7,
-        reward: "Tokenization"
+        reward: "Virtual and in-person events"
     },
     {
         id: 8,
-        reward: "Jpeg, gif, 3D modeling for rare stoners"
+        reward: "Gif, 3D modeling for rare holders"
     },
     {
         id: 9,
-        reward: "Virtual hangout - One Friday in a month Smoking session for real-life stoners"
+        reward: "Virtual hangout - mental health session twice a month through Twitter Spaces, Clubhouse, Discord, or other lifestream platforms."
     },
     {
         id: 10,
@@ -50,14 +49,14 @@ export const rewards: Reward[] = [
     },
     {
         id: 11,
-        reward: "Physical meetups travel sponsored for rare owners"
+        reward: "IP Rights of your NFT."
     },
     {
         id: 12,
-        reward: "Working with Mr. Beast to Donate $100k to team sea."
-    },
-    {
-        id: 13,
-        reward: "2 Tesla model S gift to community members. "
-    },
+        reward: "Member of an exclusive social club."
+    }
+    // {
+    //     id: 13,
+    //     reward: "2 Tesla model S gift to community members. "
+    // },
 ]

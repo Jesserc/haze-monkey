@@ -4,7 +4,7 @@
         position: relative;
     }
     .sectionContent{
-        padding: 4.5rem 0;
+        padding: 4.5rem 0 2.25rem;
     }
     .sectionContent h1{
         font: 3rem/3.125rem var(--roobert-bold);

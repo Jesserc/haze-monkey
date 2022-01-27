@@ -5,7 +5,7 @@ import styles from "../../../styles/local/components/faq.module.css"
 const Faq: NextPage = () => {
     return(
         <section className={[styles.sectionContainer].join(" ")}>
-            <div className={[styles.sectionContent, "wrapper"].join(" ")}>
+            <div className={[styles.sectionContent, "w-11/12 lg:w-3/4 mx-auto"].join(" ")}>
                 <h1 className="text-center">FAQs</h1>
                 <Accordion />  
             </div>

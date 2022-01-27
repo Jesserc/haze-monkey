@@ -2,7 +2,16 @@ module.exports = {
   purge: ['src/**/*.js', 'src/**/*.jsx', 'src/**/*.ts', 'src/**/*.tsx'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    // screens: {
+    //   's': '400px',
+    // },
+    extend: {
+      colors: {
+        'green4': '#FAFFF2',
+        'green5': '#1B2621'
+      }
+
+    }
   },
   variants: {
     extend: {}

@@ -5,7 +5,7 @@ import styles from '../../../styles/local/components/navbar.module.css'
 const TopBar = ({ isClicked, handleClick }) => {
     return ( 
         <section className={[styles.nav,  "list-unstyled"].join(" ")}>
-            <ul className="flex justify-between wrapper list-unstyled my-auto">
+            <ul className="flex  wrapper justify-between my-auto">
                 <div className="flex z-50">
                     <div 
                         className={ isClicked ? "hidden"  : "my-auto z-50" } 

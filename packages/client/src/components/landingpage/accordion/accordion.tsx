@@ -15,17 +15,26 @@ const Accordion: NextPage = ({}) => {
             
         }
         return(
-            <article key={item.id}>
+            <article
+                key={item.id} 
+                className={activeIndex === item.id && isActive  ? 
+                    'bg-green5 p-10 pb-0 transition-all' : 
+                    'p-10 pb-0 transition-all'
+                } 
+            >
                 <div className="flex justify-between mb-12">
                     <h2 className="w-3/4" onClick = {handleClick} >{item.question}</h2>
                     <button onClick = {handleClick}>
                         <img 
-                            src="images/faq/extend.svg" 
+                            src={ activeIndex === item.id && isActive ?
+                                "images/faq/arrowup.svg" :
+                                "images/faq/arrowdown.svg"} 
                             alt="collapse button" 
                         />
                     </button> 
                 </div>
-                {(activeIndex === item.id && isActive  ) &&  <p className="mb-14">{item.answer}</p>}
+                {(activeIndex === item.id && isActive  ) && 
+                <p className="mb-14">{item.answer}</p>}
                 <div className={["mb-14", styles.underline].join(" ")}></div>
             </article>
         )

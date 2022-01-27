@@ -1,15 +1,13 @@
 import JungleTree from "./leaves";
 import styles from "../../../styles/local/components/about.module.css"
-// import Art1 from "./art1";
-// import Art2 from "./art2";
 import { NextPage } from "next";
+import Video from "./video";
 const About: NextPage = () => {
     return (
       <section
         id="about"
         className={[styles.sectionContainer, 'relative'].join(' ')}
       >
-        {/* <Art1 /> */}
         <JungleTree />
         <div
           className={[
@@ -32,14 +30,14 @@ const About: NextPage = () => {
             production process.
           </p>
 
-          <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
+          <p className=" sm:w-3/4 xl:w-2/4 mx-auto">
             In line with our SDG goals at the United Nations, Haze Monkey is
             planting over 420k trees over the next 5years by collaborating with
             the community, experts, and existing green organizations to make
             this possible.
           </p>
         </div>
-        {/* <Art2 /> */}
+        <Video />
       </section>
     )
 }
