@@ -9,7 +9,7 @@ const Video:NextPage = () => {
     return (
         <section className="bg-green4 flex justify-center wrapper pb-28">
             <video
-                poster="images/about/video.svg"
+                // poster="images/about/video.svg"
                 controls={true}
                 className="w-4/4 lg:w-5/6 rounded-lg">
                 <source 
