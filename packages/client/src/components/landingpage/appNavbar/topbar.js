@@ -42,7 +42,7 @@ const TopBar = ({ isClicked, handleClick }) => {
                         alt="monkey swing" 
                     />
                 </figure>
-                <li className="my-auto">
+                <li className="my-auto lg:ml-28">
                     <Link href="/" >
                         <a className="">
                             <img 

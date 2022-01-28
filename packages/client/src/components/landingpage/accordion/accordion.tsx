@@ -22,9 +22,9 @@ const Accordion: NextPage = ({}) => {
                     'p-10 pb-0 transition-all'
                 } 
             >
-                <div className="flex justify-between mb-12">
-                    <h2 className="w-3/4" onClick = {handleClick} >{item.question}</h2>
-                    <button onClick = {handleClick}>
+                <div className="flex justify-between mb-12"  onClick = {handleClick}>
+                    <h2 className="w-3/4" >{item.question}</h2>
+                    <button className="outline-none">
                         <img 
                             src={ activeIndex === item.id && isActive ?
                                 "images/faq/arrowup.svg" :
