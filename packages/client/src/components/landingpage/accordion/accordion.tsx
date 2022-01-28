@@ -29,7 +29,9 @@ const Accordion: NextPage = ({}) => {
                             src={ activeIndex === item.id && isActive ?
                                 "images/faq/arrowup.svg" :
                                 "images/faq/arrowdown.svg"} 
-                            alt="collapse button" 
+                            alt="collapse button"
+                            width="21px"
+                            height="9px"
                         />
                     </button> 
                 </div>

@@ -11,7 +11,7 @@ import { TweenLite, Power3 } from 'gsap/dist/gsap.js';
 
 const MyApp = ({ Component, pageProps }) => {
   const [isClicked, setClicked] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
 
   const handleClick = () => {
@@ -23,12 +23,12 @@ const MyApp = ({ Component, pageProps }) => {
             
   }
 
-  useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000);
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 3000);
+  // }, [])
 
   useEffect(() => {
     if (!window.GA_INITIALIZED) {
@@ -43,10 +43,12 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
-      {
-        loading ? 
-        <Loading /> 
-        :
+      
+        {/* loading ? 
+        <Loading 
+          setLoading= {setLoading}
+        /> 
+        : */}
         <Layout handleClick={handleClick} isClicked={isClicked}>
           <Component
             {...pageProps}
@@ -55,7 +57,7 @@ const MyApp = ({ Component, pageProps }) => {
             loading = {loading}
           />
         </Layout>
-      }
+      
       
     </>
     

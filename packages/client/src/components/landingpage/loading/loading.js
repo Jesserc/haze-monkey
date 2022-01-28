@@ -1,8 +1,8 @@
 import styles from "../../../styles/local/components/loading.module.css"
 
-const Loading = ({loading, enterJungle}) => {
+const Loading = ({setLoading, enterJungle}) => {
     return (
-        <section className={[styles.sectionContainer, "relative  flex justify-center items-center"].join(" ")}>
+        <section onLoad={setLoading(false)} className={[styles.sectionContainer, "relative  flex justify-center items-center"].join(" ")}>
             <div className={[styles.sectionContent, "wrapper text-center"].join(" ")}>
                 <h1 className="mb-2">WELCOME TO THE</h1>
                 <h2>Hazron</h2>
