@@ -43,14 +43,14 @@ export const members: Team[] = [
     image: "images/team/squirrel.svg",
     name: "squirrel",
     role: "Project Advisor",
-    twitter: ""
+    twitter: "https://twitter.com/TheNFTSquirrel"
 },
 {
     id: 5,
     image: "images/team/momos.svg",
     name: "momos",
     role: "Lead Digital Artist & Animator",
-    twitter: ""
+    twitter: "https://twitter.com/i_momos_?t=_ncvbGO1fOJUm58Yr5xtBw&s=09"
 },
 {
     id: 6,
@@ -65,7 +65,7 @@ export const members: Team[] = [
       'images/team/anita.svg',
     name: 'anita',
     role: 'Community Manager',
-    twitter: 'https://twitter.com/alabobriggs_'
+    twitter: 'https://twitter.com/Anita_ihuman'
   },
   {
     id: 8,
@@ -87,14 +87,14 @@ export const members: Team[] = [
     image: "images/team/steve.svg",
     name: "steve",
     role: "Interface Designer",
-    twitter: ""
+    twitter: "https://twitter.com/steveanthny"
 },
 {
     id: 11,
     image: "images/team/brown.svg",
     name: "brown",
     role: "Animator & Digital Artist",
-    twitter: ""
+    twitter: "https://twitter.com/danbrown517"
 },
 {
     id: 12,
