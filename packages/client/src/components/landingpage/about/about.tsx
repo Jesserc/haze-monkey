@@ -33,8 +33,8 @@ const About: NextPage = () => {
           </p>
 
           <p className="mb-10 sm:w-3/4 xl:w-2/4 mx-auto">
-            In line with our SDG goals at the United Nations, Haze Monkey is
-            planting over 420k trees over the next 5years by collaborating with
+            In line with United Nations Sustainable Development Goals, Haze Monkey Society is
+            planting over 420,000 trees over the next 5years by collaborating with
             the community, experts, and existing green organizations to make
             this possible.
           </p>
