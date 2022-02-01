@@ -7,8 +7,13 @@ module.exports = {
     // },
     extend: {
       colors: {
+        'green1': '#012515',
         'green4': '#FAFFF2',
         'green5': '#1B2621'
+      },
+      spacing: {
+        '12.5': '3.1875rem',
+        '65': '16.5rem'
       }
 
     }

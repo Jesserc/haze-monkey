@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from '../../../styles/local/components/navbar.module.css'
+import Connect from '../connect';
 
 
 const TopBar = ({ isClicked, handleClick }) => {
@@ -42,7 +43,7 @@ const TopBar = ({ isClicked, handleClick }) => {
                         alt="monkey swing" 
                     />
                 </figure>
-                <li className="my-auto lg:ml-28">
+                <li className="my-auto lg:ml-65">
                     <Link href="/" >
                         <a className="">
                             <img 
@@ -57,6 +58,7 @@ const TopBar = ({ isClicked, handleClick }) => {
                     </Link>
                 </li>
                 <li className="hidden lg:flex">
+                    <Connect />
                     <button className={[styles.discord, "flex justify-center items-center"].join(" ")}>
                         <img 
                             src="images/socials/discord-light.svg" 

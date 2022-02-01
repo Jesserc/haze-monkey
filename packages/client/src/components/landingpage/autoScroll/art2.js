@@ -10,7 +10,6 @@ const Art2 = () => {
     let divRef = useRef(null);
     let sectionRef = useRef(null);
     useEffect(()=>{
-        console.log(divRef.children)
         gsap.to(divRef.children, {
             x:-1000,
             // xPercent: -100 * (divRef.length - 1),

@@ -2,7 +2,7 @@
 import { NextPage } from 'next'
 import styles from '../../../styles/local/components/hero.module.css'
 import Slide from './heroslide'
-
+import { useToasts } from "react-toast-notifications";
 const images: string[] = [
   // 'https://res.cloudinary.com/lab88/image/upload/v1640809393/website/e761092a-c9f8-418f-810e-b4139b04cd18_k7vhl0',
   // 'https://res.cloudinary.com/lab88/image/upload/v1640809390/website/d294ca30-c5c4-406e-9caf-c2ec76f3ca95_uabib1',
@@ -12,6 +12,7 @@ const images: string[] = [
 ]
 
 const Hero: NextPage = () => {
+  const { addToast } = useToasts();
   return (
     <section className={[styles.sectionContainer, 'relative'].join(' ')}>
       <div

@@ -43,6 +43,9 @@
     width: 151.39px;
     height: 51px;
   }
+  .connect{
+    font: var(--roobert-bold);
+  }
   .discord a{
     color: var(--white1);
   }
