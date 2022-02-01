@@ -66,7 +66,7 @@ const TopBar = ({ isClicked, handleClick }) => {
                             className="mr-2.5" 
                         />
                         <a 
-                            href="https://discord.gg/s87D89PqHp"
+                            href="https://discord.gg/hazemonkeynft"
                             target="_blank"
                             rel="noreferrer"
                         >
