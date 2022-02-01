@@ -1,5 +1,8 @@
 import '../styles/globals.css'
 import { useRouter } from 'next/router'
+import { Provider } from "react-redux";
+import { ToastProvider } from "react-toast-notifications";
+import store from "../redux/store";
 import Layout from '../components/landingpage/layout/layout'
 import Loading from '../components/landingpage/loading/loading'
 import { useState, useEffect } from 'react'
@@ -17,9 +20,9 @@ const MyApp = ({ Component, pageProps }) => {
   const handleClick = () => {
     setClicked(!isClicked)
      
-    TweenLite.staggerFrom([listRef.children[0], listRef.children[1], listRef.children[2]], 0.2, {
-        opacity: 0, y: 10, ease: Power3.easeOut
-    }, .4)
+    // TweenLite.staggerFrom([listRef.children[0], listRef.children[1], listRef.children[2]], 0.2, {
+    //     opacity: 0, y: 10, ease: Power3.easeOut
+    // }, .4)
             
   }
 
@@ -42,8 +45,8 @@ const MyApp = ({ Component, pageProps }) => {
   }, [router.pathname])
 
   return (
-    <>
-      
+   <Provider store={store}>
+      <ToastProvider autoDismissTimeout={3000}>
         {/* loading ? 
         <Loading 
           setLoading= {setLoading}
@@ -57,9 +60,8 @@ const MyApp = ({ Component, pageProps }) => {
             loading = {loading}
           />
         </Layout>
-      
-      
-    </>
+      </ToastProvider>
+    </Provider>
     
   )
 }

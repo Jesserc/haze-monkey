@@ -40,7 +40,7 @@ const NavList = ({ isClicked, handleClick }) => {
                         </div>
                     </li>
                     <ul 
-                        ref={el => listRef = el}
+                        // ref={el => listRef = el}
                         className={
                             ["flex flex-col mb-32 justify-center xl:justify-end ", 
                             styles.navList].join(" ")}>
