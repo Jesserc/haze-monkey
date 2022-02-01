@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import { useRouter } from 'next/router'
-import { Provider } from "react-redux";
-import { ToastProvider } from "react-toast-notifications";
-import store from "../redux/store";
+// import { Provider } from "react-redux";
+// import { ToastProvider } from "react-toast-notifications";
+// import store from "../redux/store";
 import Layout from '../components/landingpage/layout/layout'
 import Loading from '../components/landingpage/loading/loading'
 import { useState, useEffect } from 'react'
@@ -45,13 +45,9 @@ const MyApp = ({ Component, pageProps }) => {
   }, [router.pathname])
 
   return (
-   <Provider store={store}>
-      <ToastProvider autoDismissTimeout={3000}>
-        {/* loading ? 
-        <Loading 
-          setLoading= {setLoading}
-        /> 
-        : */}
+  //  <Provider store={store}>
+  //     <ToastProvider autoDismissTimeout={3000}>
+       
         <Layout handleClick={handleClick} isClicked={isClicked}>
           <Component
             {...pageProps}
@@ -60,8 +56,8 @@ const MyApp = ({ Component, pageProps }) => {
             loading = {loading}
           />
         </Layout>
-      </ToastProvider>
-    </Provider>
+    //   </ToastProvider>
+    // </Provider>
     
   )
 }
