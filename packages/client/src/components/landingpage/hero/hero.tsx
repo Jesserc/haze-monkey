@@ -23,28 +23,19 @@ const Hero: NextPage = () => {
         <div className="flex flex-col items-center text-center">
           <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
           <h1 className="mb-6">Haze Monkey Society</h1>
-          <p className="mb-6">The first residence of Hazron.</p>
+          <p className="mb-6">
+            4,200 Haze Monkeys making an impact in society through the
+            metaverse.
+          </p>
           {/* <button className="app-btn">Mint NFT</button> */}
           <button className="coming-soon bg-white cursor-not-allowed flex items-center justify-center">
             Mint NFT{' '}
             <span className="flex items-center justify-center ml-2">
-              COMING SOON
+              COMING FEB 12
             </span>
           </button>
         </div>
-        {/* <div className="relative lg:w-1/2 flex flex-wrap">
-          {images.map((img) => (
-            <img key={img} src={img} className=" w-1/2" alt="NFTs" />
-          ))}
-        </div> */}
       </div>
-      {/* <div className="relative z-0">
-        <img
-          src="images/vectors/grass.svg"
-          alt="grass"
-          className="min-w-full absolute bottom-0 z-0"
-        />
-      </div> */}
       <Slide />
     </section>
   )
