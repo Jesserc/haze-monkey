@@ -1,16 +1,30 @@
-/* eslint-disable @next/next/no-img-element */
 import { NextPage } from 'next'
 import { roadmaps } from '../data/roadmapdata'
 import styles from '../../../styles/local/components/roadmap.module.css'
 
 const Roadmap: NextPage = () => {
+  const roadmap = roadmaps.map((item) => {
+    return (
+      <div
+        key={item.id}
+        className={['relative flex flex-col', styles.roadmap].join(' ')}
+      >
+        <div className={styles.roadmapItem}>
+          <p className="mb-10">{item.content}</p>
+          <div className={['mb-12', styles.underline].join(' ')}></div>
+        </div>
+      </div>
+    )
+  })
   return (
-    <section id="roadmap" className={[styles.sectionContainer].join(' ')}>
-      <img
-        src="https://res.cloudinary.com/lab88/image/upload/w_auto,dpr_auto,q_auto,f_auto/v1643797028/website/roadmap/roadmap.jpg"
-        alt="Roadmap"
-        className="w-full"
-      />
+    <section
+      id="roadmap"
+      className={[styles.sectionContainer, 'bg-green2'].join(' ')}
+    >
+      <div className={[styles.sectionContent, 'wrapper'].join(' ')}>
+        <h1 className="text-center">Our Roadmap</h1>
+        {roadmap}
+      </div>
     </section>
   )
 }

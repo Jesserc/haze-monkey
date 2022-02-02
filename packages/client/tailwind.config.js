@@ -7,10 +7,10 @@ module.exports = {
     // },
     extend: {
       colors: {
-        'green4': '#FAFFF2',
-        'green5': '#1B2621'
+        green4: '#FAFFF2',
+        green2: '#101714',
+        green5: '#1B2621'
       }
-
     }
   },
   variants: {
