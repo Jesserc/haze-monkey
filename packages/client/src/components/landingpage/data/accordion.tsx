@@ -9,7 +9,7 @@ export const faq: Accordion[] = [
         id: 0,
         question: "How much is a Haze Monkey NFT and when is the public mint?",
         answer:
-            "Information regarding minting is yet to be made public. We will update this answer once we have fixed a date",
+            "Mint: 0.08 ETH - Date: 12th Febuary, 2022",
     },
     {           
         id: 1,
