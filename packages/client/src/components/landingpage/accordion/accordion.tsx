@@ -19,7 +19,7 @@ const Accordion: NextPage = ({}) => {
         className={
           activeIndex === item.id && isActive
             ? 'bg-green5 p-10 pb-0 transition-all'
-            : 'p-10 pb-0 transition-all'
+            : 'p-6 lg:p-10 pb-0 transition-all'
         }
       >
         <div className="flex justify-between mb-12" onClick={handleClick}>
