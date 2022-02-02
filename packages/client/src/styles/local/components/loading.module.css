@@ -13,7 +13,7 @@
     color: var(--white1);
   }
   .sectionContent h2{
-    font: 4rem/4rem var(--roobert-bold);
+    font: 4rem/4rem var(--syne);
     font-weight: 900;
     color: var(--white1);
     margin-bottom: 7.75rem;
@@ -45,7 +45,7 @@
 }
 @media all and (min-width: 1280px){
   .sectionContent h2{
-    font: 5.625rem/5.625rem var(--roobert-bold);
+    font: 5.625rem/5.625rem var(--syne);
     font-weight: 900;
     margin-bottom: 3.125rem;
   }

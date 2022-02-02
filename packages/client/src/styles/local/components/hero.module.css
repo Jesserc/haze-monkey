@@ -5,12 +5,12 @@
   .sectionContent{
     z-index: 0;
   }
-  .sectionContent div:first-child{
+  /* .sectionContent div:first-child{
     margin: 2.5rem 0;
-  }
-  .sectionContent > div {
-    /* padding: 6rem 0; */
-  }
+  } */
+  /* .sectionContent > div {
+    padding: 6rem 0;
+  } */
   .sectionContent h1{
     font: 3.75rem/4rem var(--optima);
     font-weight: 900;
@@ -22,40 +22,40 @@
     font-weight: 400;
     color: var(--green1);
   }
-  .artWrap{
-    /* display: grid;
+  /* .artWrap{
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0;
     height: auto;
-    width: auto; */
+    width: auto;
   }
   .artWrap div{
-    /* display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column: span 3;
     justify-content: flex-start;
-    margin: 0; */
+    margin: 0;
   }
   .artWrap div img{
-    /* width: 66.667%;
-    height: auto; */
+    width: 66.667%;
+    height: auto;
   }
   .artWrap div img:first-child{
-    /* margin-left: auto; */
+    margin-left: auto;
   }
 
   .artWrap div img:last-child{
-    /* margin-right: auto; */
+    margin-right: auto;
   }
   .artWrap img{
-    /* width: auto;
-    height: auto; */
-  }
+    width: auto;
+    height: auto;
+  } */
 }
 
 @media all and (min-width: 700px) {
   .sectionContent > div {
-    /* max-width: 40%; */
+    max-width: 50%;
   }
   .artWrap{
     display: grid;
@@ -72,17 +72,17 @@
   .sectionContainer{
     padding: 4.5rem 0 0 0;
   }
-  .sectionContent{
+  /* .sectionContent{
 		width: 92.5%;
-    /* padding: 5.5rem 0; */
-		margin: 0 0 0 auto;
-	}
-  .sectionContent > div {
+    padding: 5.5rem 0;
+		margin: 0 auto;
+	} */
+  /* .sectionContent > div {
     padding: 0;
     width: 50%;
-		/* margin: 0 auto;
-		overflow: hidden; */
-  }
+		margin: 0 auto;
+		overflow: hidden;
+  } */
   .sectionContent div:first-child{
     margin: 1.5rem 0;
   }
@@ -93,27 +93,27 @@
     margin: 0 auto;
     justify-content: center;
   }
-  .artWrap div{
-    /* display: flex;
+  /* .artWrap div{
+    display: flex;
     grid-column: span 1;
-    justify-content: flex-start; */
+    justify-content: flex-start;
   }
   .artWrap div img{
-    /* width: auto; */
-  }
+    width: auto;
+  } */
 }
 @media all and (min-width: 1280px){
   .sectionContainer{
     height: 100%;
   }
-  .artWrap{
+  /* .artWrap{
     display: grid;
     grid-template-columns: repeat(3, 30%);
     grid-gap: 0;
-  }
-  .sectionContent{
-    /* padding: 5.5rem 0 10rem 0; */
-  }
+  } */
+  /* .sectionContent{
+    padding: 5.5rem 0 10rem 0;
+  } */
   .sectionContent div:first-child{
     margin: 2.5rem 0;
   }
@@ -128,27 +128,22 @@
     font-weight: 400;
     color: var(--green1);
   }
-  .artWrap{
+  /* .artWrap{
     width: 70%;
-  }
+  } */
 }
 @media all and (min-width: 2000px){
-	.sectionContent{
-		width: 1440px;
-    margin: 0 auto
-	}
-
-  .artWrap{
+  /* .artWrap{
     width: 50%;
     display: grid;
     grid-template-columns: repeat(3, 33.3%);
     grid-gap: 0;
   }
   .artWrap img{
-    /* width: 100%;
-    height: auto; */
+    width: 100%;
+    height: auto;
   }
   .artWrap div img{
-    /* width: 100%; */
-  }
+    width: 100%;
+  } */
 }

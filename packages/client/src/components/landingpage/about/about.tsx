@@ -1,15 +1,13 @@
 import JungleTree from "./leaves";
 import styles from "../../../styles/local/components/about.module.css"
-// import Art1 from "./art1";
-// import Art2 from "./art2";
 import { NextPage } from "next";
+import Video from "./video";
 const About: NextPage = () => {
     return (
       <section
         id="about"
         className={[styles.sectionContainer, 'relative'].join(' ')}
       >
-        {/* <Art1 /> */}
         <JungleTree />
         <div
           className={[
@@ -39,7 +37,7 @@ const About: NextPage = () => {
             this possible.
           </p>
         </div>
-        {/* <Art2 /> */}
+        <Video />
       </section>
     )
 }

@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import styles from "../../../styles/local/components/rewards.module.css"
-import { rewards } from "../data/rewards";
 import Reward1 from "./reward1";
 import Reward2 from "./reward2";
 import SectionVectors from "./sectionVectors";

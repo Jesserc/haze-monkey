@@ -1,6 +1,6 @@
 @media all and (min-width: 0px) {
     .sectionContainer{
-        background: var(--green2);
+        background: var(--green4);
         position: relative;
     }
     .sectionContent{
@@ -9,17 +9,17 @@
     .sectionContent h1{
         font: 3rem/3.125rem var(--roobert-bold);
         font-weight: 900;
-        color: var(--white1);
+        color: var(--green1);
     }
     .sectionContent p{
         font: 1rem/1.5rem var(--roobert);
         font-weight: 400;
-        color: var(--green3);
+        color: var(--green1);
     }
     .reward div{
         width: 343px;
         height: 2px;
-        background: var(--grey2);
+        background: var(--grey3);
     }
 }
 @media all and (min-width: 1024px) {

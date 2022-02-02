@@ -45,7 +45,7 @@ const Members: NextPage = () => {
                 <h2>{member.name}</h2>
                 <a href={member.twitter}>
                     <img 
-                        src="images/socials/twitter.svg"
+                        src="images/socials/twitter2.svg"
                         alt="twitter" 
                     />
                 </a>

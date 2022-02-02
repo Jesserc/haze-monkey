@@ -6,37 +6,44 @@ interface Accordion {
 
 export const faq: Accordion[] = [
     {   
-        id: 0,
-        question: "What’s an NFT?",
+        id: 380,
+        question: "What is the mint price?",
         answer:
-            "An NFT stands for 'Non-fungible token' and is a fancy way of saying it’s a unique, one of a kind digital item that users can buy, own, and trade. Some NFTs main function are to be digital art and look cool, some offer additional utility like exclusive access to websites or participation in an event, think of it like a rare piece of art that can also act as a 'members' card.",
+            "0.08 ETH",
+    },
+    {   
+        id: 130,
+        question: "What is the mint date?",
+        answer:
+            "12th Febuary 2022 by 7:20pm UTC",
+    },
+    {   
+        id: 444,
+        question: "What Is the Total number available to mint?",
+        answer:
+            "4200",
     },
     {           
         id: 1,
-        question: "What is Metamask?",
+        question: "On what chain will Haze Monkey mint on?",
         answer:
-           "Metamask is a crypto wallet that can store your Ethereum, and is needed to purchase and mint a Cool Cat. Having a wallet gives you an Ethereum address (i.e. 0xABCD….1234), this is where your NFT will be stored. Learn more about Metamask and how easy it is to use over here! (https://metamask.io/)",
+           "Etherium blockchain.",
     },
     {   
         id: 2,
-        question: "Where does my NFT go after I purchase a Stoned Monkey?",
+        question: "Will holders get IP rights for their NFTs?",
         answer:
-            "Metamask is a crypto wallet that can store your Ethereum, and is needed to purchase and mint a Cool Cat. Having a wallet gives you an Ethereum address (i.e. 0xABCD….1234), this is where your NFT will be stored. Learn more about Metamask and how easy it is to use over here! (https://metamask.io/)",
+            "Yes, holders of Haze Monkey will get IP rights of their NFTs",
     },
     {   
         id: 3,
-        question: "Will there be a presale?",
+        question: "Does this project have any utilities? ",
         answer:
-            "November. Date TBA",
+            "We have a well drafted roadmap and holders rewards section that describes the utilities this project has to offer. You can find more information regarding that on the website.",
     },
     {   
         id: 4,
-        question: "What can I do with my Stoned Monkey?",
-        answer: "TBA",
-    },
-    {   
-        id: 5,
-        question: "Do I own the Stoned Monkey after minting it?",
-        answer: "Yes, Opensea.io ",
+        question: "How do I get whitelisted?",
+        answer: "Join our discord server and follow us of all social media platforms.",
     }
 ];

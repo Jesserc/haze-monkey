@@ -58,7 +58,7 @@ export const roadmaps: Roadmap[] = [
     percentage: 'images/vectors/roadmap5.svg'
   },
   {
-    id: 7,
+    id: 8,
     header: 'The Stoned Monkey Opportunity',
     content:
       'Start building out our virtual cinema which will premiere our future episodes and other animation projects in the metaverse.',

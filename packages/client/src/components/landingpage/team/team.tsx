@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import styles from "../../../styles/local/components/team.module.css"
+import styles from "../../../styles/local/components/slide.module.css"
 import Members from "./members";
 
 const Team: NextPage = ({}) => {
