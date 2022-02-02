@@ -2,12 +2,17 @@
 import { NextPage } from 'next'
 import { members } from '../data/team'
 import styles from '../../../styles/local/components/team2.module.css'
+import { imageOptimizer } from '../../../../utils/imageOptimizer'
 
 const Team: NextPage = () => {
   const team = members.map((member) => {
     return (
       <div key={member.id} className="mx-auto mb-12 ">
-        <img src={member.image} alt="team member" className="mx-auto mb-2" />
+        <img
+          src={imageOptimizer(member.image)}
+          alt={member.name}
+          className="mx-auto mb-2"
+        />
         <h2>{member.name.toUpperCase()}</h2>
         <p>{member.role}</p>
         <a href={member.twitter} target="_blank" rel="noreferrer">

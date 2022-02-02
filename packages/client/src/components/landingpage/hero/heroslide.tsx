@@ -6,6 +6,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import styles from '../../../styles/local/components/slide.module.css'
 import { ArrowLeft, ArrowRight } from './navigate'
 import { useState } from 'react'
+import { imageOptimizer } from '../../../../utils/imageOptimizer'
 
 const Slide: NextPage = () => {
   const [currenSlide, setCurrentSlide] = useState(0)
@@ -39,13 +40,19 @@ const Slide: NextPage = () => {
       }
     }
   })
+
   const team = members.map((member) => {
     return (
       <div className="keen-slider__slide" key={member.id}>
-        <img src={member.image} alt="Haze monkeynft " className="lg:w-full" />
+        <img
+          src={imageOptimizer(member.image)}
+          alt={member.name}
+          className="lg:w-full"
+        />
       </div>
     )
   })
+
   return (
     <section>
       <div className={['relative', styles.navigate].join(' ')}>
