@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { NextPage } from 'next'
 import React, { useState } from 'react'
 import { faq } from '../data/accordion'
 import styles from '../../../styles/local/components/faq.module.css'
 
-const Accordion: NextPage = ({}) => {
+const Accordion = ({}) => {
   const [isActive, setActive] = useState<boolean>(false)
   const [activeIndex, setActiveIndex] = useState<number>(0)
 

@@ -6,10 +6,22 @@ interface Accordion {
 
 export const faq: Accordion[] = [
     {   
-        id: 0,
-        question: "How much is a Haze Monkey NFT and when is the public mint?",
+        id: 380,
+        question: "What is the mint price?",
         answer:
-            "Mint: 0.08 ETH - Date: 12th Febuary, 2022",
+            "0.08 ETH",
+    },
+    {   
+        id: 130,
+        question: "What is the mint date?",
+        answer:
+            "12th Febuary 2022 by 7:20pm UTC",
+    },
+    {   
+        id: 444,
+        question: "What Is the Total number available to mint?",
+        answer:
+            "4200",
     },
     {           
         id: 1,
