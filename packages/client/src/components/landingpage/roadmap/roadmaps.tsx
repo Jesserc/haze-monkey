@@ -1,34 +1,18 @@
-import { NextPage } from "next";
-import { roadmaps } from "../data/roadmapdata";
-import styles from "../../../styles/local/components/roadmap.module.css"
+/* eslint-disable @next/next/no-img-element */
+import { NextPage } from 'next'
+import { roadmaps } from '../data/roadmapdata'
+import styles from '../../../styles/local/components/roadmap.module.css'
 
 const Roadmap: NextPage = () => {
-    // const roadmap = roadmaps.map(item => {
-    //     return (
-    //         <div key={item.id} className={["relative flex flex-col", styles.roadmap].join(" ")}> 
-    //             <div className={styles.roadmapItem}>
-    //                 {/* <h2 className="mb-4">{item.header}</h2> */}
-    //                 <p className="mb-10">{item.content}</p>
-    //                 <div className={["mb-12", styles.underline].join(" ")}></div>
-    //             </div> 
-    //             {/* <img 
-    //                 src={item.percentage} 
-    //                 alt="roadmap percentage" 
-    //                 className="absolute -top-10 w-40 xl:w-auto xl:top-0"
-    //             /> */}
-                
-    //         </div>
-    //     )
-    // })
-    return (  
-        <section id="roadmap" className={[styles.sectionContainer].join(" ")}>
-            {/* <div className={[styles.sectionContent, "wrapper"].join(" ")}>
-                <h1 className="text-center">Our Roadmap</h1>
-                {roadmap}
-            </div>    */}
-            <img src="images/roadmap/roadmap.svg" alt="Roadmap" className="w-full"/>
-        </section>
-    );
+  return (
+    <section id="roadmap" className={[styles.sectionContainer].join(' ')}>
+      <img
+        src="https://res.cloudinary.com/lab88/image/upload/w_auto,dpr_auto,q_auto,f_auto/v1643797028/website/roadmap/roadmap.jpg"
+        alt="Roadmap"
+        className="w-full"
+      />
+    </section>
+  )
 }
- 
-export default Roadmap;
+
+export default Roadmap
