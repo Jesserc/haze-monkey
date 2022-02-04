@@ -1,4 +1,20 @@
 @media all and (min-width: 0px) {
+    @keyframes animate1 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(30px); }
+    }
+    @keyframes animate2{
+        0% { transform: translateX(0px); }
+        100% { transform: translateX(300px); }
+    } 
+    @keyframes animate3{
+        0% { transform: translateZ(-0px); }
+        100% { transform: translateZ(-2000px); }
+    }
+    @keyframes animate4{
+        0% { transform: scale(0.5); }
+        100% { transform: scale(2); }
+    } 
     .bgVectors{
         position: absolute;
         z-index: 0;
@@ -6,50 +22,62 @@
         width: 92%;
         margin: 0;
         height: 100%;
+         -webkit-perspective: 1000;
     }
     .bgVectors img{
         position: absolute;
+        
     }
     .bgVectors img:nth-child(1){
         top: 38px;
         right: 10%;
+        animation: 50s animate2 linear infinite alternate;
     }
     .bgVectors img:nth-child(2){
         top: 80px;
         left: 0;
         width: 70px;
         height: 46px;
+        animation: 60s animate2 linear infinite alternate;
     }
     .bgVectors img:nth-child(3){
         bottom: 200px;
         left: 30px;
         width: 55px;
+        animation: 60s animate3 linear infinite alternate;
     }
     .bgVectors img:nth-child(4){
         top: 0;
+        animation: 13s animate1 linear infinite alternate;
     }
     .bgVectors img:nth-child(5){
         bottom: 190px;
         right: 30px;
+        animation: 45s animate2 linear infinite alternate;
     }
     .bgVectors img:nth-child(6){
         top: 23%;
         right: 0;
+        animation: 10s animate4 linear infinite alternate;
     }
     .bgVectors img:nth-child(7){
         bottom: 50px;
         left: 40%;
+        animation: 10s animate4 linear infinite alternate;
     }
     .bgVectors img:nth-child(8){
         top: 10%;
         right: 0;
+        animation: 7s animate4 linear infinite alternate;
     }
     .bgVectors img:nth-child(9){
         top: 56%;
         right: 0;
+        animation: 13s animate4 linear infinite alternate;
     }
     .bgVectors img:nth-child(10){
         bottom: 100px;
+        animation: 3s animate2 linear infinite alternate;
     }
 }
 
@@ -100,5 +128,7 @@
     .bgVectors img:nth-child(11){
         bottom: 13%;
         right: 3%;
+        animation: 15s animate1 linear infinite alternate;
+        
     }
 }

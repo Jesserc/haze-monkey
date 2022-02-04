@@ -17,8 +17,8 @@ const Accordion = ({}) => {
         key={item.id}
         className={
           activeIndex === item.id && isActive
-            ? 'bg-green5 p-10 pb-0 transition-all'
-            : 'p-6 lg:p-10 pb-0 transition-all'
+            ? 'bg-green5 p-3  pb-0 lg:p-5 lg:pb-0 '
+            : 'p-3 pb-0 lg:p-5 lg:pb-0'
         }
       >
         <div className="flex justify-between mb-12" onClick={handleClick}>
