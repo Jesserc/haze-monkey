@@ -1,3 +1,5 @@
+// import { connect } from "../../redux/blockchain/blockchainActions";
+
 const Mint = ({
     mintAmount,
     addToast, 

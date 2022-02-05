@@ -7,7 +7,7 @@ import Slide from './heroslide'
 import { useToasts } from "react-toast-notifications";
 import { fetchData } from '../../../redux/data/dataActions'
 import { useDispatch, useSelector } from "react-redux";
-
+import Connect from '../connect'
 
 const Hero = () => {
   const dispatch = useDispatch();
@@ -75,17 +75,29 @@ const Hero = () => {
             metaverse.
           </p>
           
-          <Mint 
-            mintAmount={mintAmount}
-            setMintAmount={setMintAmount}
-            CONFIG={CONFIG}
-            addToast={addToast}
-            dispatch={dispatch}
-            blockchain={blockchain}
-            fetchData={fetchData}
-            claimingNft={claimingNft}
-            setClaimingNft={setClaimingNft}
-          />
+          
+          <>
+            { 
+
+              blockchain.account == undefined
+               ? 
+              <Connect />
+              :
+              <Mint 
+                mintAmount={mintAmount}
+                setMintAmount={setMintAmount}
+                CONFIG={CONFIG}
+                addToast={addToast}
+                dispatch={dispatch}
+                blockchain={blockchain}
+                fetchData={fetchData}
+                claimingNft={claimingNft}
+                setClaimingNft={setClaimingNft}
+              />
+            }
+           
+          </>
+          
         </div>
       </div>
       <Slide />
