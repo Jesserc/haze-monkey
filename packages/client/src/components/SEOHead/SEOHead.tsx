@@ -46,7 +46,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image:height" content="630" />
       <link rel="icon" href="/favicon.ico" />
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="theme-color" content="#EAFA35" />
+      <meta name="theme-color" content="#F5EBD3" />
     </NextHead>
   )
 }

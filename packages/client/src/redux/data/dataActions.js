@@ -24,7 +24,7 @@ export const fetchData = () => {
 
   // let approved; 
   return async (dispatch) => {
-    const configResponse = await fetch("/stakeConfig/config.json", {
+    const configResponse = await fetch("/config/config.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

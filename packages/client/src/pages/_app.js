@@ -47,11 +47,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
    <Provider store={store}>
       <ToastProvider autoDismissTimeout={3000}>
-        {/* loading ? 
-        <Loading 
-          setLoading= {setLoading}
-        /> 
-        : */}
+       
         <Layout handleClick={handleClick} isClicked={isClicked}>
           <Component
             {...pageProps}
