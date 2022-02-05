@@ -4,7 +4,7 @@ import styles from '../../styles/local/components/footer.module.css'
 
 const Footer: NextPage = () => {
   return (
-    <footer className={[styles.sectionContainer].join(' ')}>
+    <footer className={[styles.sectionContainer, 'relative'].join(' ')}>
       <section className={[styles.sectionContent, 'wrapper '].join(' ')}>
         <div className="flex flex-col items-center">
           <div className={styles.logoWrap}>
@@ -39,7 +39,7 @@ const Footer: NextPage = () => {
               />
             </a>
             <a
-              href="https://discord.gg/s87D89PqHp"
+              href="https://discord.gg/hazemonkeynft"
               target="_blank"
               rel="noreferrer"
             >
@@ -54,8 +54,13 @@ const Footer: NextPage = () => {
         <div className="flex justify-center items-end">
           <img src="images/vectors/weed.svg" alt="weed" />
         </div>
-        <div className="flex justify-center items-end">
-          <img src="images/vectors/weed.svg" alt="weed" />
+        <div className="flex justify-center absolute bottom-0 w-12 lg:w-16  mr-4 mb-4 lg:mr-12 lg:mb-12 right-0 items-end">
+          <a href="https://raritysniper.com/" rel="noreferrer noopenner">
+            <img
+              src="images/raritysniperlogo/logo3-white.png"
+              alt="raritysniper"
+            />
+          </a>
         </div>
       </section>
     </footer>
