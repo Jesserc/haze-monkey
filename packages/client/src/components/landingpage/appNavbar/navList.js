@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { gsap } from 'gsap/dist/gsap.js';
 import { TweenLite, Power3 } from 'gsap/dist/gsap.js';
 import { useEffect, useRef } from 'react';
+import Connect from '../connect'
+import Discord from './discord'
 
 export let listRef;
 const NavList = ({ isClicked, handleClick }) => {
@@ -47,6 +49,14 @@ const NavList = ({ isClicked, handleClick }) => {
                         <li onClick={handleClick}><Link href="#about"> About </Link></li>
                         <li onClick={handleClick}><Link href="#roadmap"> Roadmap </Link></li>
                         <li onClick={handleClick}><Link href="#team"> Team </Link></li>
+                        <div 
+                            onClick={handleClick}
+                            className='lg:hidden'>
+                            <Discord 
+                                isClicked={isClicked}
+                            />
+                        </div>
+                        
                     </ul>
                     <li className="relative">
                         <img 

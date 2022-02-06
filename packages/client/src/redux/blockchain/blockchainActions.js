@@ -1,8 +1,36 @@
 // constants
 import Web3EthContract from "web3-eth-contract";
 import Web3 from "web3";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 // log
 import { fetchData } from "../data/dataActions";
+
+let provider;
+let web3Modal
+  const providerOptions = {
+    walletconnect: {
+        display: {
+            // logo: walletConnectMobile,
+            name: "WalletConnect",
+            description: "Scan with WalletConnect to connect"
+        },
+        package: WalletConnectProvider,
+        options: {
+            infuraId: "f4f8b5a14ff74915b23dda902c929730",
+        },   
+    }
+  };
+      
+  if (typeof window !== "undefined") {
+    web3Modal = new Web3Modal({
+    // network: "mainnet",
+    cacheProvider: false,
+    providerOptions,
+    theme: 'light',
+});
+
+}
 
 
 const connectRequest = () => {
@@ -51,16 +79,19 @@ export const connect = () => {
       },
     });
     const CONFIG = await configResponse.json();
-    const { ethereum } = window;
-    const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
+    
+    // const { ethereum } = window;
+    const metamaskIsInstalled = ethereum;
     if (metamaskIsInstalled) {
-      Web3EthContract.setProvider(ethereum);
-      let web3 = new Web3(ethereum);
+      provider = await web3Modal.connect();
+      Web3EthContract.setProvider(provider);
+      let web3 = new Web3(provider);
+      // let web3 = new Web3(ethereum);
       try {
-        const accounts = await ethereum.request({
+        const accounts = await provider.request({
           method: "eth_requestAccounts",
         });
-        const networkId = await ethereum.request({
+        const networkId = await provider.request({
           method: "net_version",
         });
         if (networkId == CONFIG.NETWORK.ID) {
@@ -76,10 +107,10 @@ export const connect = () => {
             })
           );
           // Add listeners start
-          ethereum.on("accountsChanged", (accounts) => {
+          provider.on("accountsChanged", (accounts) => {
             dispatch(updateAccount(accounts[0]));
           });
-          ethereum.on("chainChanged", () => {
+          provider.on("chainChanged", () => {
             window.location.reload();
           });
           // Add listeners end

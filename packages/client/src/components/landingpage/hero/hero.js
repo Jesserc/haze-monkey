@@ -77,12 +77,7 @@ const Hero = () => {
           
           
           <>
-            { 
-
-              blockchain.account == undefined
-               ? 
-              <Connect />
-              :
+            
               <Mint 
                 mintAmount={mintAmount}
                 setMintAmount={setMintAmount}
@@ -94,7 +89,7 @@ const Hero = () => {
                 claimingNft={claimingNft}
                 setClaimingNft={setClaimingNft}
               />
-            }
+  
            
           </>
           

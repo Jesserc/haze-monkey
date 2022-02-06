@@ -15,7 +15,6 @@
     background: var(--green1);
     top: 0;
     right: 0;
-    z-index: 5;
     height: 100vh;
     width: 100%;
     transition: all 0.3s ease;
@@ -25,7 +24,7 @@
     height: 100vh;
   }
   .navWrapper ul li {
-    padding: 1.125rem;
+    padding: 1.125rem 0;
     margin: 0;
   }
   .navWrapper ul li a {
@@ -44,7 +43,7 @@
     height: 51px;
   }
   .connect{
-    font: var(--roobert-bold);
+    font-family: var(--roobert-bold);
   }
   .discord a{
     color: var(--white1);

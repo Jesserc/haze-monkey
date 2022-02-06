@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from '../../../styles/local/components/navbar.module.css'
 import Connect from '../connect';
+import Discord from './discord';
 
 
 const TopBar = ({ isClicked, handleClick }) => {
@@ -43,7 +44,7 @@ const TopBar = ({ isClicked, handleClick }) => {
                         alt="monkey swing" 
                     />
                 </figure>
-                <li className="my-auto lg:ml-65">
+                <li className="hidden my-auto lg:flex lg:ml-65">
                     <Link href="/" >
                         <a className="">
                             <img 
@@ -57,22 +58,14 @@ const TopBar = ({ isClicked, handleClick }) => {
                         </a>
                     </Link>
                 </li>
-                <li className="hidden lg:flex">
+                <li className="flex lg:flex">
                     <Connect />
-                    <button className={[styles.discord, "flex justify-center items-center"].join(" ")}>
-                        <img 
-                            src="images/socials/discord-light.svg" 
-                            alt="join discord"  
-                            className="mr-2.5" 
+                    <div className='hidden lg:flex'>
+                        <Discord 
+                            isClicked={isClicked}
                         />
-                        <a 
-                            href="https://discord.gg/hazemonkeynft"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Join Discord
-                        </a>
-                    </button>
+                    </div>
+                    
                 </li>
             </ul>
         </section>

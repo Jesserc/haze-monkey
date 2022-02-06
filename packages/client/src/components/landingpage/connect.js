@@ -1,4 +1,5 @@
 import { connect } from "../../redux/blockchain/blockchainActions";
+// import WalletConnect from "@walletconnect/client";
 import { useDispatch, useSelector } from "react-redux";
 import styles from '../../styles/local/components/navbar.module.css'
 
@@ -19,13 +20,28 @@ const Connect = () => {
             className={
                 [styles.connect, 
                 `flex justify-center items-center outline-none 
-                bg-transparent border-2 lg:border-green1 
-                lg:rounded-xl lg:w-36 lg:h-12.5 lg:text-green1 
+                bg-transparent border-2 w-28  h-10 lg:mb-auto border-green1 
+                rounded-xl lg:w-38 text-green1 
                 font-semibold lg:mr-3`]
                 .join(" ")}
         >
-            {blockchain.account == undefined ? "Connect Wallet" : blockchain.account.slice(0, 8)}
+            {blockchain.account == undefined ? "Connect" : blockchain.account.slice(0, 8)}
         </button>
      );
 }
 export default Connect;
+
+
+
+{/* <button 
+            onClick={handleConnect}
+            className={
+                [styles.connect, 
+                `flex justify-center items-center outline-none 
+                bg-transparent border-2 text-white w-full h-12.5 mb-7  lg:mb-auto lg:border-green1 
+                rounded-xl lg:w-38 lg:text-green1 
+                font-semibold lg:mr-3`]
+                .join(" ")}
+        >
+            {blockchain.account == undefined ? "Connect Wallet" : blockchain.account.slice(0, 8)}
+        </button> */}

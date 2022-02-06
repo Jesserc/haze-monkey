@@ -1,4 +1,4 @@
-// import { connect } from "../../redux/blockchain/blockchainActions";
+import { connect } from "../../../redux/blockchain/blockchainActions";
 
 const Mint = ({
     mintAmount,
@@ -53,13 +53,18 @@ const Mint = ({
         // fetch blockchain data
         dispatch(fetchData(blockchain.account));
       });
-  };
+    };
 
+    const handleMint = () => {
+      // blockchain.account == undefined ? 
+      // dispatch(connect()): 
+      mintNFTs()
+    }
     return ( 
         <button 
             onClick={(e)=>{
                 e.preventDefault()
-                mintNFTs()
+                handleMint()
             }}
             disabled={claimingNft ? 1 : 0}
                 className="app-btn">
