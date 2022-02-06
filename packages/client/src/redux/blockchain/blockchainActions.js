@@ -80,9 +80,9 @@ export const connect = () => {
     });
     const CONFIG = await configResponse.json();
     
-    // const { ethereum } = window;
-    const metamaskIsInstalled = ethereum;
-    if (metamaskIsInstalled) {
+    const { ethereum } = window;
+    const metamaskIsInstalled =  provider ; 
+    if (metamaskIsInstalled != 2) {
       provider = await web3Modal.connect();
       Web3EthContract.setProvider(provider);
       let web3 = new Web3(provider);
