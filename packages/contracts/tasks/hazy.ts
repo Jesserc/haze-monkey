@@ -10,7 +10,7 @@ import "@nomiclabs/hardhat-ethers"
 import { Hazy__factory } from "../typechain/factories/Hazy__factory"
 import { ethers } from "ethers"
 
-const CONTRACT_ADDRESS = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
 
 task("name", "Name of token").setAction(async (_, hre) => {
   const token = Hazy__factory.connect(CONTRACT_ADDRESS, hre.ethers.provider)
@@ -44,15 +44,19 @@ task("mint", "Mint a token").setAction(async (_, hre) => {
 })
 
 task("seedPresalelist", "Mint a token").setAction(async (_, hre) => {
-  // const contract = Hazy__factory.connect(
-  //   CONTRACT_ADDRESS,
-  //   hre.ethers.provider.getSigner()
-  // )
-  // const res = await contract.seedPresalelist(2, {
-  //   value: ethers.utils.parseEther("1"),
-  // })
+  const contract = Hazy__factory.connect(
+    CONTRACT_ADDRESS,
+    hre.ethers.provider.getSigner()
+  )
+  const res = await contract.seedPresalelist(
+    [
+      "0xab8483f64d9c6d1ecf9b849ae677dd3315835cb2",
+      "0x4b20993bc481177ec7e8f571cecae8a9e22c02db",
+    ],
+    2
+  )
 
-  // console.log(res)
+  console.log(res)
 })
 
 task("total-supply", "Mint a token").setAction(async (_, hre) => {
