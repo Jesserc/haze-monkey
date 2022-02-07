@@ -9,12 +9,12 @@ import { task } from "hardhat/config"
 import "@nomiclabs/hardhat-ethers"
 import { Greeter__factory } from "../typechain/factories/Greeter__factory"
 
-task("test-greeting", "doge balance")
-  .addParam("address", "the user address")
-  .setAction(async ({ address }, hre) => {
-    const token = Greeter__factory.connect("address", hre.ethers.provider)
+task("test-greeting", "doge balance").setAction(async ({ address }, hre) => {
+  const token = Greeter__factory.connect(
+    "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    hre.ethers.provider
+  )
+  const res = await token.greet()
 
-    const res = await token.greet()
-
-    console.log(res)
-  })
+  console.log(res)
+})
