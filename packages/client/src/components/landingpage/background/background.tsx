@@ -22,7 +22,7 @@ const Background: NextPage = () => {
             called Hazron, a magnificent specie of specially bred monkeys needed
             absolutely nothing to survive other than haze and chilled vibes. On
             a planet, where everything was dope and ganga, there was every
-            single specie of haze you can think of on Hazron. What's most
+            single specie of haze you can think of on Hazron. What`&apos;`s most
             fascinating is the diverse forms of which the haze took, they even
             existed in form of tall palm trees and beautiful swines.
           </p>
