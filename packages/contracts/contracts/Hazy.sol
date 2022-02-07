@@ -78,13 +78,13 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
     }
 
     function setSaleConfig(
-        uint64 mintlistPriceWei,
+        uint64 presaleListPriceWei,
         uint64 publicPriceWei,
         uint32 publicSaleStartTime
     ) external onlyOwner {
         saleConfig = SaleConfig(
             publicSaleStartTime,
-            mintlistPriceWei,
+            presaleListPriceWei,
             publicPriceWei
         );
     }
