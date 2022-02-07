@@ -99,14 +99,10 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
 
     function seedPresalelist(
         address[] memory addresses,
-        uint256[] memory numSlots
+        uint256 numSlots
     ) external onlyOwner {
-        require(
-            addresses.length == numSlots.length,
-            "addresses does not match numSlots length"
-        );
         for (uint256 i = 0; i < addresses.length; i++) {
-            allowlist[addresses[i]] = numSlots[i];
+            allowlist[addresses[i]] = numSlots;
         }
     }
 
