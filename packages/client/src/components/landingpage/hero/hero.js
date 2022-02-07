@@ -7,7 +7,7 @@ import Slide from './heroslide'
 import { useToasts } from "react-toast-notifications";
 import { fetchData } from '../../../redux/data/dataActions'
 import { useDispatch, useSelector } from "react-redux";
-import Connect from '../connect'
+// import Connect from '../connect'
 
 const Hero = () => {
   const dispatch = useDispatch();

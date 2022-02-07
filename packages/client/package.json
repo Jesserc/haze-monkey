@@ -9,6 +9,7 @@
     "build:tailwind": "tailwindcss build src/styles/globals.css -o src/styles/tailwind.output.css"
   },
   "dependencies": {
+    "@usedapp/core": "^0.10.1",
     "@walletconnect/client": "^1.7.1",
     "@walletconnect/web3-provider": "^1.7.1",
     "all": "^0.0.0",

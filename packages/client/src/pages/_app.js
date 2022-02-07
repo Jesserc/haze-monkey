@@ -1,16 +1,18 @@
 import '../styles/globals.css'
 import { useRouter } from 'next/router'
 import { Provider } from "react-redux";
+import { Rinkeby, Mainnet, DAppProvider } from '@usedapp/core';
 import { ToastProvider } from "react-toast-notifications";
 import store from "../redux/store";
 import Layout from '../components/landingpage/layout/layout'
-import Loading from '../components/landingpage/loading/loading'
+// import Loading from '../components/landingpage/loading/loading'
 import { useState, useEffect } from 'react'
 import { initGA, logPageView } from '../../utils/analytics'
-import { listRef } from '../components/landingpage/appNavbar/navList'
+// import { listRef } from '../components/landingpage/appNavbar/navList'
 
-import { gsap } from 'gsap/dist/gsap.js';
-import { TweenLite, Power3 } from 'gsap/dist/gsap.js';
+// import { gsap } from 'gsap/dist/gsap.js';
+// import { TweenLite, Power3 } from 'gsap/dist/gsap.js';
+
 
 const MyApp = ({ Component, pageProps }) => {
   const [isClicked, setClicked] = useState(false)
@@ -44,20 +46,32 @@ const MyApp = ({ Component, pageProps }) => {
     logPageView()
   }, [router.pathname])
 
+  const config = {
+    // readOnlyChainId: Rinkeby.chainId,
+    // readOnlyUrls: {
+    //   [Rinkeby.chainId]: "https://rinkeby.infura.io/v3/9b9c747683534e9cbbaec57dc67b7dbf"
+    // },
+    readOnlyChainId: Mainnet.chainId,
+    readOnlyUrls: {
+      [Mainnet.chainId]: "https://rinkeby.infura.io/v3/f4f8b5a14ff74915b23dda902c929730"
+    },
+  }
   return (
-   <Provider store={store}>
-      <ToastProvider autoDismissTimeout={3000}>
-       
-        <Layout handleClick={handleClick} isClicked={isClicked}>
-          <Component
-            {...pageProps}
-            handleclick={handleClick}
-            isClicked={isClicked}
-            loading = {loading}
-          />
-        </Layout>
-      </ToastProvider>
-    </Provider>
+    <DAppProvider config={config}>
+      <Provider store={store}>
+        <ToastProvider autoDismissTimeout={3000}>
+        
+          <Layout handleClick={handleClick} isClicked={isClicked}>
+            <Component
+              {...pageProps}
+              handleclick={handleClick}
+              isClicked={isClicked}
+              loading = {loading}
+            />
+          </Layout>
+        </ToastProvider>
+      </Provider>
+    </DAppProvider>
     
   )
 }

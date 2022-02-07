@@ -80,9 +80,9 @@ export const connect = () => {
     });
     const CONFIG = await configResponse.json();
     
-    const { ethereum } = window;
-    const metamaskIsInstalled =  provider ; 
-    if (metamaskIsInstalled != 2) {
+    // const { ethereum } = window;
+    // const metamaskIsInstalled =  provider ; 
+    // if (metamaskIsInstalled) {
       provider = await web3Modal.connect();
       Web3EthContract.setProvider(provider);
       let web3 = new Web3(provider);
@@ -120,9 +120,10 @@ export const connect = () => {
       } catch (err) {
         dispatch(connectFailed("Something went wrong."));
       }
-    } else {
-      dispatch(connectFailed("Install Metamask."));
-    }
+    // } 
+    // else {
+    //   dispatch(connectFailed("Install Metamask."));
+    // }
   };
 
 };
