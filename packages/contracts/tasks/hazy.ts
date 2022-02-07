@@ -43,7 +43,7 @@ task("mint", "Mint a token").setAction(async (_, hre) => {
   console.log(res)
 })
 
-task("seedPresalelist", "Mint a token").setAction(async (_, hre) => {
+task("seedPresalelist", "seedPresalelist").setAction(async (_, hre) => {
   const contract = Hazy__factory.connect(
     CONTRACT_ADDRESS,
     hre.ethers.provider.getSigner()
@@ -52,9 +52,21 @@ task("seedPresalelist", "Mint a token").setAction(async (_, hre) => {
     [
       "0xab8483f64d9c6d1ecf9b849ae677dd3315835cb2",
       "0x4b20993bc481177ec7e8f571cecae8a9e22c02db",
+      "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
     ],
     2
   )
+
+  console.log(res)
+})
+task("presaleMint", "presaleMint").setAction(async (_, hre) => {
+  const contract = Hazy__factory.connect(
+    CONTRACT_ADDRESS,
+    hre.ethers.provider.getSigner()
+  )
+  const res = await contract.presaleMint({
+    value: ethers.utils.parseEther("1"),
+  })
 
   console.log(res)
 })
