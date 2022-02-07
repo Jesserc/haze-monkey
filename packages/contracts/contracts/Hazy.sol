@@ -19,7 +19,7 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
 
     SaleConfig public saleConfig;
 
-    mapping(address => uint256) public allowlist;
+    mapping(address => uint256) public presaleList;
 
     constructor(
         uint256 maxBatchSize_,
@@ -41,10 +41,10 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
 
     function presaleMint() external payable callerIsUser {
         uint256 price = uint256(saleConfig.presalePrice);
-        require(price != 0, "allowlist sale has not begun yet");
-        require(allowlist[msg.sender] > 0, "not eligible for allowlist mint");
+        require(price != 0, "presaleList sale has not begun yet");
+        require(presaleList[msg.sender] > 0, "not eligible for presaleList mint");
         require(totalSupply() + 1 <= collectionSize, "reached max supply");
-        allowlist[msg.sender]--;
+        presaleList[msg.sender]--;
         _safeMint(msg.sender, 1);
         refundIfOver(price);
     }
@@ -102,7 +102,7 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
         uint256 numSlots
     ) external onlyOwner {
         for (uint256 i = 0; i < addresses.length; i++) {
-            allowlist[addresses[i]] = numSlots;
+            presaleList[addresses[i]] = numSlots;
         }
     }
 
