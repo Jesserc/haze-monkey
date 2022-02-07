@@ -6,7 +6,8 @@
   "scripts": {
     "start": "hardhat node",
     "build": "hardhat compile",
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts --network localhost"
   },
   "keywords": [],
   "author": "",
@@ -42,5 +43,8 @@
     "ts-node": "^10.1.0",
     "typechain": "^5.1.2",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2"
   }
 }
