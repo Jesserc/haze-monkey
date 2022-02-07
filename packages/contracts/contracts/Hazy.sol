@@ -13,7 +13,7 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
 
     struct SaleConfig {
         uint32 publicSaleStartTime;
-        uint64 mintlistPrice;
+        uint64 presalePrice;
         uint64 publicPrice;
     }
 
@@ -39,8 +39,8 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
         _;
     }
 
-    function allowlistMint() external payable callerIsUser {
-        uint256 price = uint256(saleConfig.mintlistPrice);
+    function presaleMint() external payable callerIsUser {
+        uint256 price = uint256(saleConfig.presalePrice);
         require(price != 0, "allowlist sale has not begun yet");
         require(allowlist[msg.sender] > 0, "not eligible for allowlist mint");
         require(totalSupply() + 1 <= collectionSize, "reached max supply");

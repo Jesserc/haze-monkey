@@ -10,18 +10,17 @@ import "@nomiclabs/hardhat-ethers"
 import { Hazy__factory } from "../typechain/factories/Hazy__factory"
 import { ethers } from "ethers"
 
+const CONTRACT_ADDRESS = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+
 task("name", "Name of token").setAction(async (_, hre) => {
-  const token = Hazy__factory.connect(
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    hre.ethers.provider
-  )
+  const token = Hazy__factory.connect(CONTRACT_ADDRESS, hre.ethers.provider)
   const res = await token.name()
   console.log(res)
 })
 
 task("set-sale-config", "set sale config").setAction(async (_, hre) => {
   const token = Hazy__factory.connect(
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    CONTRACT_ADDRESS,
     hre.ethers.provider.getSigner()
   )
   const res = await token.setSaleConfig(
@@ -34,7 +33,7 @@ task("set-sale-config", "set sale config").setAction(async (_, hre) => {
 
 task("mint", "Mint a token").setAction(async (_, hre) => {
   const contract = Hazy__factory.connect(
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    CONTRACT_ADDRESS,
     hre.ethers.provider.getSigner()
   )
   const res = await contract.publicSaleMint(2, {
@@ -46,7 +45,7 @@ task("mint", "Mint a token").setAction(async (_, hre) => {
 
 task("total-supply", "Mint a token").setAction(async (_, hre) => {
   const contract = Hazy__factory.connect(
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    CONTRACT_ADDRESS,
     hre.ethers.provider.getSigner()
   )
   const res = await contract.totalSupply()
@@ -56,7 +55,7 @@ task("total-supply", "Mint a token").setAction(async (_, hre) => {
 
 task("withdraw", "get signer").setAction(async (_, hre) => {
   const contract = Hazy__factory.connect(
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    CONTRACT_ADDRESS,
     hre.ethers.provider.getSigner()
   )
   const res = await contract.withdrawMoney()
