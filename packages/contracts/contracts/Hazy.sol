@@ -97,7 +97,7 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
         return publicPriceWei != 0 && block.timestamp >= publicSaleStartTime;
     }
 
-    function seedAllowlist(
+    function seedPresalelist(
         address[] memory addresses,
         uint256[] memory numSlots
     ) external onlyOwner {

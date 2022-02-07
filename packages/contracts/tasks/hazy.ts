@@ -43,6 +43,18 @@ task("mint", "Mint a token").setAction(async (_, hre) => {
   console.log(res)
 })
 
+task("seedPresalelist", "Mint a token").setAction(async (_, hre) => {
+  // const contract = Hazy__factory.connect(
+  //   CONTRACT_ADDRESS,
+  //   hre.ethers.provider.getSigner()
+  // )
+  // const res = await contract.seedPresalelist(2, {
+  //   value: ethers.utils.parseEther("1"),
+  // })
+
+  // console.log(res)
+})
+
 task("total-supply", "Mint a token").setAction(async (_, hre) => {
   const contract = Hazy__factory.connect(
     CONTRACT_ADDRESS,
