@@ -17,9 +17,9 @@
     "@babel/highlight" "^7.16.7"
 
 "@babel/compat-data@^7.13.11", "@babel/compat-data@^7.16.4":
-  version "7.16.8"
-  resolved "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.16.8.tgz"
-  integrity sha512-m7OkX0IdKLKPpBlJtF561YJal5y/jyI5fNfWbPxh2D/nbzzGI4qRyrD8xO2jB24u7l+5I2a43scCG2IrfjC50Q==
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.17.0.tgz#86850b8597ea6962089770952075dcaabb8dba34"
+  integrity sha512-392byTlpGWXMv4FbyWw3sAZ/FrW/DrwqLGXpy0mbyNe9Taqv1mg9yON5/o0cnr8XYCkFTZbC1eV+c+LAROgrng==
 
 "@babel/generator@^7.17.0":
   version "7.17.0"
@@ -1134,7 +1134,7 @@
 
 "@walletconnect/web3-provider@^1.7.1":
   version "1.7.1"
-  resolved "https://registry.npmjs.org/@walletconnect/web3-provider/-/web3-provider-1.7.1.tgz"
+  resolved "https://registry.yarnpkg.com/@walletconnect/web3-provider/-/web3-provider-1.7.1.tgz#3b7bf41bfd0198b18f5cc5626e1ec28e931667c7"
   integrity sha512-dhoYwQaBVbaKIiELNeCF4kW7Dslbf73wDIsxOF9gmjVch1Qi18kNlqbR03u56iBcAsXU0tAwfd9Z7cGHfUX1Fg==
   dependencies:
     "@walletconnect/client" "^1.7.1"

@@ -1,5 +1,5 @@
 import { connect } from "../../redux/blockchain/blockchainActions";
-import { WalletConnect} from './walletConnect/walletConnect'
+// import { WalletConnect} from './walletConnect/walletConnect'
 import { useDispatch, useSelector } from "react-redux";
 import styles from '../../styles/local/components/navbar.module.css'
 

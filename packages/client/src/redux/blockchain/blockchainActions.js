@@ -10,15 +10,15 @@ let provider;
 let web3Modal
   const providerOptions = {
     walletconnect: {
-        display: {
-            // logo: walletConnectMobile,
-            name: "WalletConnect",
-            description: "Scan with WalletConnect to connect"
-        },
-        package: WalletConnectProvider,
-        options: {
-            infuraId: "f4f8b5a14ff74915b23dda902c929730",
-        },   
+      display: {
+        // logo: walletConnectMobile,
+        name: "WalletConnect",
+        description: "Scan with WalletConnect to connect"
+      },
+      package: WalletConnectProvider,
+      options: {
+        infuraId: "f674dc4ebe2e4c589aa4fccfa2a66fbd",
+      },   
     }
   };
       
@@ -80,9 +80,9 @@ export const connect = () => {
     });
     const CONFIG = await configResponse.json();
     
-    // const { ethereum } = window;
-    // const metamaskIsInstalled =  provider ; 
-    // if (metamaskIsInstalled) {
+    const { ethereum } = window;
+    const metamaskIsInstalled =  provider ; 
+    if (metamaskIsInstalled != 2) {
       provider = await web3Modal.connect();
       Web3EthContract.setProvider(provider);
       let web3 = new Web3(provider);
@@ -120,10 +120,9 @@ export const connect = () => {
       } catch (err) {
         dispatch(connectFailed("Something went wrong."));
       }
-    // } 
-    // else {
-    //   dispatch(connectFailed("Install Metamask."));
-    // }
+    } else {
+      dispatch(connectFailed("Install Metamask."));
+    }
   };
 
 };

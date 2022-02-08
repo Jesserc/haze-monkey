@@ -46,18 +46,18 @@ const MyApp = ({ Component, pageProps }) => {
     logPageView()
   }, [router.pathname])
 
-  const config = {
-    // readOnlyChainId: Rinkeby.chainId,
-    // readOnlyUrls: {
-    //   [Rinkeby.chainId]: "https://rinkeby.infura.io/v3/9b9c747683534e9cbbaec57dc67b7dbf"
-    // },
-    readOnlyChainId: Mainnet.chainId,
-    readOnlyUrls: {
-      [Mainnet.chainId]: "https://rinkeby.infura.io/v3/f4f8b5a14ff74915b23dda902c929730"
-    },
-  }
+  // const config = {
+  //   // readOnlyChainId: Rinkeby.chainId,
+  //   // readOnlyUrls: {
+  //   //   [Rinkeby.chainId]: "https://rinkeby.infura.io/v3/9b9c747683534e9cbbaec57dc67b7dbf"
+  //   // },
+  //   readOnlyChainId: Mainnet.chainId,
+  //   readOnlyUrls: {
+  //     [Mainnet.chainId]: "https://mainnet.infura.io/v3/f674dc4ebe2e4c589aa4fccfa2a66fbd"
+  //   },
+  // }
   return (
-    <DAppProvider config={config}>
+    // <DAppProvider config={config}>
       <Provider store={store}>
         <ToastProvider autoDismissTimeout={3000}>
         
@@ -71,7 +71,7 @@ const MyApp = ({ Component, pageProps }) => {
           </Layout>
         </ToastProvider>
       </Provider>
-    </DAppProvider>
+    // </DAppProvider>
     
   )
 }
