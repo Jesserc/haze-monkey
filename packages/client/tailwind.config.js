@@ -10,7 +10,8 @@ module.exports = {
         green4: '#FAFFF2',
         green2: '#101714',
         green5: '#1B2621',
-        buttonGreen: '#aeed47'
+        buttonGreen: '#aeed47',
+        brown: 'var(--brown1)'
       }
     }
   },

@@ -4,14 +4,33 @@ import SEOHead from '../components/SEOHead/SEOHead'
 import styles from '../styles/local/components/hero.module.css'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
     <>
       <SEOHead />
+      <nav className="flex items-center justify-between bg-brown px-4 lg:px-24 py-2">
+        <Link href="/">
+          <a className="">
+            <img
+              src="/images/logo.svg"
+              alt="logo"
+              className="logo"
+              id="logo"
+              width={33.21}
+              height={31}
+            />
+          </a>
+        </Link>
+
+        <DiscordButton className="flex justify-center text-white items-center">
+          Connect wallet
+        </DiscordButton>
+      </nav>
       <main>
-        <StyledSection className="sectionContainer relative">
-          <div className="sectionContent flex flex-col items-center pt-20 pb-12 lg:pt-14 lg:pb-9 w-full h-full relative wrapper">
+        <StyledSection className="sectionContainer flex flex-col justify-between min-h-screen ">
+          <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-4 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
               <h1 className="mb-6">Mint Haze Monkey</h1>
@@ -19,7 +38,6 @@ const Home: NextPage = () => {
                 4,200 Haze Monkeys making an impact in society through the
                 metaverse.
               </p>
-              {/* <button className="app-btn">Mint NFT</button> */}
               <button className="coming-soon bg-buttonGreen tracking-widest transition-colors  hover:bg-white font-bold flex items-center justify-center">
                 MINT
               </button>
@@ -31,6 +49,13 @@ const Home: NextPage = () => {
     </>
   )
 }
+
+const DiscordButton = styled.button`
+  background: var(--green1);
+  border-radius: 12px;
+  width: 151.39px;
+  height: 51px;
+`
 
 const StyledSection = styled.section`
   @media all and (min-width: 0px) {
