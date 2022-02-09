@@ -2,13 +2,7 @@
 import styles from '../../../styles/local/components/navbar.module.css'
 import Link from 'next/link'
 
-export let listRef
 const NavList = ({ isClicked, handleClick }) => {
-  listRef = useRef(null)
-  let slideUp = () => {
-    console.log('rex')
-  }
-
   return (
     <section>
       <nav className={isClicked ? [styles.navWrapper].join(' ') : 'invisible'}>
@@ -23,9 +17,8 @@ const NavList = ({ isClicked, handleClick }) => {
             </div>
           </li>
           <ul
-            // ref={el => listRef = el}
             className={[
-              'flex flex-col mb-32 justify-center xl:justify-end ',
+              'flex flex-col mb-32 justify-center xl:justify-end',
               styles.navList
             ].join(' ')}
           >
