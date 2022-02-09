@@ -59,7 +59,18 @@ const Home: NextPage = () => {
           </a>
         </Link>
 
-        {walletAddress && walletAddress}
+        {walletAddress && (
+          <div className="flex items-center">
+            <span className="inline-block w-2 h-2 bg-green-500 rounded-full" />
+            <StyledConnectText className="ml-1 mr-2 font-bold text-green-500 text-sm">
+              Connected
+            </StyledConnectText>
+            <StyledProfilePicture
+              className="rounded-full w-10 h-10"
+              src="https://res.cloudinary.com/lab88/image/upload/dpr_auto,q_auto,f_auto/v1643791432/website/chinese_e2dydz"
+            />
+          </div>
+        )}
 
         {!walletAddress && (
           <DiscordButton
@@ -92,11 +103,20 @@ const Home: NextPage = () => {
   )
 }
 
+const StyledConnectText = styled.p`
+  font-family: var(--roobert-bold);
+`
+
 const DiscordButton = styled.button`
   background: var(--green1);
   border-radius: 12px;
   width: 151.39px;
   height: 51px;
+`
+
+const StyledProfilePicture = styled.img`
+  width: 40px;
+  height: 40px;
 `
 
 const StyledSection = styled.section`
