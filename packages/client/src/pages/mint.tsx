@@ -1,12 +1,46 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
+import WalletConnectProvider from '@walletconnect/web3-provider'
+import { ethers } from 'ethers'
+import Web3Modal from 'web3modal'
 import SEOHead from '../components/SEOHead/SEOHead'
 import styles from '../styles/local/components/hero.module.css'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
+import { useState } from 'react'
+
+const providerOptions = {
+  walletconnect: {
+    package: WalletConnectProvider, // required
+    options: {
+      infuraId: '1d3fc459897045008abf38b545f4444e' // required
+    }
+  }
+}
 
 const Home: NextPage = () => {
+  const [walletAddress, setWalletAddress] = useState('')
+  const connectWallet = async () => {
+    try {
+      const web3Modal = new Web3Modal({
+        network: 'mainnet', // optional
+        cacheProvider: true, // optional
+        providerOptions // required
+      })
+      const instance = await web3Modal.connect()
+      const provider = new ethers.providers.Web3Provider(instance)
+
+      const signer = provider.getSigner()
+
+      const address = await signer.getAddress()
+
+      setWalletAddress(address)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <SEOHead />
@@ -24,9 +58,16 @@ const Home: NextPage = () => {
           </a>
         </Link>
 
-        <DiscordButton className="flex justify-center text-white items-center">
-          Connect wallet
-        </DiscordButton>
+        {walletAddress && { walletAddress }}
+
+        {!walletAddress && (
+          <DiscordButton
+            onClick={connectWallet}
+            className="flex justify-center text-white items-center"
+          >
+            Connect wallet
+          </DiscordButton>
+        )}
       </nav>
       <main>
         <StyledSection className="sectionContainer flex flex-col justify-between min-h-screen ">
