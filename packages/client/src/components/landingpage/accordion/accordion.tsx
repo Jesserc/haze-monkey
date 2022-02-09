@@ -22,7 +22,7 @@ const Accordion = ({}) => {
         }
       >
         <div className="flex justify-between mb-12" onClick={handleClick}>
-          <h2 className="w-3/4">{item.question}</h2>
+          <h3 className="w-3/4">{item.question}</h3>
           <button className="outline-none">
             <img
               src={

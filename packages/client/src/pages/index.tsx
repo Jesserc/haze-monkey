@@ -10,7 +10,8 @@ import Reward from '../components/landingpage/reward/reward'
 import Roadmap from '../components/landingpage/roadmap/roadmaps'
 import Team from '../components/landingpage/team/team2'
 import SEOHead from '../components/SEOHead/SEOHead'
-import NavBar from '../components/landingpage/appNavbar/navbar'
+import TopBar from '../components/landingpage/appNavbar/topbar'
+import NavList from '../components/landingpage/appNavbar/navList'
 
 const Home: NextPage = () => {
   const [isClicked, setClicked] = useState(false)
@@ -22,8 +23,8 @@ const Home: NextPage = () => {
   return (
     <>
       <SEOHead />
-      <NavBar handleClick={handleClick} isClicked={isClicked} />
-
+      <TopBar handleClick={handleClick} isClicked={isClicked} />
+      <NavList handleClick={handleClick} isClicked={isClicked} />
       <main>
         <Hero />
         <About />
