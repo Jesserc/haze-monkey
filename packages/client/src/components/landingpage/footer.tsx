@@ -54,7 +54,7 @@ const Footer: NextPage = () => {
         <div className="flex justify-center items-end">
           <img src="images/vectors/weed.svg" alt="weed" />
         </div>
-        <div className="flex justify-center absolute bottom-0 w-12 lg:w-16  mr-4 mb-4 lg:mr-12 lg:mb-12 right-0 items-end">
+        <div className="flex justify-center absolute bottom-0 w-8 lg:w-12  mr-4 mb-4 lg:mr-12 lg:mb-12 right-0 items-end">
           <a href="https://raritysniper.com/" rel="noreferrer noopenner">
             <img
               src="images/raritysniperlogo/logo3-white.png"
