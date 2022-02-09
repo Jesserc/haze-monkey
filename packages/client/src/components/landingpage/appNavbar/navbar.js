@@ -1,19 +1,13 @@
-import TopBar from "./topbar";
-import NavList from './navList';
+import TopBar from './topbar'
+import NavList from './navList'
 
 const NavBar = ({ handleClick, isClicked }) => {
-    return (
-        <>
-            <TopBar 
-                handleClick= {handleClick}
-                isClicked={isClicked}
-            /> 
-            <NavList
-                handleClick={handleClick}
-                isClicked={isClicked}
-            />
-        </>   
-    );
+  return (
+    <>
+      <TopBar handleClick={handleClick} isClicked={isClicked} />
+      <NavList handleClick={handleClick} isClicked={isClicked} />
+    </>
+  )
 }
- 
-export default NavBar;
+
+export default NavBar
