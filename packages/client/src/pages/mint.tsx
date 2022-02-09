@@ -21,6 +21,7 @@ const providerOptions = {
 
 const Home: NextPage = () => {
   const [walletAddress, setWalletAddress] = useState('')
+
   const connectWallet = async () => {
     try {
       const web3Modal = new Web3Modal({
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
           </a>
         </Link>
 
-        {walletAddress && { walletAddress }}
+        {walletAddress && walletAddress}
 
         {!walletAddress && (
           <DiscordButton
