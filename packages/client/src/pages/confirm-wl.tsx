@@ -1,13 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
+import type { NextPage } from 'next'
 import SEOHead from '../components/SEOHead/SEOHead'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { connectWallet } from '../../utils/eth'
+import csvtojson from 'csvtojson'
 
-const Home = () => {
+interface Entry {
+  time: string
+  username: string
+  address: string
+}
+
+const ConfirmPresale: NextPage = () => {
   const [walletAddress, setWalletAddress] = useState('')
+  const [walletIsWL, setWalletIsWL] = useState('')
+
+  useEffect(() => {
+    csvtojson()
+      .fromFile('/presale-list.csv')
+      .then((jsonObj) => {
+        console.log(jsonObj)
+      })
+  }, [])
 
   const onConnectWallet = async () => {
     try {
@@ -62,14 +79,19 @@ const Home = () => {
           <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-4 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
-              <h1 className="mb-6">Mint Haze Monkey</h1>
+              <h1 className="mb-6">Confirm wallet address</h1>
               <p className="mb-6">
-                4,200 Haze Monkeys making an impact in society through the
-                metaverse.
+                Confirm if your wallet address for mint has been whitelisted
               </p>
-              <button className="coming-soon bg-buttonGreen tracking-widest transition-colors  hover:bg-white font-bold flex items-center justify-center">
-                MINT
-              </button>
+              <form className="w-full flex items-center justify-center">
+                <input
+                  placeholder="Enter wallet  address to confirm"
+                  className="h-12 mr-4 w-full border-2 px-4 border-black rounded-lg"
+                />
+                <button className=" border-2 px-6 lg:px-8 py-4 h-12 border-black rounded-lg bg-buttonGreen tracking-widest transition-colors  hover:bg-white font-bold flex items-center justify-center">
+                  Confirm
+                </button>
+              </form>
             </div>
           </div>
           <Slide />
@@ -170,4 +192,4 @@ const StyledSection = styled.section`
   }
 `
 
-export default Home
+export default ConfirmPresale
