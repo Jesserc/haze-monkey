@@ -6,7 +6,7 @@
     .sectionContent{
         padding: 4.5rem 0 2.25rem;
     }
-    .sectionContent h1{
+    .sectionContent h2{
         font: 3rem/3.125rem var(--roobert-bold);
         font-weight: 900;
         color: var(--green1);
@@ -18,7 +18,7 @@
     }
 }
 @media all and (min-width: 1024px) {
-    .sectionContent h1{
+    .sectionContent h2{
         font: 4.5rem/4.625rem var(--roobert-bold);
         font-weight: 900;
         color: var(--green1);
