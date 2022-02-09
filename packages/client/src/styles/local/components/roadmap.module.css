@@ -6,13 +6,13 @@
         width: 100%;
         margin: 0 auto;
     }
-    .sectionContent h1{
+    .sectionContent h2{
         font: 3rem/3.125rem var(--roobert-bold);
         font-weight: 900;
         color: var(--white1);
         margin-bottom: 7.375rem;
     }
-    .sectionContent h2{
+    .sectionContent h3{
         font: 1.5rem/1.75rem var(--roobert-bold);
         font-weight: 700;
         color: var(--white2);
@@ -30,11 +30,11 @@
     }
 }
 @media all and (min-width: 1024px) {
-    .sectionContent h1{
+    .sectionContent h2{
         font: 4.5rem/4.625rem var(--roobert-bold);
         font-weight: 900;;
     }
-    .sectionContent h2{
+    .sectionContent h3{
         font: 2.25rem/2.5rem var(--roobert-bold);
         font-weight: 700;
         color: var(--white2);

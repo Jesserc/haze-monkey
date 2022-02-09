@@ -8,14 +8,14 @@
     padding: 11.68rem 0 18.93rem  0;
     z-index: 1;
   }
-  .sectionContent h1{
+  .sectionContent h2{
     font: 0.75rem/1rem var(--roobert);
     font-weight: 600;
     color: var(--white1);
     text-transform: uppercase;
     filter: brightness(61%)
   }
-  .sectionContent h2{
+  .sectionContent h3{
     font: 3rem/3.125rem var(--roobert-bold);
     font-weight: 900;
     color: var(--white1);
@@ -30,12 +30,12 @@
   .sectionContent{
     padding: 12.68rem 0 10.125rem  0;
   }
-  .sectionContent h1{
+  .sectionContent h2{
     font: 0.875rem/1rem var(--roobert);
     font-weight: 600;
         
     }
-  .sectionContent h2{
+  .sectionContent h3{
     font: 4.5rem/4.635rem var(--roobert-bold);
     font-weight: 400;
   }

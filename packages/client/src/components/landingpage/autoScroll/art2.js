@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from '../../../styles/local/components/arts.module.css'
 import { arts } from '../data/arts'
 import { gsap } from 'gsap/dist/gsap.js'
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 const Art2 = () => {
   let divRef = useRef(null)
   let sectionRef = useRef(null)
+
   useEffect(() => {
     console.log(divRef.children)
     gsap.to(divRef.children, {
@@ -24,16 +26,6 @@ const Art2 = () => {
     })
   }, [])
 
-  const art = arts.map((item) => {
-    return (
-      <img
-        className="border-2 border-black"
-        src={imageOptimizer(item.art)}
-        alt={'NFTs ' + item.id}
-        key={item.id}
-      />
-    )
-  })
   return (
     <>
       <section
@@ -44,7 +36,16 @@ const Art2 = () => {
           ref={(el) => (divRef = el)}
           className={[styles.sectionContent, ''].join(' ')}
         >
-          {art}
+          {arts.map((item) => {
+            return (
+              <img
+                className="border-2 border-black"
+                src={imageOptimizer(item.art)}
+                alt={'NFTs ' + item.id}
+                key={item.id}
+              />
+            )
+          })}
         </div>
       </section>
     </>

@@ -13,10 +13,10 @@ const Background: NextPage = () => {
       >
         <SectionVectors />
         <div className="w-2/4">
-          <h1 className="mb-2">150 Light-years away</h1>
-          <h2 className="mb-14">Our Background Story</h2>
+          <h2 className="mb-2">150 Light-years away</h2>
+          <h3 className="mb-14">Our Background Story</h3>
         </div>
-        <div className="md:w-3/4 lg:w-3/4">
+        <article className="md:w-3/4 lg:w-3/4">
           <p className="mb-10">
             150 light-years away, in an experimental planet created by Elun Mosk
             called Hazron, a magnificent specie of specially bred monkeys needed
@@ -48,7 +48,7 @@ const Background: NextPage = () => {
           <p className="mb-10">
             Get ready for the wildest story in the history of the metaverse!
           </p>
-        </div>
+        </article>
       </div>
     </section>
   )
