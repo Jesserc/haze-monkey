@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import SEOHead from '../components/SEOHead/SEOHead'
 import Slide from '../components/landingpage/hero/heroslide'
@@ -8,6 +9,7 @@ import { connectWallet } from '../../utils/eth'
 
 const Home = () => {
   const [walletAddress, setWalletAddress] = useState('')
+  const [inputAmount, setInputAmount] = useState('1')
 
   const onConnectWallet = async () => {
     try {
@@ -16,6 +18,10 @@ const Home = () => {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const onChangeHandler = (e: any) => {
+    setInputAmount(e.target.value)
   }
 
   return (
@@ -62,14 +68,31 @@ const Home = () => {
           <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-4 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
-              <h1 className="mb-6">Mint Haze Monkey</h1>
-              <p className="mb-6">
-                4,200 Haze Monkeys making an impact in society through the
-                metaverse.
+              <h1 className="mb-0">Mint Haze Monkey</h1>
+              <p className="">
+                Input quantity to be minted and click on "Mint" button
               </p>
-              <button className="coming-soon cursor-not-allowed opacity-20 bg-buttonGreen tracking-widest transition-colors  font-bold flex items-center justify-center">
-                MINT
-              </button>
+
+              <section className=" mt-12">
+                <div className=" mb-4">
+                  <p className=" text-sm font-bold text-left">Max mint (2)</p>
+                  <StyledMintInput className="border-2 bg-white w-full rounded-md border-black">
+                    <button>-</button>
+
+                    <input
+                      placeholder="1"
+                      type="tel"
+                      value={inputAmount}
+                      className="text-center w-20 font-bold focus:outline-none"
+                    />
+                    <button>+</button>
+                  </StyledMintInput>
+                </div>
+
+                <button className=" py-4 px-24 border-2 border-black rounded-sm cursor-not-allowed bg-buttonGreen transition-colors  font-bold flex items-center justify-center">
+                  Mint
+                </button>
+              </section>
             </div>
           </div>
           <Slide />
@@ -78,6 +101,17 @@ const Home = () => {
     </>
   )
 }
+
+const StyledMintInput = styled.div`
+  button {
+    padding: 10px 24px;
+    font-size: 24px;
+  }
+
+  input {
+    font-family: var(--roobert-bold);
+  }
+`
 
 const StyledConnectText = styled.p`
   font-family: var(--roobert-bold);
@@ -103,22 +137,14 @@ const StyledSection = styled.section`
       z-index: 0;
     }
     .sectionContent h1 {
-      font: 3.75rem/4rem var(--optima);
+      font: 30px var(--optima);
       font-weight: 900;
       color: var(--green1);
       width: 80%;
     }
-    .sectionContent p {
-      font: 1.125rem/1.875rem var(--roobert);
-      font-weight: 400;
-      color: var(--green1);
-    }
   }
 
   @media all and (min-width: 700px) {
-    .sectionContent > div {
-      max-width: 50%;
-    }
     .artWrap {
       display: grid;
       grid-template-columns: repeat(3, 20%);
@@ -135,9 +161,6 @@ const StyledSection = styled.section`
       padding: 4.5rem 0 0 0;
     }
 
-    .sectionContent div:first-child {
-      margin: 1.5rem 0;
-    }
     .artWrap {
       display: grid;
       grid-template-columns: repeat(3, 33.33%);
@@ -151,22 +174,12 @@ const StyledSection = styled.section`
       height: 100%;
     }
 
-    .sectionContent div:first-child {
-      margin: 2.5rem 0;
-    }
     .sectionContent h1 {
-      font: 5rem/5.5rem var(--optima);
+      font: 55px var(--optima);
       font-weight: 900;
       color: var(--green1);
       width: 100%;
     }
-    .sectionContent p {
-      font: 1.5rem/2rem var(--roobert);
-      font-weight: 400;
-      color: var(--green1);
-    }
-  }
-  @media all and (min-width: 2000px) {
   }
 `
 
