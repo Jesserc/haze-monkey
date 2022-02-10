@@ -11,7 +11,7 @@ import { WL_ADDRESS } from '../data'
 
 const ConfirmPresale = () => {
   const [walletAddress, setWalletAddress] = useState('')
-  const [walletIsWL, setWalletIsWL] = useState(false)
+  const [walletIsWL, setWalletIsWL] = useState<null | boolean>(null)
   const [input, setInput] = useState('')
 
   const [windowWandH, setWAndH] = useState({
@@ -31,6 +31,10 @@ const ConfirmPresale = () => {
     try {
       const fetchedAddres = await connectWallet()
       setWalletAddress(fetchedAddres)
+
+      const isAvailable = WL_ADDRESS.find((ad) => ad === fetchedAddres)
+      console.log(fetchedAddres)
+      setWalletIsWL(Boolean(isAvailable))
     } catch (error) {
       console.log(error)
     }
@@ -93,9 +97,20 @@ const ConfirmPresale = () => {
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
               <h1 className="mb-6">Confirm wallet address</h1>
 
-              {walletIsWL ? (
-                <p className="mb-6 text-green-500">Wallet is on Presale List 🎉🎉🎉</p>
-              ) : (
+              {walletIsWL === false && (
+                <p className="mb-6 text-red-500">
+                  Sorry your wallet is not on the Presale List. Please resubmit
+                  wallet address or open a ticket on discord.
+                </p>
+              )}
+
+              {walletIsWL && (
+                <p className="mb-6 text-green-500">
+                  Wallet is on Presale List 🎉🎉🎉
+                </p>
+              )}
+
+              {walletIsWL === null && (
                 <p className="mb-6">
                   Confirm if your wallet address for mint has been whitelisted
                 </p>
