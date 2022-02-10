@@ -1,21 +1,55 @@
 /* eslint-disable @next/next/no-img-element */
+import React from 'react'
+import Confetti from 'react-confetti'
 import SEOHead from '../components/SEOHead/SEOHead'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { connectWallet } from '../../utils/eth'
+import { WL_ADDRESS } from '../data'
 
-const Home = () => {
+const ConfirmPresale = () => {
   const [walletAddress, setWalletAddress] = useState('')
+  const [walletIsWL, setWalletIsWL] = useState<null | boolean>(null)
+  const [input, setInput] = useState('')
+
+  const [windowWandH, setWAndH] = useState({
+    width: 0,
+    height: 0
+  })
+
+  useEffect(() => {
+    const { innerWidth: width, innerHeight: height } = window
+    setWAndH({
+      width,
+      height
+    })
+  }, [])
 
   const onConnectWallet = async () => {
     try {
       const fetchedAddres = await connectWallet()
       setWalletAddress(fetchedAddres)
+
+      const isAvailable = WL_ADDRESS.find((ad) => ad === fetchedAddres)
+      console.log(fetchedAddres)
+      setWalletIsWL(Boolean(isAvailable))
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const onChangeHandler = (e: any) => {
+    setInput(e.target.value)
+  }
+
+  const onFormSubmit = (e: any) => {
+    e.preventDefault()
+    try {
+      const isAvailable = WL_ADDRESS.find((ad) => ad === input)
+      setWalletIsWL(Boolean(isAvailable))
+    } catch (error) {}
   }
 
   return (
@@ -34,7 +68,6 @@ const Home = () => {
             />
           </a>
         </Link>
-
         {walletAddress && (
           <div className="flex items-center">
             <span className="inline-block w-2 h-2 bg-green-500 rounded-full" />
@@ -62,18 +95,48 @@ const Home = () => {
           <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-4 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
-              <h1 className="mb-6">Mint Haze Monkey</h1>
-              <p className="mb-6">
-                4,200 Haze Monkeys making an impact in society through the
-                metaverse.
-              </p>
-              <button className="coming-soon cursor-not-allowed opacity-20 bg-buttonGreen tracking-widest transition-colors  font-bold flex items-center justify-center">
-                MINT
-              </button>
+              <h1 className="mb-6">Confirm wallet address</h1>
+
+              {walletIsWL === false && (
+                <p className="mb-6 text-red-500">
+                  Sorry your wallet is not on the Presale List. Please resubmit
+                  wallet address or open a ticket on discord.
+                </p>
+              )}
+
+              {walletIsWL && (
+                <p className="mb-6 text-green-500">
+                  Wallet is on Presale List 🎉🎉🎉
+                </p>
+              )}
+
+              {walletIsWL === null && (
+                <p className="mb-6">
+                  Confirm if your wallet address for mint has been whitelisted
+                </p>
+              )}
+
+              <form
+                onSubmit={onFormSubmit}
+                className="w-full flex items-center justify-center"
+              >
+                <input
+                  value={input}
+                  onChange={onChangeHandler}
+                  placeholder="Enter wallet  address to confirm"
+                  className="h-12 mr-4 w-full border-2 px-4 border-black rounded-lg"
+                />
+                <button className=" border-2 px-6 lg:px-8 py-4 h-12 border-black rounded-lg bg-buttonGreen tracking-widest transition-colors  hover:bg-white font-bold flex items-center justify-center">
+                  Confirm
+                </button>
+              </form>
             </div>
           </div>
           <Slide />
         </StyledSection>
+        {walletIsWL && (
+          <Confetti width={windowWandH.width} height={windowWandH.height} />
+        )}
       </main>
     </>
   )
@@ -111,7 +174,6 @@ const StyledSection = styled.section`
     .sectionContent p {
       font: 1.125rem/1.875rem var(--roobert);
       font-weight: 400;
-      color: var(--green1);
     }
   }
 
@@ -163,11 +225,10 @@ const StyledSection = styled.section`
     .sectionContent p {
       font: 1.5rem/2rem var(--roobert);
       font-weight: 400;
-      color: var(--green1);
     }
   }
   @media all and (min-width: 2000px) {
   }
 `
 
-export default Home
+export default ConfirmPresale

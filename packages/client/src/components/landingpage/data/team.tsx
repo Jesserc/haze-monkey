@@ -1,4 +1,3 @@
-import { imageOptimizer } from '../../../../utils/imageOptimizer'
 
 interface Team {
   id: number
