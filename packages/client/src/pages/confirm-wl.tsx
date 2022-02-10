@@ -19,11 +19,7 @@ const ConfirmPresale: NextPage = () => {
   const [walletIsWL, setWalletIsWL] = useState('')
 
   useEffect(() => {
-    csvtojson()
-      .fromFile('/presale-list.csv')
-      .then((jsonObj) => {
-        console.log(jsonObj)
-      })
+   
   }, [])
 
   const onConnectWallet = async () => {
