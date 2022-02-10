@@ -67,7 +67,7 @@ const Home = () => {
                 4,200 Haze Monkeys making an impact in society through the
                 metaverse.
               </p>
-              <button className="coming-soon bg-buttonGreen tracking-widest transition-colors  hover:bg-white font-bold flex items-center justify-center">
+              <button className="coming-soon cursor-not-allowed opacity-20 bg-buttonGreen tracking-widest transition-colors  font-bold flex items-center justify-center">
                 MINT
               </button>
             </div>
