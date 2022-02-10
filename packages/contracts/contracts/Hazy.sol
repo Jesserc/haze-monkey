@@ -40,10 +40,10 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
     }
 
     function presaleMint(uint256 quantity) external payable callerIsUser {
-        uint256 price = uint256(saleConfig.presalePrice) * quantity;
+        uint256 price = uint256(saleConfig.presalePrice * quantity) ;
         require(price != 0, "presaleList sale has not begun yet");
-        require(quantity <= presaleList[msg.sender], "Max amount already minted");
         require(presaleList[msg.sender] > 0, "not eligible for presaleList mint");
+        require(quantity <= presaleList[msg.sender], "Max amount already minted");
         require(totalSupply() + quantity <= collectionSize, "reached max supply");
 
         presaleList[msg.sender] = presaleList[msg.sender] - quantity;
