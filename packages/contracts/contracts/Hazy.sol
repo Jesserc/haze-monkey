@@ -39,13 +39,15 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
         _;
     }
 
-    function presaleMint() external payable callerIsUser {
+    function presaleMint(uint256 quantity) external payable callerIsUser {
         uint256 price = uint256(saleConfig.presalePrice);
         require(price != 0, "presaleList sale has not begun yet");
+        require(presaleList[msg.sender] < quantity, "Max amount already minted");
         require(presaleList[msg.sender] > 0, "not eligible for presaleList mint");
         require(totalSupply() + 1 <= collectionSize, "reached max supply");
-        presaleList[msg.sender]--;
-        _safeMint(msg.sender, 1);
+
+        presaleList[msg.sender] = presaleList[msg.sender] - quantity;
+        _safeMint(msg.sender, quantity);
         refundIfOver(price);
     }
 
