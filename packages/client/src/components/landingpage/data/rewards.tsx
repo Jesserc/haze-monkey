@@ -4,10 +4,10 @@ interface Reward {
 }
 
 export const rewards: Reward[] = [
-    {
-        id: 0,
-        reward: "Games"
-    },
+    // {
+    //     id: 0,
+    //     reward: "Games"
+    // },
     {
         id: 1,
         reward: "Animation series"
