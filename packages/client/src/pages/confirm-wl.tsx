@@ -1,25 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
-import type { NextPage } from 'next'
+import React from 'react'
+import Confetti from 'react-confetti'
 import SEOHead from '../components/SEOHead/SEOHead'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { connectWallet } from '../../utils/eth'
-import csvtojson from 'csvtojson'
+import { WL_ADDRESS } from '../data'
 
-interface Entry {
-  time: string
-  username: string
-  address: string
-}
-
-const ConfirmPresale: NextPage = () => {
+const ConfirmPresale = () => {
   const [walletAddress, setWalletAddress] = useState('')
-  const [walletIsWL, setWalletIsWL] = useState('')
+  const [walletIsWL, setWalletIsWL] = useState(false)
+  const [input, setInput] = useState('')
+
+  const [windowWandH, setWAndH] = useState({
+    width: 0,
+    height: 0
+  })
 
   useEffect(() => {
-   
+    const { innerWidth: width, innerHeight: height } = window
+    setWAndH({
+      width,
+      height
+    })
   }, [])
 
   const onConnectWallet = async () => {
@@ -29,6 +34,18 @@ const ConfirmPresale: NextPage = () => {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const onChangeHandler = (e: any) => {
+    setInput(e.target.value)
+  }
+
+  const onFormSubmit = (e: any) => {
+    e.preventDefault()
+    try {
+      const isAvailable = WL_ADDRESS.find((ad) => ad === input)
+      setWalletIsWL(Boolean(isAvailable))
+    } catch (error) {}
   }
 
   return (
@@ -47,7 +64,6 @@ const ConfirmPresale: NextPage = () => {
             />
           </a>
         </Link>
-
         {walletAddress && (
           <div className="flex items-center">
             <span className="inline-block w-2 h-2 bg-green-500 rounded-full" />
@@ -76,11 +92,22 @@ const ConfirmPresale: NextPage = () => {
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
               <h1 className="mb-6">Confirm wallet address</h1>
-              <p className="mb-6">
-                Confirm if your wallet address for mint has been whitelisted
-              </p>
-              <form className="w-full flex items-center justify-center">
+
+              {walletIsWL ? (
+                <p className="mb-6 text-green-500">Wallet is on Presale List 🎉🎉🎉</p>
+              ) : (
+                <p className="mb-6">
+                  Confirm if your wallet address for mint has been whitelisted
+                </p>
+              )}
+
+              <form
+                onSubmit={onFormSubmit}
+                className="w-full flex items-center justify-center"
+              >
                 <input
+                  value={input}
+                  onChange={onChangeHandler}
                   placeholder="Enter wallet  address to confirm"
                   className="h-12 mr-4 w-full border-2 px-4 border-black rounded-lg"
                 />
@@ -92,6 +119,9 @@ const ConfirmPresale: NextPage = () => {
           </div>
           <Slide />
         </StyledSection>
+        {walletIsWL && (
+          <Confetti width={windowWandH.width} height={windowWandH.height} />
+        )}
       </main>
     </>
   )
@@ -129,7 +159,6 @@ const StyledSection = styled.section`
     .sectionContent p {
       font: 1.125rem/1.875rem var(--roobert);
       font-weight: 400;
-      color: var(--green1);
     }
   }
 
@@ -181,7 +210,6 @@ const StyledSection = styled.section`
     .sectionContent p {
       font: 1.5rem/2rem var(--roobert);
       font-weight: 400;
-      color: var(--green1);
     }
   }
   @media all and (min-width: 2000px) {
