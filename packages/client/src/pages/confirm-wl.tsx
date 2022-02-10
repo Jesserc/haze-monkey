@@ -166,7 +166,8 @@ const StyledSection = styled.section`
       z-index: 0;
     }
     .sectionContent h1 {
-      font: 3.75rem/4rem var(--optima);
+      font-family: var(--optima);
+      font-size: 35px;
       font-weight: 900;
       color: var(--green1);
       width: 80%;
