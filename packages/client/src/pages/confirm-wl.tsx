@@ -30,10 +30,11 @@ const ConfirmPresale = () => {
   const onConnectWallet = async () => {
     try {
       const fetchedAddres = await connectWallet()
-      setWalletAddress(fetchedAddres)
+      const adds = await fetchedAddres.getAddress()()
+      setWalletAddress(adds)
 
-      const isAvailable = WL_ADDRESS.find((ad) => ad === fetchedAddres)
-      console.log(fetchedAddres)
+      const isAvailable = WL_ADDRESS.find((ad) => ad === adds)
+      console.log(adds)
       setWalletIsWL(Boolean(isAvailable))
     } catch (error) {
       console.log(error)

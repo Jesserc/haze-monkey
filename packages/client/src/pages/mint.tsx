@@ -1,22 +1,91 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import SEOHead from '../components/SEOHead/SEOHead'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { useState } from 'react'
+import Hazy from '../artifacts/Hazy.sol/Hazy.json'
+import { useEffect, useMemo, useState } from 'react'
 import { connectWallet } from '../../utils/eth'
+import Confetti from 'react-confetti'
+import { ethers } from 'ethers'
+import Spinner from '../components/atoms/Spinner'
+
+const CONTRACT_ADDRESS = '0x776e8C51EC26124A8Cbb6105F1ec741769C1fbBA'
 
 const Home = () => {
+  // Constants
+  const MINT_PRICE = 0.06
+
   const [walletAddress, setWalletAddress] = useState('')
+  const [mintQuantity, setMintQuantity] = useState(1)
+  const [signer, setSigner] = useState<any>(null)
+  const [mintErrorMessage, setMintErrorMessage] = useState(
+    'Connect wallet before trying to mint'
+  )
+  const [mintMessage, setMintMessage] = useState('')
+  const [mintLoading, setMintLoading] = useState(false)
+
+  const [windowWandH, setWAndH] = useState({
+    width: 0,
+    height: 0
+  })
+
+  useEffect(() => {
+    const { innerWidth: width, innerHeight: height } = window
+    setWAndH({
+      width,
+      height
+    })
+  }, [])
 
   const onConnectWallet = async () => {
     try {
-      const fetchedAddres = await connectWallet()
-      setWalletAddress(fetchedAddres)
+      const getchedSigner = await connectWallet()
+      const address = await getchedSigner.getAddress()
+      setWalletAddress(address)
+      setSigner(getchedSigner)
+      setMintErrorMessage('')
     } catch (error) {
       console.log(error)
     }
   }
+
+  const numberIncrease = (sub: boolean) => {
+    if (sub && mintQuantity !== 1) {
+      return setMintQuantity(mintQuantity - 1)
+    }
+    if (!sub && mintQuantity !== 2) {
+      return setMintQuantity(mintQuantity + 1)
+    }
+  }
+
+  const mint = async () => {
+    // Get wallet details
+    if (!walletAddress) return
+    try {
+      setMintLoading(true)
+      // Interact with contract
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, Hazy, signer)
+      const totalPrice = MINT_PRICE * mintQuantity
+      const transaction = await contract.presaleMint(mintQuantity, {
+        value: ethers.utils.parseEther(totalPrice.toString())
+      })
+      await transaction.wait()
+
+      setMintMessage(`🎉🎉🎉 Congrats, you minted ${mintQuantity} token(s)!`)
+    } catch (error: any) {
+      console.log(`${error.message}`)
+      setMintErrorMessage(
+        'Something went wrong: Please confirm you are on the presale list. Also reeach out on Discord for assitance'
+      )
+    }
+    setMintLoading(false)
+  }
+
+  const walletAddressExist = useMemo(() => {
+    return Boolean(walletAddress)
+  }, [walletAddress])
 
   return (
     <>
@@ -59,25 +128,76 @@ const Home = () => {
       </nav>
       <main>
         <StyledSection className="sectionContainer flex flex-col justify-between min-h-screen ">
-          <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-4 lg:pb-9 w-full h-full relative wrapper">
+          <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-16 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
-              <h1 className="mb-6">Mint Haze Monkey</h1>
-              <p className="mb-6">
-                4,200 Haze Monkeys making an impact in society through the
-                metaverse.
+              <h1 className="mb-0">Mint Haze Monkey</h1>
+              <p className="">
+                Input quantity to be minted and click on "Mint" button
               </p>
-              <button className="coming-soon cursor-not-allowed opacity-20 bg-buttonGreen tracking-widest transition-colors  font-bold flex items-center justify-center">
-                MINT
-              </button>
+
+              <form className=" mt-12 w-full md:w-1/2 lg:w-1/2">
+                {mintMessage && (
+                  <p className="mb-6 text-green-500">{mintMessage}</p>
+                )}
+                <div className=" mb-4 w-full">
+                  <p className=" text-sm font-bold text-left">Max mint - 2</p>
+                  <StyledMintInput className="border-2 flex items-center justify-between h-16 w-full bg-white rounded-md border-black">
+                    <button type="button" onClick={() => numberIncrease(true)}>
+                      -
+                    </button>
+
+                    <input
+                      placeholder="1"
+                      type="tel"
+                      value={mintQuantity}
+                      readOnly
+                      className="text-center w-20 font-bold focus:outline-none"
+                    />
+                    <button type="button" onClick={() => numberIncrease(false)}>
+                      +
+                    </button>
+                  </StyledMintInput>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={mint}
+                  disabled={(walletAddress ? false : false) || mintLoading}
+                  className={[
+                    'py-4 px-24 border-2 h-16 border-black w-full rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
+                    !walletAddressExist && 'opacity-25 cursor-not-allowed'
+                  ].join(' ')}
+                >
+                  {mintLoading ? <Spinner size={40} /> : 'Mint'}
+                </button>
+                {mintErrorMessage && (
+                  <p className=" mt-4 text-red-600">{mintErrorMessage}</p>
+                )}
+              </form>
             </div>
           </div>
+
           <Slide />
         </StyledSection>
+        {mintMessage && (
+          <Confetti width={windowWandH.width} height={windowWandH.height} />
+        )}
       </main>
     </>
   )
 }
+
+const StyledMintInput = styled.div`
+  button {
+    padding: 10px 24px;
+    font-size: 24px;
+  }
+
+  input {
+    font-family: var(--roobert-bold);
+  }
+`
 
 const StyledConnectText = styled.p`
   font-family: var(--roobert-bold);
@@ -103,22 +223,14 @@ const StyledSection = styled.section`
       z-index: 0;
     }
     .sectionContent h1 {
-      font: 3.75rem/4rem var(--optima);
+      font: 30px var(--optima);
       font-weight: 900;
       color: var(--green1);
       width: 80%;
     }
-    .sectionContent p {
-      font: 1.125rem/1.875rem var(--roobert);
-      font-weight: 400;
-      color: var(--green1);
-    }
   }
 
   @media all and (min-width: 700px) {
-    .sectionContent > div {
-      max-width: 50%;
-    }
     .artWrap {
       display: grid;
       grid-template-columns: repeat(3, 20%);
@@ -135,9 +247,6 @@ const StyledSection = styled.section`
       padding: 4.5rem 0 0 0;
     }
 
-    .sectionContent div:first-child {
-      margin: 1.5rem 0;
-    }
     .artWrap {
       display: grid;
       grid-template-columns: repeat(3, 33.33%);
@@ -151,22 +260,12 @@ const StyledSection = styled.section`
       height: 100%;
     }
 
-    .sectionContent div:first-child {
-      margin: 2.5rem 0;
-    }
     .sectionContent h1 {
-      font: 5rem/5.5rem var(--optima);
+      font: 55px var(--optima);
       font-weight: 900;
       color: var(--green1);
       width: 100%;
     }
-    .sectionContent p {
-      font: 1.5rem/2rem var(--roobert);
-      font-weight: 400;
-      color: var(--green1);
-    }
-  }
-  @media all and (min-width: 2000px) {
   }
 `
 
