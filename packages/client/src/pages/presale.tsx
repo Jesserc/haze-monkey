@@ -11,7 +11,7 @@ import Confetti from 'react-confetti'
 import { ethers } from 'ethers'
 import Spinner from '../components/atoms/Spinner'
 
-const CONTRACT_ADDRESS = '0x776e8C51EC26124A8Cbb6105F1ec741769C1fbBA'
+const CONTRACT_ADDRESS = '0xD85EbB24bc0C2fcD6901cc9aE7409e41d4a9E0a3'
 
 const PresaleMintPage = () => {
   // Constants
@@ -164,7 +164,7 @@ const PresaleMintPage = () => {
                   </StyledMintInput>
                 </div>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={mint}
                   disabled={(walletAddress ? false : false) || mintLoading}
@@ -177,7 +177,7 @@ const PresaleMintPage = () => {
                 </button>
                 {mintErrorMessage && (
                   <p className=" mt-4 text-red-600">{mintErrorMessage}</p>
-                )}
+                )} */}
               </form>
             </div>
           </div>
