@@ -7,7 +7,7 @@ import "./ReentrancyGuard.sol";
 import "./ERC721A.sol";
 import "./Strings.sol";
 
-contract Hazy is Ownable, ERC721A, ReentrancyGuard {
+contract HazeMonkey is Ownable, ERC721A, ReentrancyGuard {
     uint256 public immutable maxPerAddressDuringMint;
     uint256 public immutable amountForDevs;
 
@@ -25,7 +25,7 @@ contract Hazy is Ownable, ERC721A, ReentrancyGuard {
         uint256 maxBatchSize_,
         uint256 collectionSize_,
         uint256 amountForDevs_
-    ) ERC721A("Hazy", "HAZY", maxBatchSize_, collectionSize_) {
+    ) ERC721A("Haze Monkey Society", "HAZE", maxBatchSize_, collectionSize_) {
         maxPerAddressDuringMint = maxBatchSize_;
         amountForDevs = amountForDevs_;
         require(
