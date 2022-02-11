@@ -11,9 +11,11 @@ import Confetti from 'react-confetti'
 import { ethers } from 'ethers'
 import Spinner from '../components/atoms/Spinner'
 
+const CONTRACT_ADDRESS = '0x776e8C51EC26124A8Cbb6105F1ec741769C1fbBA'
+
 const Home = () => {
   // Constants
-  const MINT_PRICE = 0.08
+  const MINT_PRICE = 0.06
 
   const [walletAddress, setWalletAddress] = useState('')
   const [mintQuantity, setMintQuantity] = useState(1)
@@ -64,11 +66,7 @@ const Home = () => {
     try {
       setMintLoading(true)
       // Interact with contract
-      const contract = new ethers.Contract(
-        '0xade630281AAd37985940eB01B34795436c78aC2B',
-        Hazy,
-        signer
-      )
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, Hazy, signer)
       const totalPrice = MINT_PRICE * mintQuantity
       const transaction = await contract.publicSaleMint(mintQuantity, {
         value: ethers.utils.parseEther(totalPrice.toString())
