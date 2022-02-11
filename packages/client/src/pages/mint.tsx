@@ -17,7 +17,7 @@ const Home = () => {
   const [mintQuantity, setMintQuantity] = useState(1)
   const [signer, setSigner] = useState<any>(null)
 
-  const [mintError, setMintError] = useState(false)
+  const [mintErrorMessage, setMintErrorMessage] = useState('')
   const [mintMessage, setMintMessage] = useState('')
   const [mintLoading, setMintLoading] = useState(false)
 
@@ -43,31 +43,28 @@ const Home = () => {
 
   const mint = async () => {
     // Get wallet details
+    console.log('hello')
     if (!walletAddress) return
     try {
-      try {
-        setMintLoading(true)
-        // Interact with contract
-        const contract = new ethers.Contract(
-          'process.env.NEXT_PUBLIC_MINTER_ADDRESS',
-          Hazy,
-          signer
-        )
-        const totalPrice = MINT_PRICE * mintQuantity
-        const transaction = await contract.mint(mintQuantity, {
-          value: ethers.utils.parseEther(totalPrice.toString())
-        })
-        await transaction.wait()
+      setMintLoading(true)
+      // Interact with contract
+      const contract = new ethers.Contract(
+        '0xade630281AAd37985940eB01B34795436c78aC2B',
+        Hazy,
+        signer
+      )
+      const totalPrice = MINT_PRICE * mintQuantity
+      const transaction = await contract.presaleMint({
+        value: ethers.utils.parseEther(totalPrice.toString())
+      })
+      await transaction.wait()
 
-        setMintMessage(`Congrats, you minted ${mintQuantity} token(s)!`)
-        setMintError(false)
-      } catch {
-        setMintMessage('Connect your wallet first.')
-        setMintError(true)
-      }
+      setMintMessage(`Congrats, you minted ${mintQuantity} token(s)!`)
     } catch (error: any) {
-      setMintMessage(error.message)
-      setMintError(true)
+      console.log(error.message)
+      setMintErrorMessage(
+        'Something went wrong: Please confirm you are on the presale list. Also reeach out on Discord for assitance'
+      )
     }
     setMintLoading(false)
   }
@@ -125,7 +122,7 @@ const Home = () => {
                 Input quantity to be minted and click on "Mint" button
               </p>
 
-              <form className=" mt-12">
+              <form className=" mt-12 w-1/3">
                 <div className=" mb-4">
                   <p className=" text-sm font-bold text-left">Max mint - 2</p>
                   <StyledMintInput className="border-2 bg-white w-full rounded-md border-black">
@@ -137,6 +134,7 @@ const Home = () => {
                       placeholder="1"
                       type="tel"
                       value={mintQuantity}
+                      readOnly
                       className="text-center w-20 font-bold focus:outline-none"
                     />
                     <button type="button" onClick={() => numberIncrease(false)}>
@@ -146,15 +144,19 @@ const Home = () => {
                 </div>
 
                 <button
+                  type="button"
                   onClick={mint}
-                  disabled={Boolean(walletAddress)}
+                  disabled={walletAddress ? false : false}
                   className={[
-                    'py-4 px-24 border-2 border-black rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
+                    'py-4 px-24 border-2 border-black  w-full rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
                     !walletAddressExist && 'opacity-25 cursor-not-allowed'
                   ].join(' ')}
                 >
                   Mint
                 </button>
+                {mintErrorMessage && (
+                  <p className=" mt-4 text-red-500">😭 {mintErrorMessage}</p>
+                )}
               </form>
             </div>
           </div>
