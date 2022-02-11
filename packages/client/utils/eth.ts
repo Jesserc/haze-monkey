@@ -11,9 +11,9 @@ const providerOptions = {
   }
 }
 
-const connectWallet = async (): Promise<string> => {
+const connectWallet = async (): Promise<any> => {
   const web3Modal = new Web3Modal({
-    network: 'mainnet', // optional
+    network: 'rinkeby', // optional
     cacheProvider: true, // optional
     providerOptions // required
   })
@@ -22,7 +22,7 @@ const connectWallet = async (): Promise<string> => {
   const signer = provider.getSigner()
   const address = await signer.getAddress()
 
-  return address
+  return signer
 }
 
 export { connectWallet }

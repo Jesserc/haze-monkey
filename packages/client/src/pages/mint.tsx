@@ -4,31 +4,77 @@ import SEOHead from '../components/SEOHead/SEOHead'
 import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
-import { useState } from 'react'
+import Hazy from '../artifacts/Hazy.sol/Hazy.json'
+import { useMemo, useState } from 'react'
 import { connectWallet } from '../../utils/eth'
+import { ethers } from 'ethers'
 
 const Home = () => {
+  // Constants
+  const MINT_PRICE = 0.06
+
   const [walletAddress, setWalletAddress] = useState('')
-  const [inputAmount, setInputAmount] = useState(1)
+  const [mintQuantity, setMintQuantity] = useState(1)
+  const [signer, setSigner] = useState<any>(null)
+
+  const [mintError, setMintError] = useState(false)
+  const [mintMessage, setMintMessage] = useState('')
+  const [mintLoading, setMintLoading] = useState(false)
 
   const onConnectWallet = async () => {
     try {
-      const fetchedAddres = await connectWallet()
-      setWalletAddress(fetchedAddres)
+      const getchedSigner = await connectWallet()
+      const address = await getchedSigner.getAddress()
+      setWalletAddress(address)
+      setSigner(getchedSigner)
     } catch (error) {
       console.log(error)
     }
   }
 
   const numberIncrease = (sub: boolean) => {
-    if (sub && inputAmount !== 1) {
-      return setInputAmount(inputAmount - 1)
+    if (sub && mintQuantity !== 1) {
+      return setMintQuantity(mintQuantity - 1)
     }
-
-    if (!sub && inputAmount !== 2) {
-      return setInputAmount(inputAmount + 1)
+    if (!sub && mintQuantity !== 2) {
+      return setMintQuantity(mintQuantity + 1)
     }
   }
+
+  const mint = async () => {
+    // Get wallet details
+    if (!walletAddress) return
+    try {
+      try {
+        setMintLoading(true)
+        // Interact with contract
+        const contract = new ethers.Contract(
+          'process.env.NEXT_PUBLIC_MINTER_ADDRESS',
+          Hazy,
+          signer
+        )
+        const totalPrice = MINT_PRICE * mintQuantity
+        const transaction = await contract.mint(mintQuantity, {
+          value: ethers.utils.parseEther(totalPrice.toString())
+        })
+        await transaction.wait()
+
+        setMintMessage(`Congrats, you minted ${mintQuantity} token(s)!`)
+        setMintError(false)
+      } catch {
+        setMintMessage('Connect your wallet first.')
+        setMintError(true)
+      }
+    } catch (error: any) {
+      setMintMessage(error.message)
+      setMintError(true)
+    }
+    setMintLoading(false)
+  }
+
+  const walletAddressExist = useMemo(() => {
+    return Boolean(walletAddress)
+  }, [walletAddress])
 
   return (
     <>
@@ -90,7 +136,7 @@ const Home = () => {
                     <input
                       placeholder="1"
                       type="tel"
-                      value={inputAmount}
+                      value={mintQuantity}
                       className="text-center w-20 font-bold focus:outline-none"
                     />
                     <button type="button" onClick={() => numberIncrease(false)}>
@@ -99,7 +145,14 @@ const Home = () => {
                   </StyledMintInput>
                 </div>
 
-                <button className=" py-4 px-24 border-2 border-black rounded-sm cursor-not-allowed bg-buttonGreen transition-colors  font-bold flex items-center justify-center">
+                <button
+                  onClick={mint}
+                  disabled={Boolean(walletAddress)}
+                  className={[
+                    'py-4 px-24 border-2 border-black rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
+                    !walletAddressExist && 'opacity-25 cursor-not-allowed'
+                  ].join(' ')}
+                >
                   Mint
                 </button>
               </form>
