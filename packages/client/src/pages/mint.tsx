@@ -5,21 +5,37 @@ import Slide from '../components/landingpage/hero/heroslide'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Hazy from '../artifacts/Hazy.sol/Hazy.json'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { connectWallet } from '../../utils/eth'
+import Confetti from 'react-confetti'
 import { ethers } from 'ethers'
+import Spinner from '../components/atoms/Spinner'
 
 const Home = () => {
   // Constants
-  const MINT_PRICE = 0.06
+  const MINT_PRICE = 0.08
 
   const [walletAddress, setWalletAddress] = useState('')
   const [mintQuantity, setMintQuantity] = useState(1)
   const [signer, setSigner] = useState<any>(null)
-
-  const [mintErrorMessage, setMintErrorMessage] = useState('')
+  const [mintErrorMessage, setMintErrorMessage] = useState(
+    'Connect wallet before trying to mint'
+  )
   const [mintMessage, setMintMessage] = useState('')
   const [mintLoading, setMintLoading] = useState(false)
+
+  const [windowWandH, setWAndH] = useState({
+    width: 0,
+    height: 0
+  })
+
+  useEffect(() => {
+    const { innerWidth: width, innerHeight: height } = window
+    setWAndH({
+      width,
+      height
+    })
+  }, [])
 
   const onConnectWallet = async () => {
     try {
@@ -27,6 +43,7 @@ const Home = () => {
       const address = await getchedSigner.getAddress()
       setWalletAddress(address)
       setSigner(getchedSigner)
+      setMintErrorMessage('')
     } catch (error) {
       console.log(error)
     }
@@ -54,14 +71,14 @@ const Home = () => {
         signer
       )
       const totalPrice = MINT_PRICE * mintQuantity
-      const transaction = await contract.presaleMint({
+      const transaction = await contract.publicSaleMint(mintQuantity, {
         value: ethers.utils.parseEther(totalPrice.toString())
       })
       await transaction.wait()
 
-      setMintMessage(`Congrats, you minted ${mintQuantity} token(s)!`)
+      setMintMessage(`🎉🎉🎉 Congrats, you minted ${mintQuantity} token(s)!`)
     } catch (error: any) {
-      console.log(error.message)
+      console.log(`${error.message}`)
       setMintErrorMessage(
         'Something went wrong: Please confirm you are on the presale list. Also reeach out on Discord for assitance'
       )
@@ -122,10 +139,13 @@ const Home = () => {
                 Input quantity to be minted and click on "Mint" button
               </p>
 
-              <form className=" mt-12 w-1/3">
-                <div className=" mb-4">
+              <form className=" mt-12 w-full md:w-1/2 lg:w-1/2">
+                {mintMessage && (
+                  <p className="mb-6 text-green-500">{mintMessage}</p>
+                )}
+                <div className=" mb-4 w-full">
                   <p className=" text-sm font-bold text-left">Max mint - 2</p>
-                  <StyledMintInput className="border-2 bg-white w-full rounded-md border-black">
+                  <StyledMintInput className="border-2 flex items-center justify-between h-16 w-full bg-white rounded-md border-black">
                     <button type="button" onClick={() => numberIncrease(true)}>
                       -
                     </button>
@@ -146,22 +166,26 @@ const Home = () => {
                 <button
                   type="button"
                   onClick={mint}
-                  disabled={walletAddress ? false : false}
+                  disabled={(walletAddress ? false : false) || mintLoading}
                   className={[
-                    'py-4 px-24 border-2 border-black  w-full rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
+                    'py-4 px-24 border-2 h-16 border-black w-full rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
                     !walletAddressExist && 'opacity-25 cursor-not-allowed'
                   ].join(' ')}
                 >
-                  Mint
+                  {mintLoading ? <Spinner size={40} /> : 'Mint'}
                 </button>
                 {mintErrorMessage && (
-                  <p className=" mt-4 text-red-500">😭 {mintErrorMessage}</p>
+                  <p className=" mt-4 text-red-600">{mintErrorMessage}</p>
                 )}
               </form>
             </div>
           </div>
+
           <Slide />
         </StyledSection>
+        {mintMessage && (
+          <Confetti width={windowWandH.width} height={windowWandH.height} />
+        )}
       </main>
     </>
   )
