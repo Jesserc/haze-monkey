@@ -60,7 +60,6 @@ const Home = () => {
 
   const mint = async () => {
     // Get wallet details
-    console.log('hello')
     if (!walletAddress) return
     try {
       setMintLoading(true)
