@@ -77,7 +77,7 @@ const PresaleMintPage = () => {
     } catch (error: any) {
       console.log(`${error.message}`)
       setMintErrorMessage(
-        'Something went wrong : Please confirm you are on the presale list or reach out to admin on Discord for assistance'
+        'Presale has not begun'
       )
     }
     setMintLoading(false)
