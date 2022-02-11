@@ -89,7 +89,7 @@ export const members: Team[] = [
   {
     id: 11,
     image: 'rockstar_jmynh2',
-    name: 'brown',
+    name: 'danbrown',
     role: 'Animator & Digital Artist',
     twitter: 'https://twitter.com/danbrown517'
   },
