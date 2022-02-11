@@ -140,14 +140,6 @@ contract HazeMonkey is Ownable, ERC721A, ReentrancyGuard {
         require(success, "Transfer failed.");
     }
 
-    function setOwnersExplicit(uint256 quantity)
-        external
-        onlyOwner
-        nonReentrant
-    {
-        _setOwnersExplicit(quantity);
-    }
-
     function numberMinted(address owner) public view returns (uint256) {
         return _numberMinted(owner);
     }
