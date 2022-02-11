@@ -77,7 +77,7 @@ const PresaleMintPage = () => {
     } catch (error: any) {
       console.log(`${error.message}`)
       setMintErrorMessage(
-        'Presale has not begun'
+        'Presale has not begun. Starting by 2:20pm (EST)'
       )
     }
     setMintLoading(false)

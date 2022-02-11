@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextPage } from 'next'
+import Link from 'next/link'
 import styles from '../../../styles/local/components/hero.module.css'
 import Slide from './heroslide'
 
@@ -26,6 +27,9 @@ const Hero: NextPage = () => {
               COMING FEB 12
             </span>
           </button>
+          <div className="text-green-800 underline mt-6">
+            {'>>'} <Link href="/presale">Presale mint</Link> {'<<'}
+          </div>
         </div>
       </div>
       <Slide />
