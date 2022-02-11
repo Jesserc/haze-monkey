@@ -68,7 +68,7 @@ const Home = () => {
       // Interact with contract
       const contract = new ethers.Contract(CONTRACT_ADDRESS, Hazy, signer)
       const totalPrice = MINT_PRICE * mintQuantity
-      const transaction = await contract.publicSaleMint(mintQuantity, {
+      const transaction = await contract.presaleMint(mintQuantity, {
         value: ethers.utils.parseEther(totalPrice.toString())
       })
       await transaction.wait()
