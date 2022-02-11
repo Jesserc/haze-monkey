@@ -76,9 +76,7 @@ const PresaleMintPage = () => {
       setMintMessage(`🎉🎉🎉 Congrats, you minted ${mintQuantity} token(s)!`)
     } catch (error: any) {
       console.log(`${error.message}`)
-      setMintErrorMessage(
-        'Sorry you are not on the presale list. Goodnews, public sale starts by 2:20pm EST for public'
-      )
+      setMintErrorMessage(error.message)
     }
     setMintLoading(false)
   }
