@@ -9,7 +9,7 @@ import { connectWallet } from '../../utils/eth'
 
 const Home = () => {
   const [walletAddress, setWalletAddress] = useState('')
-  const [inputAmount, setInputAmount] = useState('1')
+  const [inputAmount, setInputAmount] = useState(1)
 
   const onConnectWallet = async () => {
     try {
@@ -20,8 +20,14 @@ const Home = () => {
     }
   }
 
-  const onChangeHandler = (e: any) => {
-    setInputAmount(e.target.value)
+  const numberIncrease = (sub: boolean) => {
+    if (sub && inputAmount !== 1) {
+      return setInputAmount(inputAmount - 1)
+    }
+
+    if (!sub && inputAmount !== 2) {
+      return setInputAmount(inputAmount + 1)
+    }
   }
 
   return (
@@ -65,7 +71,7 @@ const Home = () => {
       </nav>
       <main>
         <StyledSection className="sectionContainer flex flex-col justify-between min-h-screen ">
-          <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-4 lg:pb-9 w-full h-full relative wrapper">
+          <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-16 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
               <h1 className="mb-0">Mint Haze Monkey</h1>
@@ -73,11 +79,13 @@ const Home = () => {
                 Input quantity to be minted and click on "Mint" button
               </p>
 
-              <section className=" mt-12">
+              <form className=" mt-12">
                 <div className=" mb-4">
-                  <p className=" text-sm font-bold text-left">Max mint (2)</p>
+                  <p className=" text-sm font-bold text-left">Max mint - 2</p>
                   <StyledMintInput className="border-2 bg-white w-full rounded-md border-black">
-                    <button>-</button>
+                    <button type="button" onClick={() => numberIncrease(true)}>
+                      -
+                    </button>
 
                     <input
                       placeholder="1"
@@ -85,14 +93,16 @@ const Home = () => {
                       value={inputAmount}
                       className="text-center w-20 font-bold focus:outline-none"
                     />
-                    <button>+</button>
+                    <button type="button" onClick={() => numberIncrease(false)}>
+                      +
+                    </button>
                   </StyledMintInput>
                 </div>
 
                 <button className=" py-4 px-24 border-2 border-black rounded-sm cursor-not-allowed bg-buttonGreen transition-colors  font-bold flex items-center justify-center">
                   Mint
                 </button>
-              </section>
+              </form>
             </div>
           </div>
           <Slide />
