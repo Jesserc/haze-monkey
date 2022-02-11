@@ -160,7 +160,7 @@ const Home = () => {
                   </StyledMintInput>
                 </div>
 
-                {/* <button
+                <button
                   type="button"
                   onClick={mint}
                   disabled={(walletAddress ? false : false) || mintLoading}
@@ -173,7 +173,7 @@ const Home = () => {
                 </button>
                 {mintErrorMessage && (
                   <p className=" mt-4 text-red-600">{mintErrorMessage}</p>
-                )} */}
+                )}
               </form>
             </div>
           </div>
