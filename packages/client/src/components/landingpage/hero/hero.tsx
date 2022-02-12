@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextPage } from 'next'
 import Link from 'next/link'
+import styled from 'styled-components'
 import styles from '../../../styles/local/components/hero.module.css'
 import Slide from './heroslide'
 
@@ -20,15 +21,19 @@ const Hero: NextPage = () => {
             4,200 Haze Monkeys making an impact in society through the
             metaverse.
           </p>
+          <div>
+            <button className="coming-soon bg-white opacity-30 cursor-not-allowed flex items-center justify-center">
+              Mint NFT
+            </button>
+            <MintTimeIcon className="flex items-center w-full bg-buttonGreen  rounded-full px-4 py-2 justify-center mt-1">
+              STARTING 2:20PM (EST), FEB 12
+            </MintTimeIcon>
+          </div>
           {/* <button className="app-btn">Mint NFT</button> */}
-          <button className="coming-soon bg-white cursor-not-allowed flex items-center justify-center">
-            Mint NFT{' '}
-            <span className="flex items-center justify-center ml-2">
-              COMING FEB 12
-            </span>
-          </button>
+
           <div className="text-green-800 underline mt-6">
-            {'>>'} <Link href="/presale">Presale (Whitelist only) mint</Link> {'<<'}
+            {'>>'} <Link href="/presale">Presale (Whitelist only) mint</Link>{' '}
+            {'<<'}
           </div>
         </div>
       </div>
@@ -36,5 +41,15 @@ const Hero: NextPage = () => {
     </section>
   )
 }
+
+const MintTimeIcon = styled.span`
+  background: var(--lemon1);
+  border-radius: 32px;
+  // width: 119px;
+  height: 32px;
+  font: 11px var(--roobert-bold);
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+`
 
 export default Hero

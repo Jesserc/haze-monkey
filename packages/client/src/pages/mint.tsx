@@ -114,9 +114,8 @@ const PresaleMintPage = () => {
   return (
     <>
       <SEOHead
-        title="Presale Mint"
-        description="Official Presale mint page for Haze Monkey Society"
-        ogImage="https://res.cloudinary.com/lab88/image/upload/v1644592637/presale_ystzdi.jpg"
+        title="Mint Haze Monkey NFT"
+        description="Official Public mint page for Haze Monkey Society"
       />
       <nav className="flex items-center justify-between bg-brown px-4 lg:px-24 py-2">
         <Link href="/">
