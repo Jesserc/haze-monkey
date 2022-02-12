@@ -10,6 +10,8 @@ import { connectWallet } from '../../utils/eth'
 import Confetti from 'react-confetti'
 import { ethers } from 'ethers'
 import Spinner from '../components/atoms/Spinner'
+import Web3Modal from 'web3modal'
+import WalletConnectProvider from '@walletconnect/web3-provider'
 
 const CONTRACT_ADDRESS = '0xD85EbB24bc0C2fcD6901cc9aE7409e41d4a9E0a3'
 
@@ -26,6 +28,15 @@ const PresaleMintPage = () => {
   const [mintMessage, setMintMessage] = useState('')
   const [mintLoading, setMintLoading] = useState(false)
 
+  const providerOptions = {
+    walletconnect: {
+      package: WalletConnectProvider, // required
+      options: {
+        infuraId: '1d3fc459897045008abf38b545f4444e' // required
+      }
+    }
+  }
+
   const [windowWandH, setWAndH] = useState({
     width: 0,
     height: 0
@@ -41,13 +52,26 @@ const PresaleMintPage = () => {
 
   const onConnectWallet = async () => {
     try {
-      const getchedSigner = await connectWallet()
-      const address = await getchedSigner.getAddress()
+      const web3Modal = new Web3Modal({
+        network: 'mainnet', // optional
+        cacheProvider: true, // optional
+        providerOptions // required
+      })
+      const instance = await web3Modal.connect()
+      const provider = new ethers.providers.Web3Provider(instance)
+      const signer = provider.getSigner()
+
+      const network = await provider.getNetwork()
+      if (network.chainId !== 1) {
+        throw new Error('Wrong network: Switch network to Ethereum Mainnet')
+      }
+
+      const address = await signer.getAddress()
       setWalletAddress(address)
-      setSigner(getchedSigner)
+      setSigner(signer)
       setMintErrorMessage('')
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      setMintErrorMessage(error.message)
     }
   }
 
