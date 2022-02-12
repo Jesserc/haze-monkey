@@ -18,7 +18,7 @@ const Background: NextPage = () => {
         </div>
         <article className="md:w-3/4 lg:w-3/4">
           <p className="mb-10">
-            150 light-years away, in an experimental planet created by &quot;Elun Mosk&quot;
+            150 light-years away, in an experimental planet created by Elun Mosk [sic]
             called Hazron, a magnificent specie of specially bred monkeys needed
             absolutely nothing to survive other than haze and chilled vibes. On
             a planet, where everything was dope and ganga, there was every
