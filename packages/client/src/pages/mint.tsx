@@ -17,7 +17,8 @@ const CONTRACT_ADDRESS = '0xD85EbB24bc0C2fcD6901cc9aE7409e41d4a9E0a3'
 
 const PresaleMintPage = () => {
   // Constants
-  const MINT_PRICE = 0.06
+  const MINT_PRICE = 0.08
+  const MAX_MINT = 10
 
   const [walletAddress, setWalletAddress] = useState('')
   const [mintQuantity, setMintQuantity] = useState(1)
@@ -79,7 +80,7 @@ const PresaleMintPage = () => {
     if (sub && mintQuantity !== 1) {
       return setMintQuantity(mintQuantity - 1)
     }
-    if (!sub && mintQuantity !== 2) {
+    if (!sub && mintQuantity !== MAX_MINT) {
       return setMintQuantity(mintQuantity + 1)
     }
   }
@@ -92,7 +93,7 @@ const PresaleMintPage = () => {
       // Interact with contract
       const contract = new ethers.Contract(CONTRACT_ADDRESS, Hazy, signer)
       const totalPrice = MINT_PRICE * mintQuantity
-      const transaction = await contract.presaleMint(mintQuantity, {
+      const transaction = await contract.publicSaleMint(mintQuantity, {
         value: ethers.utils.parseEther(totalPrice.toString())
       })
       await transaction.wait()
