@@ -169,7 +169,9 @@ const PresaleMintPage = () => {
                   <p className="mb-6 text-green-500">{mintMessage}</p>
                 )}
                 <div className=" mb-4 w-full">
-                  <p className=" text-sm font-bold text-left">Max mint - 2</p>
+                  <p className=" text-sm font-bold text-left">
+                    Max mint - {MAX_MINT}
+                  </p>
                   <StyledMintInput className="border-2 flex items-center justify-between h-16 w-full bg-white rounded-md border-black">
                     <button type="button" onClick={() => numberIncrease(true)}>
                       -
