@@ -17,17 +17,16 @@ const Hero: NextPage = () => {
         <div className="flex flex-col items-center text-center">
           <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
           <h1 className="mb-6">Haze Monkey Society</h1>
-          <p className="mb-6">
+          <p className="mb-8">
             4,200 Haze Monkeys making an impact in society through the
             metaverse.
           </p>
           <div>
-            <button className="coming-soon bg-white opacity-30 cursor-not-allowed flex items-center justify-center">
-              Mint NFT
-            </button>
-            <MintTimeIcon className="flex items-center w-full bg-buttonGreen  rounded-full px-4 py-2 justify-center mt-1">
-              STARTING 2:20PM (EST), FEB 12
-            </MintTimeIcon>
+            <Link href="/mint" passHref>
+              <a className="coming-soon text-lg bg-buttonGreen  flex items-center justify-center">
+                Mint NFT
+              </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -37,7 +36,7 @@ const Hero: NextPage = () => {
 }
 
 const MintTimeIcon = styled.span`
-  background: var(--lemon1);
+  background: white;
   border-radius: 32px;
   // width: 119px;
   height: 32px;
