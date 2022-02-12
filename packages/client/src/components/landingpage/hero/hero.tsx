@@ -28,7 +28,7 @@ const Hero: NextPage = () => {
             </span>
           </button>
           <div className="text-green-800 underline mt-6">
-            {'>>'} <Link href="/presale">Presale mint</Link> {'<<'}
+            {'>>'} <Link href="/presale">Presale (Whitelist only) mint</Link> {'<<'}
           </div>
         </div>
       </div>
