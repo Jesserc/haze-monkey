@@ -98,6 +98,6 @@ export const members: Team[] = [
     image: 'space_q4sqbh',
     name: 'lord mo',
     role: 'Digital Artist',
-    twitter: 'https://twitter.com/konqueror_kuei?s=09'
+    twitter: 'https://twitter.com/Lordkuei'
   }
 ]
