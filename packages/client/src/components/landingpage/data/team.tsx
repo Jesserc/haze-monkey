@@ -34,7 +34,7 @@ export const members: Team[] = [
     image: 'rasta_jrfsln',
     name: 'joshua',
     role: 'SDG Execution Lead',
-    twitter: ''
+    twitter: 'https://twitter.com/joshgseyi/'
   },
   {
     id: 4,
