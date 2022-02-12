@@ -29,12 +29,6 @@ const Hero: NextPage = () => {
               STARTING 2:20PM (EST), FEB 12
             </MintTimeIcon>
           </div>
-          {/* <button className="app-btn">Mint NFT</button> */}
-
-          <div className="text-green-800 underline mt-6">
-            {'>>'} <Link href="/presale">Presale (Whitelist only) mint</Link>{' '}
-            {'<<'}
-          </div>
         </div>
       </div>
       <Slide />
