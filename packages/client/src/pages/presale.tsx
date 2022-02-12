@@ -99,8 +99,8 @@ const PresaleMintPage = () => {
 
       setMintMessage(`🎉🎉🎉 Congrats, you minted ${mintQuantity} token(s)!`)
     } catch (error: any) {
-      console.log(`${error.message}`)
-      setMintErrorMessage(error.message)
+      console.log(`${error.reason}`)
+      setMintErrorMessage(error.reason)
     }
     setMintLoading(false)
   }
