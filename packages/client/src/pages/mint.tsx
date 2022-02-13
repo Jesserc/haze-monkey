@@ -12,13 +12,13 @@ import Spinner from '../components/atoms/Spinner'
 import Web3Modal from 'web3modal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { serializeError } from 'eth-rpc-errors'
+import { WL_ADDRESS } from '../data'
 
 const CONTRACT_ADDRESS = '0xD85EbB24bc0C2fcD6901cc9aE7409e41d4a9E0a3'
 
 const PresaleMintPage = () => {
   // Constants
   const MINT_PRICE = 0.08
-  const MAX_MINT = 10
 
   const [walletAddress, setWalletAddress] = useState('')
   const [mintQuantity, setMintQuantity] = useState(1)
@@ -42,6 +42,13 @@ const PresaleMintPage = () => {
     width: 0,
     height: 0
   })
+
+  const maxMint = useMemo(() => {
+    const isWL = WL_ADDRESS.find((ad) => ad === walletAddress)
+    if (isWL) return 8
+
+    return 10
+  }, [walletAddress])
 
   useEffect(() => {
     const { innerWidth: width, innerHeight: height } = window
@@ -80,7 +87,7 @@ const PresaleMintPage = () => {
     if (sub && mintQuantity !== 1) {
       return setMintQuantity(mintQuantity - 1)
     }
-    if (!sub && mintQuantity !== MAX_MINT) {
+    if (!sub && mintQuantity !== maxMint) {
       return setMintQuantity(mintQuantity + 1)
     }
   }
@@ -169,7 +176,7 @@ const PresaleMintPage = () => {
                 )}
                 <div className=" mb-4 w-full">
                   <p className=" text-sm font-bold text-left">
-                    Max mint - {MAX_MINT}
+                    Max mint - {maxMint}
                   </p>
                   <StyledMintInput className="border-2 flex items-center justify-between h-16 w-full bg-white rounded-md border-black">
                     <button type="button" onClick={() => numberIncrease(true)}>
