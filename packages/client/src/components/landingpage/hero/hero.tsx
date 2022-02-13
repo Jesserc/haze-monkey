@@ -13,6 +13,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 import { WL_ADDRESS } from '../../../data'
 import { serializeError } from 'eth-rpc-errors'
 import Spinner from '../../atoms/Spinner'
+import ReactConfetti from 'react-confetti'
 
 const CONTRACT_ADDRESS = '0xD85EbB24bc0C2fcD6901cc9aE7409e41d4a9E0a3'
 
@@ -264,6 +265,10 @@ const Hero: NextPage = ({ isClicked, handleClick }: any) => {
         </div>
         <Slide />
       </main>
+
+      {mintMessage && (
+        <ReactConfetti width={windowWandH.width} height={windowWandH.height} />
+      )}
     </>
   )
 }
