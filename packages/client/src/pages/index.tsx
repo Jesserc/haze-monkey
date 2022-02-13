@@ -23,18 +23,15 @@ const Home: NextPage = () => {
   return (
     <>
       <SEOHead />
-      <TopBar handleClick={handleClick} isClicked={isClicked} />
       <NavList handleClick={handleClick} isClicked={isClicked} />
-      <main>
-        <Hero />
-        <About />
-        <Background />
-        <Art2 />
-        <Reward />
-        <Roadmap />
-        <Team />
-        <Faq />
-      </main>
+      <Hero />
+      <About />
+      <Background />
+      <Art2 />
+      <Reward />
+      <Roadmap />
+      <Team />
+      <Faq />
       <Footer />
     </>
   )
