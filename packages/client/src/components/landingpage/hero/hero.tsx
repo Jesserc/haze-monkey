@@ -25,7 +25,7 @@ const Hero: NextPage = ({ isClicked, handleClick }: any) => {
   const [mintQuantity, setMintQuantity] = useState(1)
   const [signer, setSigner] = useState<any>(null)
   const [mintErrorMessage, setMintErrorMessage] = useState(
-    'Connect wallet before trying to mint'
+    'Phase one minting has ended'
   )
   const [mintMessage, setMintMessage] = useState('')
   const [mintLoading, setMintLoading] = useState(false)
@@ -248,10 +248,7 @@ const Hero: NextPage = ({ isClicked, handleClick }: any) => {
                 type="button"
                 onClick={mint}
                 disabled={(walletAddress ? false : false) || mintLoading}
-                className={[
-                  'py-4 px-24 border-2 h-16 border-black w-full rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center',
-                  !walletAddressExist && 'opacity-25 cursor-not-allowed'
-                ].join(' ')}
+                className="py-4 px-24 border-2 h-16 border-black w-full rounded-sm bg-buttonGreen transition-colors  font-bold flex items-center justify-center opacity-25 cursor-not-allowed"
               >
                 {mintLoading ? <Spinner size={40} /> : 'Mint'}
               </button>
@@ -260,6 +257,18 @@ const Hero: NextPage = ({ isClicked, handleClick }: any) => {
                   {mintErrorMessage}
                 </span>
               )}
+
+              <div className="text-green-800 underline mt-6">
+                {'>>'}{' '}
+                <a
+                  href="https://opensea.io/collection/hazemonkeygenesisnft"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Buy on OpenSea
+                </a>{' '}
+                {'<<'}
+              </div>
             </form>
           </div>
         </div>
