@@ -102,7 +102,9 @@ const ConfirmPresale = () => {
 
               {confirmFreeMint === false && (
                 <p className="mb-6 text-red-500">
-                  Sorry your wallet is not eligible for free mint. Open a ticket on discord.
+                  Your wallet is not eligible for free mint. Only holders
+                  are eligible for free mint. Open a ticket on discord if your
+                  wallet owns a Haze Monkey NFT and wasn&rsquo;t indexed.
                 </p>
               )}
 
