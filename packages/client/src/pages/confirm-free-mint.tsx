@@ -33,7 +33,9 @@ const ConfirmPresale = () => {
       const adds = await fetchedAddres.getAddress()
       setWalletAddress(adds)
 
-      const isAvailable = HOLDERS_SNAPSHOT.find((ad) => ad === adds)
+      const isAvailable = HOLDERS_SNAPSHOT.find(
+        (ad) => ad.toLowerCase() === adds.toLowerCase()
+      )
       console.log(adds)
       setWalletIsWL(Boolean(isAvailable))
     } catch (error) {
@@ -102,8 +104,8 @@ const ConfirmPresale = () => {
 
               {confirmFreeMint === false && (
                 <p className="mb-6 text-red-500">
-                  Your wallet is not eligible for free mint. Only holders
-                  are eligible for free mint. Open a ticket on discord if your
+                  Your wallet is not eligible for free mint. Only holders are
+                  eligible for free mint. Open a ticket on discord if your
                   wallet owns a Haze Monkey NFT and wasn&rsquo;t indexed.
                 </p>
               )}
