@@ -17,10 +17,9 @@ const CONTRACT_ADDRESS = '0xD85EbB24bc0C2fcD6901cc9aE7409e41d4a9E0a3'
 
 const PresaleMintPage = () => {
   // Constants
-  const MINT_PRICE = 0.06
+  const MINT_PRICE = 1
 
   const [walletAddress, setWalletAddress] = useState('')
-  const [mintQuantity, setMintQuantity] = useState(1)
   const [signer, setSigner] = useState<any>(null)
   const [mintErrorMessage, setMintErrorMessage] = useState(
     'Connect wallet before trying to mint'
@@ -75,15 +74,6 @@ const PresaleMintPage = () => {
     }
   }
 
-  const numberIncrease = (sub: boolean) => {
-    if (sub && mintQuantity !== 1) {
-      return setMintQuantity(mintQuantity - 1)
-    }
-    if (!sub && mintQuantity !== 2) {
-      return setMintQuantity(mintQuantity + 1)
-    }
-  }
-
   const mint = async () => {
     // Get wallet details
     if (!walletAddress) return
@@ -91,17 +81,20 @@ const PresaleMintPage = () => {
       setMintLoading(true)
       // Interact with contract
       const contract = new ethers.Contract(CONTRACT_ADDRESS, Hazy, signer)
-      const totalPrice = MINT_PRICE * mintQuantity
-      const transaction = await contract.presaleMint(mintQuantity, {
-        value: ethers.utils.parseEther(totalPrice.toString())
+      const transaction = await contract.presaleMint(1, {
+        value: ethers.utils.parseUnits(MINT_PRICE.toString(), "wei")
       })
       await transaction.wait()
 
-      setMintMessage(`🎉🎉🎉 Congrats, you minted ${mintQuantity} token(s)!`)
+      setMintMessage(
+        `🎉🎉🎉 Congrats, you have claimed your free Haze Monkey NFT!`
+      )
     } catch (error: any) {
+      setMintLoading(false)
+
       const serializedError: any = serializeError(error)
       console.log(serializedError.data)
-      setMintErrorMessage(serializedError.data.originalError.error.message)
+      // setMintErrorMessage(serializedError.data.originalError.error.message)
     }
     setMintLoading(false)
   }
@@ -113,7 +106,7 @@ const PresaleMintPage = () => {
   return (
     <>
       <SEOHead
-        title="Presale Mint"
+        title="Claim free NFT"
         description="Official Presale mint page for Haze Monkey Society"
         ogImage="https://res.cloudinary.com/lab88/image/upload/v1644592637/presale_ystzdi.jpg"
       />
@@ -158,34 +151,14 @@ const PresaleMintPage = () => {
           <div className="sectionContent flex flex-col items-center pt-12 pb-12 lg:pt-16 lg:pb-9 w-full h-full relative wrapper">
             <div className="flex flex-col items-center text-center">
               <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
-              <h1 className="mb-0">Mint Haze Monkey</h1>
-              <p className="">
-                Input quantity to be minted and click on "Mint" button
-              </p>
+              <h1 className="mb-0">
+                Claim free Haze Monkey NFT <br /> (Holders only)
+              </h1>
 
-              <form className=" mt-12 w-full md:w-1/2 lg:w-1/2">
+              <form className=" mt-12 w-full md:w-1/2 lg:w-2/3">
                 {mintMessage && (
                   <p className="mb-6 text-green-500">{mintMessage}</p>
                 )}
-                <div className=" mb-4 w-full">
-                  <p className=" text-sm font-bold text-left">Max mint - 2</p>
-                  <StyledMintInput className="border-2 flex items-center justify-between h-16 w-full bg-white rounded-md border-black">
-                    <button type="button" onClick={() => numberIncrease(true)}>
-                      -
-                    </button>
-
-                    <input
-                      placeholder="1"
-                      type="tel"
-                      value={mintQuantity}
-                      readOnly
-                      className="text-center w-20 font-bold focus:outline-none"
-                    />
-                    <button type="button" onClick={() => numberIncrease(false)}>
-                      +
-                    </button>
-                  </StyledMintInput>
-                </div>
 
                 <button
                   type="button"
@@ -196,7 +169,7 @@ const PresaleMintPage = () => {
                     !walletAddressExist && 'opacity-25 cursor-not-allowed'
                   ].join(' ')}
                 >
-                  {mintLoading ? <Spinner size={40} /> : 'Mint'}
+                  {mintLoading ? <Spinner size={40} /> : 'Claim free NFT'}
                 </button>
                 {mintErrorMessage && (
                   <p className=" mt-4 text-red-600">{mintErrorMessage}</p>
