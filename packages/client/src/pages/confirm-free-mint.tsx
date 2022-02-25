@@ -30,7 +30,7 @@ const ConfirmPresale = () => {
   const onConnectWallet = async () => {
     try {
       const fetchedAddres = await connectWallet()
-      const adds = await fetchedAddres.getAddress()()
+      const adds = await fetchedAddres.getAddress()
       setWalletAddress(adds)
 
       const isAvailable = HOLDERS_SNAPSHOT.find((ad) => ad === adds)
