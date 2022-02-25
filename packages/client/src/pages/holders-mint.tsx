@@ -82,7 +82,7 @@ const PresaleMintPage = () => {
       // Interact with contract
       const contract = new ethers.Contract(CONTRACT_ADDRESS, Hazy, signer)
       const transaction = await contract.presaleMint(1, {
-        value: ethers.utils.parseUnits(MINT_PRICE.toString(), "wei")
+        value: ethers.utils.parseUnits(MINT_PRICE.toString(), 'wei')
       })
       await transaction.wait()
 
@@ -94,7 +94,7 @@ const PresaleMintPage = () => {
 
       const serializedError: any = serializeError(error)
       console.log(serializedError.data)
-      // setMintErrorMessage(serializedError.data.originalError.error.message)
+      setMintErrorMessage(serializedError.data.originalError.error.message)
     }
     setMintLoading(false)
   }
