@@ -170,6 +170,18 @@ const PresaleMintPage = () => {
                 >
                   {mintLoading ? <Spinner size={40} /> : 'Claim free NFT'}
                 </button>
+
+                <div className="text-green-800 underline mt-6">
+                  {'>>'}{' '}
+                  <a
+                    href="https://opensea.io/collection/hazemonkeygenesisnft"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Buy on OpenSea
+                  </a>{' '}
+                  {'<<'}
+                </div>
                 {mintErrorMessage && (
                   <p className=" mt-4 text-red-600">{mintErrorMessage}</p>
                 )}
