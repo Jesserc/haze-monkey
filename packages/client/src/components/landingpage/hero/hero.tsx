@@ -214,7 +214,7 @@ const Hero: NextPage = ({ isClicked, handleClick }: any) => {
             <img src="images/vectors/weed3.svg" alt="weed" className="mb-6" />
             <h1 className="mb-6">Haze Monkey Society</h1>
             <p className="mb-8">
-              4,200 Haze Monkeys making an impact in society through the
+              1,242 Haze Monkeys making an impact in society through the
               metaverse.
             </p>
 
