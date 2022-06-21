@@ -23,7 +23,7 @@ export const faq: Accordion[] = [
   {
     id: 3,
     question: 'On what chain will Haze Monkey mint on?',
-    answer: 'Etherium blockchain.'
+    answer: 'Ethereum blockchain.'
   },
   {
     id: 4,
